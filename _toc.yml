@@ -9,4 +9,11 @@ options:
 
 # Chapters may be written in either Markdown or as Jupyter Notebooks
 chapters:
-  - file: chapters/01_example
+  - file: chapters/01-how-ai-thinks
+  - file: chapters/02-responsible-ai
+  - file: chapters/03-how-to-talk-to-ai
+  - file: chapters/04-how-ai-talks-to-you
+  - file: chapters/05-glossary
+  - file: chapters/06-appendices
+  
+  

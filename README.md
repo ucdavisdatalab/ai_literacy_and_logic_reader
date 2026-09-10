@@ -1,110 +1,37 @@
-# Template: Workshop Reader
-
-This repository is a template for Python-specific workshop readers for the UC
-Davis DataLab. It uses [Jupyter Book][jb] to generate the reader.
-
-To get started, create a new repo on GitHub from this template
-([instructions][gh]), then `git clone` your new repo.
-
-[gh]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
-[jb]: https://jupyterbook.org/en/stable/intro.html
-
-Once you've cloned the repo, here's a checklist of things to do to prepare it:
-
-1. Environment management: we recommend using [Pixi][], a fast package manager
-   based on the conda ecosystem. A few minutes spent on proper environment
-   management now will save you time (and suffering) later! To install Pixi,
-   follow [the official instructions][Pixi].
-
-   [Pixi]: https://pixi.prefix.dev/
-
-   Once you've installed Pixi, open a terminal and navigate to your local clone
-   of this repo. The repo is already set up with a Pixi virtual environment:
-   explicit dependencies and version constraints are listed in `pixi.toml`, and
-   the exact versions of *all* dependencies are listed in `pixi.lock`. To
-   upgrade to the most recent versions, ignoring the constraints, run:
-
-   ```sh
-   pixi upgrade
-   ```
-
-   Pixi will upgrade `pixi.toml` and `pixi.lock` to match. Don't forget to
-   commit these files when they change!
-
-   At this point, you can use `pixi add` to install other packages. See section
-   [Setup](#setup) for more about how to use Pixi.
-
-2. `README.md`: Replace the all-caps text with your workshop details.
-   + Title
-   + Quarter & year
-   + Author's name and email
-   + Helpers' names and email (optional)
-   + Reader URL
-   + Event URL
-   + Description, learning goals, & prerequisites
-
-3. `_config.yml`: Replace the all-caps text with your workshop details.
-   + Title
-   + Author
-   + Date (year only)
-   + URL
-
-4. `chapters/index.md`: You can write chapters as Markdown (`.md`) files,
-   Jupyter Notebook (`.ipynb`) files, or a mix of both. The template defaults
-   to Markdown files. If you want to use a Jupyter notebook for the front page,
-   delete `index.md` and use Jupyter to create `index.ipynb` instead.
-
-5. `_toc.yml`: This file is the table of contents for the book. Any chapters
-   that are not registered here will not appear in the book. The `index.md` (or
-   `index.ipynb`) and `01_example.md` chapters are already registered. Note
-   that you should not specify the file extension in the table of contents. If
-   you rename or add any chapters, you must update the table of contents in
-   order for them to appear in the book.
-
-6. Compile your book with:
-
-   ```sh
-   pixi run build
-   # Or equivalently:
-   # pixi run jupyter-book build .
-   ``` 
-
-   This will generate a new `_build/` directory, which will contain HTML 
-   versions of your reader. This should not be added to Git (a `.gitignore` 
-   file is already in the template).
-
-7. `git add` all of the changed files, then `git commit` and `git push`.
-
-8. This template is set up to serve the reader from the `gh-pages` branch of
-   the repository rather than a directory in the `main` branch (in contrast to
-   our Quarto template). Once you've committed your files, you need to run one
-   more command, which will automatically push the rendered HTML files to the
-   `gh-pages` branch on GitHub:
-
-   ```sh
-   pixi run publish
-   # Or equivalently:
-   # pixi run ghp-import --no-jekyll --no-history --push _build/html
-   ```
-
-   Make sure the GitHub repo is configured to serve pages from the `gh-pages`
-   branch by going to `Settings/Pages` on GitHub. Select the `gh-pages` branch
-   if it isn't selected already. _You must run the `pixi run publish` step
-   every time you wish to push updates to the live site on GitHub._
-
-9. `README.md`: Remove these template instructions, which end at this step, 
-   and, if you'd like, `git add` this file and `commit`/`push` it.
-
-# Workshop: WORKSHOP TITLE
+# Workshop: AI Literacy and Logic
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 _[UC Davis DataLab](https://datalab.ucdavis.edu/)_  
-_QUARTER YEAR_  
-_Instructor: YOUR NAME_  
-_Maintainer: MAINTAINER'S NAME <<MAINTAINER_EMAIL@ucdavis.edu>>_  
+_Spring 2026_  
+_Instructors: Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal_  
+_Maintainer: Carl Stahmer <<datalab@ucdavis.edu>>_  
 
-* [Reader](https://ucdavisdatalab.github.io/YOUR_REPOSITORY/)
-* [Event Page](https://datalab.ucdavis.edu/eventscalendar/YOUR_EVENT/)
+* [Reader](https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/)
+* [Event Page](https://events.library.ucdavis.edu/event/ai-literacy-logic-spring-2026#)
 
-YOUR DESCRIPTION, LEARNING GOALS, PREREQUISITES, ETC
+This free, 1-day intensive workshop is for College of Letters & Science majors, and covers the foundational principles and skills for using Artificial Intelligence (AI).
+
+## You will learn:
+
+* How AI thinks
+* How to use AI responsibly
+* How to "Talk" to AI
+* How AI talks to you
+* Upon completion, you will be able to:
+* Define "AI"
+* Identify if a problem is suitable for an AI solution
+* Develop advanced prompting strategies
+* Critically interrogate your own use of AI and impact
+* Practice and grow your confidence with AI
+* Earn a Certificate of Completion
+
+## Why Apply to Attend?
+
+AI is no longer a “tech” skill - it is a foundational literacy. By stripping away the dense math and complex coding often associated with AI, we’ve developed a workshop designed for students from all L&S majors, including those in STEM, humanities, social sciences, and the arts. So no matter your major or career aspiration, this workshop is for you!
+
+## Who Should Apply to Attend?
+All students in the College of Letters & Science are eligible to apply. Although priority registration will be given to students who are planning to graduate in Spring or Summer 2026, we encourage all students to apply to attend and may be admitted as space permits. Accepted learners are expected to attend all modules on their date of instruction. 
+
+## When and Where?
+Five different sessions of this workshop were offered Spring Quarter, 2026 on the following dates: April 10, May 2, May 9, May 16, May 30. Apply for any of these dates through the link below.

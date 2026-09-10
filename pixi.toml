@@ -21,3 +21,5 @@ rebuild = { depends-on = ["clean", "build"], description = "Remove the build dir
 python = ">=3.13.3,<3.14"
 jupyter-book = ">=1.0.4.post1,<2"
 ghp-import = ">=2.1.0,<3"
+
+

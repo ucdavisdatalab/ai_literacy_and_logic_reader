@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: WORKSHOP TITLE
-author: YOUR NAME
-copyright: "202X"
+title: AI Literacy and Logic
+author: Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal
+copyright: "2026"
 logo: images/datalab-logo-full-color-rgb.png
 exclude_patterns: [_build, .pixi]
 only_build_toc_files: true
@@ -25,7 +25,7 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/ucdavisdatalab/<YOUR REPO>
+  url: https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader
   path_to_book: docs
 
 # Add GitHub buttons to your book
