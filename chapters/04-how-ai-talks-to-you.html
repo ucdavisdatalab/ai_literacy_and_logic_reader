@@ -1,0 +1,1086 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Chapter 4. How AI Talks to You &#8212; AI Literacy and Logic</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=dddfd265"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/04-how-ai-talks-to-you';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Glossary" href="05-glossary.html" />
+    <link rel="prev" title="3. Chapter 3. How to Talk to AI" href="03-how-to-talk-to-ai.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-us"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-light" alt="AI Literacy and Logic - Home"/>
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-dark pst-js-only" alt="AI Literacy and Logic - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-how-ai-thinks.html">1. Chapter 1. How AI Thinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-responsible-ai.html">2. Chapter 2. How to Use AI Responsibly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-how-to-talk-to-ai.html">3. Chapter 3. How to Talk to AI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Chapter 4. How AI Talks to You</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-appendices.html">6. Appendices</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/issues/new?title=Issue%20on%20page%20%2Fchapters/04-how-ai-talks-to-you.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/04-how-ai-talks-to-you.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 4. How AI Talks to You</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">4.1. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-and-framing">4.2. Recap and Framing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hallucination-and-ai-slop">4.3. 4.1 Hallucination and AI Slop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-range-of-harm">4.3.1. 4.1.1 The Range of Harm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friendliness-and-sycophancy">4.3.2. 4.1.2 Friendliness and Sycophancy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-ai-lying-to-you">4.3.3. 4.1.3 Is the AI Lying to You?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-outputs-are-not-evidence">4.4. 4.2 AI Outputs Are Not Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-will-be-held-accountable">4.5. 4.3 You Will Be Held Accountable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate">4.6. 4.4 Validate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-craap-test">4.6.1. 4.4.1 The CRAAP Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ai-validation-problem">4.6.2. 4.4.2 The AI Validation Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lateral-reading">4.7. 4.5 Lateral Reading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ai-requires-more">4.7.1. 4.5.1 Why AI Requires More</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstration-evaluating-an-unfamiliar-source">4.7.2. 4.5.2 Demonstration: Evaluating an Unfamiliar Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lateral-reading-an-ai-response">4.7.3. 4.5.3 Lateral Reading an AI Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-lateral-reading">4.7.4. 4.5.4 Tools for Lateral Reading</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synthetic-images-and-video">4.8. 4.6 Synthetic Images and Video</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-diagnostic-exercise">4.8.1. 4.6.1 A Diagnostic Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#five-categories-of-implausibility">4.8.2. 4.6.2 Five Categories of Implausibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-technology-is-improving">4.8.3. 4.6.3 The Technology Is Improving</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cognitive-cost-of-verification">4.8.4. 4.6.4 The Cognitive Cost of Verification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-learn-and-practice">4.8.5. 4.6.5 Where to Learn and Practice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-do-about-it">4.9. 4.7 What to Do About It</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lateral-watching">4.9.1. 4.7.1 Lateral Watching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-image-search-and-watermarking">4.9.2. 4.7.2 Reverse Image Search and Watermarking</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-ai-generated-journals">4.10. 4.8 Case Study: AI-Generated Journals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">4.11. Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-terms">4.12. Key Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">4.13. Review Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">4.14. Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-how-ai-talks-to-you">
+<h1><span class="section-number">4. </span>Chapter 4. How AI Talks to You<a class="headerlink" href="#chapter-4-how-ai-talks-to-you" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><em>Session 4 of the AI Literacy and Logic workshop. Lead instructor: Rebeccah Yterdal, STEM Librarian, Researcher Services, UC Davis Library.</em></p>
+</div></blockquote>
+<section id="learning-objectives">
+<h2><span class="section-number">4.1. </span>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>Upon completing this chapter, the reader should be able to:</p>
+<ol class="arabic simple">
+<li><p>Describe how the tone and confidence of AI output are engineered, and explain why friendliness is a design choice with epistemic consequences.</p></li>
+<li><p>Define <em>hallucination</em> and <em>AI slop</em>, and give examples ranging from the trivial to the actively harmful.</p></li>
+<li><p>Explain why AI output constitutes a claim requiring evidence rather than evidence supporting a claim.</p></li>
+<li><p>State the accountability principle and identify who bears responsibility when AI-assisted work is wrong.</p></li>
+<li><p>Apply the CRAAP test to a source, and explain which of its five criteria are difficult or impossible to apply to AI output.</p></li>
+<li><p>Execute the lateral reading workflow — break it down, search, analyze, decide, repeat — on an AI response.</p></li>
+<li><p>Select appropriate tools for lateral reading, and explain why another chatbot is generally a poor verification instrument.</p></li>
+<li><p>Evaluate images and video for signs of synthetic generation across five categories of implausibility, and apply verification techniques including reverse image search and account-history analysis.</p></li>
+</ol>
+</section>
+<section id="recap-and-framing">
+<h2><span class="section-number">4.2. </span>Recap and Framing<a class="headerlink" href="#recap-and-framing" title="Link to this heading">#</a></h2>
+<p><img alt="Recap: prediction, bias, and prompting." src="chapters/assets/ch4-fig-01-how-ai-sounds.png" /></p>
+<p><em>Figure 4.1. How AI sounds: confident, adjustable in friendliness, built to give you an answer.</em></p>
+<p>Three points from earlier chapters set up this one.</p>
+<p><strong>AI output is confident.</strong> As Chapter 2 established, and as is worth restating: an AI response will sound confident the overwhelming majority of the time, regardless of whether the statement is true.</p>
+<p><strong>Tone is a product decision.</strong> Companies tune their models to be more or less friendly. Most contemporary general-purpose chatbots are quite friendly — one instructor’s comparison was to a golden retriever. Anthropic’s Claude has undergone explicit “character training.” Models can be built and tuned to be more engaging, warmer, even romantic. A model that sounds one way today may sound different after an update.</p>
+<p><strong>They are built to give you an answer.</strong> Marketing language positions these systems as personal assistants that will save time on scheduling, correspondence, and routine tasks. The design consequence is that they always produce a response, including when they do not have one.</p>
+<blockquote>
+<div><p><strong>The golden retriever.</strong> The metaphor, from a cartoon a colleague generated in Gemini, is worth keeping. A chatbot wants to please you. You throw the ball; it goes to fetch. But sometimes it sees a chicken along the way and decides the chicken is more valuable, and brings you the chicken instead.</p>
+<p>That is a hallucination.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="hallucination-and-ai-slop">
+<h2><span class="section-number">4.3. </span>4.1 Hallucination and AI Slop<a class="headerlink" href="#hallucination-and-ai-slop" title="Link to this heading">#</a></h2>
+<p><img alt="Hallucinations and AI slop." src="chapters/assets/ch4-fig-02-hallucinations-and-slop.png" /></p>
+<p><em>Figure 4.2. Misleading, inaccurate, or fabricated content.</em></p>
+<p><strong>Hallucination:</strong> misleading, inaccurate, or fabricated content in an AI response.</p>
+<p><strong>AI slop:</strong> the flood of low-quality, frequently hallucination-laden AI-generated content overwhelming parts of the internet — including material that ranks well in search results and presents as news or research.</p>
+<section id="the-range-of-harm">
+<h3><span class="section-number">4.3.1. </span>4.1.1 The Range of Harm<a class="headerlink" href="#the-range-of-harm" title="Link to this heading">#</a></h3>
+<p>Hallucinations run from the silly to the dangerous.</p>
+<p><strong>Trivial.</strong> A widely circulated example: a user searching for advice on cheese sliding off pizza received an AI search summary suggesting the addition of non-toxic glue to the sauce. The failure is funny, and it illustrates a structural point about search-integrated AI summaries. When you type into a search box you are not constructing a prompt: you are not defining a speaker, establishing an audience, or supplying context. Everything in Chapter 3 that improves output quality is absent by construction, which makes these summaries <em>more</em> susceptible to error than a considered prompt would be.</p>
+<blockquote>
+<div><p><strong>Practical measures.</strong> Appending <code class="docutils literal notranslate"><span class="pre">-AI</span></code> to a search query on Google suppresses the AI summary at the top of the results. In-page AI overviews further down the results remain, but the initial summary does not appear — which also avoids the energy and water cost of generating it, and the effort of scrolling past it. Alternatively, some search engines allow AI features to be disabled entirely in settings; DuckDuckGo was recommended for this and for its data practices.</p>
+</div></blockquote>
+<p><strong>Harmful.</strong> OpenAI’s Whisper speech recognition system, used to produce transcripts including in medical settings, has a documented tendency to fill silences by inventing content. In some cases the invented content included descriptions of violent acts. Research found that transcripts of patients with aphasia — reduced ability to express oneself in speech, typically following stroke or brain injury — contained <em>more</em> of these fabrications than transcripts of other patients. The failure mode falls hardest on the people least able to correct it.</p>
+</section>
+<section id="friendliness-and-sycophancy">
+<h3><span class="section-number">4.3.2. </span>4.1.2 Friendliness and Sycophancy<a class="headerlink" href="#friendliness-and-sycophancy" title="Link to this heading">#</a></h3>
+<p>There is evidence that friendlier tools may hallucinate more (Ibrahim et al., 2026), and popular reporting has noted that users who are friendlier to a system sometimes get better answers. The corollary is less comfortable: <strong>models can be tuned to validate you</strong>, which means that a false premise supplied in a prompt may simply be reinforced.</p>
+<blockquote>
+<div><p><strong>Demonstration: Jim Henson at Ohio State.</strong> The prompt asked ChatGPT to write a short essay about Jim Henson’s undergraduate years at Ohio State University. The response began by describing Henson as the visionary creator behind the Muppets and asserting that his undergraduate years at Ohio State played a formative role in shaping his artistic sensibility and approach.</p>
+<p>The first claim is true. The second is not: Jim Henson attended the University of Maryland. But the prompt asserted Ohio State, and the model built an essay on that premise.</p>
+<p>This is a distinct species of hallucination — not invention out of nothing, but the confident elaboration of a falsehood the user supplied. It is precisely the failure mode that the 20% “confirm my assumptions” usage pattern in Chapter 3 produces at scale.</p>
+</div></blockquote>
+</section>
+<section id="is-the-ai-lying-to-you">
+<h3><span class="section-number">4.3.3. </span>4.1.3 Is the AI Lying to You?<a class="headerlink" href="#is-the-ai-lying-to-you" title="Link to this heading">#</a></h3>
+<p>No. It is not intentionally deceiving you, and when it hallucinates it is not, technically speaking, doing anything wrong. It is doing exactly what it was built to do.</p>
+<p>OpenAI’s own research offers a useful account (Kalai et al., 2025): <strong>language models are optimized to be good test-takers, and guessing when uncertain improves test performance.</strong> Consider a multiple-choice exam. You do not know the answer. You do not leave it blank; you choose an option, because a guess might earn credit and a blank certainly will not. That is what these systems do. Lacking the fact, they guess — fluently.</p>
+<p>The additional caution: the semantic similarity and contextual processing described in Chapter 1 permit these systems to operate on something resembling meaning. That is not the same as comprehension, and it does not mean the outputs carry meaning or intention in the sense a human utterance does.</p>
+<p><strong>Every AI tool will hallucinate to some extent.</strong> No tool is exempt. It is also worth remembering that the general-purpose chatbots most people encounter are not experts in anything. A tool trained specifically to analyze scans for cancerous masses is a different case — and even that tool is producing a claim that requires human review. Unless a system was built for a niche purpose, it is not an expert in anything.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ai-outputs-are-not-evidence">
+<h2><span class="section-number">4.4. </span>4.2 AI Outputs Are Not Evidence<a class="headerlink" href="#ai-outputs-are-not-evidence" title="Link to this heading">#</a></h2>
+<p><img alt="AI outputs are claims, not evidence." src="chapters/assets/ch4-fig-03-outputs-are-not-evidence.png" /></p>
+<p><em>Figure 4.3. Claims, not evidence; usually not built to cite sources; and hallucinated sources.</em></p>
+<p>Every session of this workshop hammers the same point, and this is the chapter in which it becomes operational.</p>
+<p><strong>What an AI gives you cannot serve as evidence</strong> — not for an argument, not for a paper, not for a professional recommendation. <strong>Everything that comes out of an AI tool is a claim that you need evidence to support.</strong></p>
+<p>The citation problem was treated in Chapter 2, and two empirical findings sharpen it:</p>
+<ul class="simple">
+<li><p>GPT-4o produced citation fabrications in which references were either wholly invalid or carried a DOI or link that was not real or that resolved to an entirely different article.</p></li>
+<li><p>In a mental health literature review, GPT-4o fabricated close to <strong>20% of citations</strong> (Linardon et al., 2025).</p></li>
+</ul>
+<p>Models are generally not built to cite sources, except where they have been specifically constructed for research or educational use — and retrofitting citation onto a system that generates text probabilistically does not make its citations trustworthy.</p>
+<p>There <em>are</em> AI tools built specifically to locate real citations, which returns to the principle of using the right tool for the task. And there are a great many tools built for different tasks and audiences; the general-purpose chatbot is the least specialized instrument available.</p>
+</section>
+<hr class="docutils" />
+<section id="you-will-be-held-accountable">
+<h2><span class="section-number">4.5. </span>4.3 You Will Be Held Accountable<a class="headerlink" href="#you-will-be-held-accountable" title="Link to this heading">#</a></h2>
+<p><img alt="You are responsible for your work products." src="chapters/assets/ch4-fig-04-you-will-be-held-accountable.png" /></p>
+<p><em>Figure 4.4. You are responsible for your work products, regardless of the tools used to create them.</em></p>
+<blockquote>
+<div><p><strong>You are responsible for your work products, regardless of the tools you use to create them.</strong></p>
+</div></blockquote>
+<p>The consequences are not hypothetical.</p>
+<p><strong>Law.</strong> Attorneys who filed briefs citing cases that did not exist, supplied by an AI tool, have been fined and subjected to discipline by bar associations. The AI is not sanctioned; the attorney is.</p>
+<p><strong>Marketing and communications.</strong> An advertisement designed with AI assistance that contains a hallucination is the responsibility of the person who failed to catch and correct it.</p>
+<blockquote>
+<div><p><strong>Google’s Bard advertisement (2023).</strong> In the promotional launch material for Bard, the model gave an incorrect answer about which telescope took the first image of a planet outside our solar system, attributing it to the James Webb Space Telescope. In fact the first exoplanet image was captured by the European Southern Observatory’s Very Large Telescope in 2004.</p>
+<p>The error’s origin is instructive: many news articles had used constructions like “the first picture of an exoplanet from the JWST,” meaning the first such picture <em>that telescope</em> had taken — not the first ever taken. The model reproduced the pattern without the distinction. The error was in the company’s own launch advertisement, and it was expensive.</p>
+</div></blockquote>
+<p><strong>Finance and small business.</strong> A small business owner using AI for financial management who acts on a hallucinated figure has spent the money. There is no recourse to the tool.</p>
+<p>The instruction that follows is the AI Use Roadmap from Chapter 2, re-encountered from the far side. Before using the tool, ask whether you are willing to be held accountable for the result. After using it, recognize that you now are.</p>
+</section>
+<hr class="docutils" />
+<section id="validate">
+<h2><span class="section-number">4.6. </span>4.4 Validate<a class="headerlink" href="#validate" title="Link to this heading">#</a></h2>
+<p><img alt="Validate." src="chapters/assets/ch4-fig-05-craap-test.png" /></p>
+<p><em>Figure 4.5. The CRAAP test: a framework for evaluating content validity.</em></p>
+<p>So what should be done? <strong>Do not believe it.</strong> Begin from the assumption that what you received is not true, and validate it. Skepticism — in the constructive sense established in Chapter 2 — is the appropriate posture.</p>
+<section id="the-craap-test">
+<h3><span class="section-number">4.6.1. </span>4.4.1 The CRAAP Test<a class="headerlink" href="#the-craap-test" title="Link to this heading">#</a></h3>
+<p>The CRAAP test is an evaluation method developed by librarian Sarah Blakeslee at the Meriam Library, California State University, Chico. Librarians have taught it for years, and it applies to anything you read, not only to AI output.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criterion</p></th>
+<th class="head"><p>Question</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>C — Currency</strong></p></td>
+<td><p>Is the production date of the information such that the information can be considered relevant?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>R — Relevance</strong></p></td>
+<td><p>Is the fact or argument (and its source) relevant to my question or problem? Who is the intended audience?</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>A — Authority</strong></p></td>
+<td><p>Does the person or organization making the claim have the necessary credentials and experience to be a reliable source on your topic?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>A — Accuracy</strong></p></td>
+<td><p>Can you verify the accuracy of the claim in at least two other reputable sources?</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>P — Purpose</strong></p></td>
+<td><p>Why was the information originally created at its source? Is it fact, opinion, entertainment, satire, or propaganda?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 4.1. The CRAAP test.</em></p>
+<p>Applied notes on each criterion:</p>
+<ul class="simple">
+<li><p><strong>Currency.</strong> Note that you can introduce time bias accidentally through your prompt.</p></li>
+<li><p><strong>Relevance.</strong> Even if a claim is true, it may not be relevant — and a lack of relevance often traces back to insufficient specificity in the prompt.</p></li>
+<li><p><strong>Authority.</strong> Consider whether you can trace the information back to its original source and evaluate that source. <strong>The AI tool does not itself have authority.</strong></p></li>
+<li><p><strong>Accuracy.</strong> Verification in at least two other reputable sources.</p></li>
+<li><p><strong>Purpose.</strong> Essentially: what bias is present in the information?</p></li>
+</ul>
+</section>
+<section id="the-ai-validation-problem">
+<h3><span class="section-number">4.6.2. </span>4.4.2 The AI Validation Problem<a class="headerlink" href="#the-ai-validation-problem" title="Link to this heading">#</a></h3>
+<p><img alt="The CRAAP test applied to AI." src="chapters/assets/ch4-fig-06-craap-test-in-ai.png" /></p>
+<p><em>Figure 4.6. CRAAP applied to AI output: four of five criteria become difficult or impossible.</em></p>
+<p>Here is the difficulty. Nearly everything the CRAAP test asks cannot be determined by looking at a chatbot response.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criterion</p></th>
+<th class="head"><p>The problem with AI output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Currency</strong></p></td>
+<td><p>How do you know the date of the information?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Relevance</strong></p></td>
+<td><p>Is the fact or argument relevant to your question — and did your prompt actually ask what you meant?</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Authority</strong></p></td>
+<td><p>How do you know the original source? Does the tool even have the training and corpus to answer this question?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Accuracy</strong></p></td>
+<td><p><em>This one you can still do.</em> Verify each claim in at least two other reputable sources.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Purpose</strong></p></td>
+<td><p>Can you find the purpose of the information at its source? And additionally: what is the purpose of the AI tool, and what bias exists in it?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 4.2. The CRAAP test in AI.</em></p>
+<p>Purpose becomes doubly difficult, because two purposes are now in play: that of the original information, which the model cannot report, and that of the tool itself, along with its underlying bias.</p>
+<p><strong>The consequence is that accuracy carries the weight.</strong> Because the other four criteria are largely foreclosed, verification of each claim against at least two other reputable sources becomes the essential step. <strong>When using AI, this is the most important thing you can do.</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lateral-reading">
+<h2><span class="section-number">4.7. </span>4.5 Lateral Reading<a class="headerlink" href="#lateral-reading" title="Link to this heading">#</a></h2>
+<p><img alt="The lateral reading workflow." src="chapters/assets/ch4-fig-07-lateral-reading-workflow.png" /></p>
+<p><em>Figure 4.7. Lateral reading: break it down, search, analyze, decide, repeat.</em></p>
+<p><strong>Lateral reading</strong> means leaving the source in front of you and consulting other sources in order to evaluate its facts, claims, references, quotations, and authorities. Every professional fact-checker works this way.</p>
+<p>The name comes from the physical action. Instead of reading <em>vertically</em> — proceeding down the page — you read a little, then open another tab and move <em>laterally</em> to verify what you have just read, then return. It might equally be called tabbed reading.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1. Break it down</strong></p></td>
+<td><p>Identify specific facts, claims, references, and sources of authority</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2. Search</strong></p></td>
+<td><p>Search other sources to verify facts, references, and credentials</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3. Analyze</strong></p></td>
+<td><p>Analyze the results of your external verification</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4. Decide</strong></p></td>
+<td><p>Determine whether the claim is valid</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5. Repeat</strong></p></td>
+<td><p>Repeat the cycle for each claim, fact, or source</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 4.3. The lateral reading workflow.</em></p>
+<p>The technique applies in two directions. <strong>Evaluating a source:</strong> encountering an unfamiliar website or publication, open a new tab and see what other sources say about <em>it</em> — verify early, so you can decide whether it is worth reading at all. <strong>Evaluating a claim:</strong> read until you reach a fact, then move laterally to check it.</p>
+<section id="why-ai-requires-more">
+<h3><span class="section-number">4.7.1. </span>4.5.1 Why AI Requires More<a class="headerlink" href="#why-ai-requires-more" title="Link to this heading">#</a></h3>
+<p>Lateral reading is good practice for everything. With AI it becomes mandatory, and the reason is structural.</p>
+<p>When reading an article written by a human, you may fact-check the first several claims, find them sound, form a judgment about the author’s reliability, and extend provisional trust to the rest. <strong>That inference does not hold for AI output.</strong> The first ten claims may be true and the eleventh may be a hallucination. There is no author whose track record accumulates across the piece, because there is no author — only a token-by-token process that is equally capable of accuracy and fabrication at every position.</p>
+<p><strong>You must check every fact.</strong> You cannot stop checking, or continue reading on trust, based on the first few.</p>
+<blockquote>
+<div><p>A parallel worth noting from the media-literacy literature: a good deal of misinformation is constructed to sound credible at the outset and to place the false or conspiratorial material later, once the reader’s guard has lowered. The AI case is not adversarial in the same way, but it produces the same requirement.</p>
+</div></blockquote>
+</section>
+<section id="demonstration-evaluating-an-unfamiliar-source">
+<h3><span class="section-number">4.7.2. </span>4.5.2 Demonstration: Evaluating an Unfamiliar Source<a class="headerlink" href="#demonstration-evaluating-an-unfamiliar-source" title="Link to this heading">#</a></h3>
+<p>The session’s first worked example concerned a conspiracy claim — an article asserting that technology companies were demanding increased atmospheric intervention to cool AI data centers — published on a site nobody in the room recognized.</p>
+<p>Rather than beginning with the claim, the instructor began with the <strong>source</strong>. A new tab, a search on the publication’s name, and a Wikipedia entry established that the site had operated previously under a different name and was a known purveyor of fabricated news; it had rebranded.</p>
+<p>That single lateral move settled the question before any individual claim in the article had been examined. It illustrates the half of lateral reading that is easiest to skip: <strong>verify early, so that you can decide whether the source is worth reading at all.</strong> Wikipedia serves this purpose well — not as an authority on the underlying subject, but as an orientation to who is speaking and what is known about them, with a reference list attached.</p>
+</section>
+<section id="lateral-reading-an-ai-response">
+<h3><span class="section-number">4.7.3. </span>4.5.3 Lateral Reading an AI Response<a class="headerlink" href="#lateral-reading-an-ai-response" title="Link to this heading">#</a></h3>
+<p>Contemporary chatbots sometimes — but not always — include links to sources within responses, both inline and in a source list at the end.</p>
+<p>Recall from Chapter 2 that these are not references in the scholarly sense. <strong>Think of AI sources as “read more” links rather than as the sources of the information.</strong> Note also that not every claim will carry one.</p>
+<p>The workflow applied to a response:</p>
+<ol class="arabic simple">
+<li><p><strong>Break it down.</strong> The opening paragraph is often a summary of the whole; the substantive claims follow. Identify the first specific fact or claim.</p></li>
+<li><p><strong>Search</strong> for independent confirmation.</p></li>
+<li><p><strong>Analyze</strong> what you find.</p></li>
+<li><p><strong>Decide</strong> whether the claim holds.</p></li>
+<li><p><strong>Repeat</strong> for the next claim.</p></li>
+</ol>
+<p><strong>When the tool supplies a source, apply lateral reading to the source as well:</strong></p>
+<ul class="simple">
+<li><p>Click the source — it may not be reputable.</p></li>
+<li><p>Follow the link — the source or the link may be hallucinated.</p></li>
+<li><p>Read it and apply CRAAP — currency, relevance, authority, accuracy, purpose. <strong>It may exist, be real, and still fail to support what the AI response claims it supports.</strong></p></li>
+</ul>
+</section>
+<section id="tools-for-lateral-reading">
+<h3><span class="section-number">4.7.4. </span>4.5.4 Tools for Lateral Reading<a class="headerlink" href="#tools-for-lateral-reading" title="Link to this heading">#</a></h3>
+<p><img alt="Tools for lateral reading." src="chapters/assets/ch4-fig-08-lateral-reading-tools.png" /></p>
+<p><em>Figure 4.8. Where to verify.</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Library resources</strong></p></td>
+<td><p>Scholarly sources; the most reliable starting point</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Search engines</strong></p></td>
+<td><p>Useful for surfacing coverage and provenance</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wikipedia</strong></p></td>
+<td><p>Useful for orientation and for its reference lists</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Multiple trusted news sources</strong></p></td>
+<td><p>Plural is the operative word</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>News fact-checkers</strong></p></td>
+<td><p>Purpose-built for exactly this. Snopes was named repeatedly in the session as a first stop for viral images and claims</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>An alternate LLM</strong></p></td>
+<td><p>Only with significant caveats — see below</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>An LLM for data extraction</strong></p></td>
+<td><p>A specific, limited, legitimate use — see below</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 4.4. Lateral reading tools.</em></p>
+<blockquote>
+<div><p><strong>On using another chatbot to check the first one.</strong> This is generally a poor idea. The major models are trained on approximately the same material and function in approximately the same way; agreement between them is not verification. Their access to current information also varies unpredictably — some can retrieve material from minutes ago, others cannot.</p>
+<p>There is a narrow benefit: a fresh session in a different tool removes the accumulated context of the original conversation, which may itself have been steering the answer. If you do this, do not simply ask <em>is this true</em> or re-submit the identical prompt. Use it to investigate further. And where you have access to a <strong>specialized model</strong> appropriate to the specific claim — a medical model for a medical fact — that is a materially different and better proposition, though it is not available to most people most of the time.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>The data-extraction technique.</strong> Breaking a long AI response into its individual claims is itself laborious. One practical approach — suggested during the workshop by Dr. Stahmer — is to paste the response into a <em>separate</em> session and ask the tool to extract only the factual claims as a bulleted list. You then have a checklist to verify, without having done the extraction work by hand.</p>
+<p><strong>The caveat is essential:</strong> the extraction may miss claims, and the extraction step can itself hallucinate. Keep everything you know about these tools in mind while using one. This is a labor-saving device for a step you still perform, not a shortcut around verification.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="synthetic-images-and-video">
+<h2><span class="section-number">4.8. </span>4.6 Synthetic Images and Video<a class="headerlink" href="#synthetic-images-and-video" title="Link to this heading">#</a></h2>
+<p><img alt="AI-generated images and video." src="chapters/assets/ch4-fig-09-ai-generated-images.png" /></p>
+<p><em>Figure 4.9. A second validation problem.</em></p>
+<p>We are accustomed to treating photographs as representations of fact. This was never entirely accurate — an event can look one way from one vantage and differently from another — but it is now far more complicated.</p>
+<p>There are two distinct problems here. First, a picture may no longer validate a claim. Second, <strong>pictures themselves must now be validated.</strong> And the material arrives not only in response to your prompts: AI slop is encountered incidentally, everywhere on the internet, and it is increasingly difficult to evaluate.</p>
+<section id="a-diagnostic-exercise">
+<h3><span class="section-number">4.8.1. </span>4.6.1 A Diagnostic Exercise<a class="headerlink" href="#a-diagnostic-exercise" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><strong>Exercise 4.1 — Nine images, two real.</strong> The workshop presented a grid of nine images and disclosed that only two were authentic. Participants were asked to examine them and say which looked real, which looked wrong, and why.</p>
+<p>Several observations from the room proved productive, and several confident judgments proved wrong. This is the expected result. The instructor — who has studied this material for years and continues to take detection quizzes — reported still finding it difficult. <strong>Getting them wrong is not a failure; it is the current state of the technology.</strong></p>
+</div></blockquote>
+</section>
+<section id="five-categories-of-implausibility">
+<h3><span class="section-number">4.8.2. </span>4.6.2 Five Categories of Implausibility<a class="headerlink" href="#five-categories-of-implausibility" title="Link to this heading">#</a></h3>
+<p><img alt="What to look for in a suspect image." src="chapters/assets/ch4-fig-10-what-to-look-for.png" /></p>
+<p><em>Figure 4.10. Categories of implausibility. After Kamali et al. (2024).</em></p>
+<p>The overarching question is simply: <strong>what generally doesn’t make sense?</strong> Beneath it sit five categories.</p>
+<p><strong>1. Functional implausibilities.</strong> Objects that could not perform their function.</p>
+<p><img alt="Asymmetrical buckles on a garment." src="chapters/assets/ch4-fig-11-functional-implausibility-buckles.png" /></p>
+<p><em>Figure 4.11. Functional implausibility: asymmetrical buckles.</em></p>
+<p><img alt="A pole that supports nothing." src="chapters/assets/ch4-fig-12-functional-implausibility-pole.png" /></p>
+<p><em>Figure 4.12. Functional implausibility: a non-functional pole.</em></p>
+<p>Architecture is a particularly rich source: staircases that lead nowhere, columns with holes that make no structural sense, railings at levels that would not function. In one exercise image, the strongest cue was that a figure appeared to have walked <em>out of the air</em> across the safety line onto a railway platform; the platform railings and levels then compounded the impression.</p>
+<p><img alt="Merged earpieces on eyeglasses." src="chapters/assets/ch4-fig-13-merged-earpieces.png" /></p>
+<p><em>Figure 4.13. Merged earpieces.</em></p>
+<p><strong>2. Anatomical implausibilities.</strong></p>
+<p><img alt="A missing eye detail." src="chapters/assets/ch4-fig-15-anatomical-implausibility.png" /></p>
+<p><em>Figure 4.14. Anatomical implausibility: missing eye detail.</em></p>
+<p><img alt="A visual artifact between teeth." src="chapters/assets/ch4-fig-14-visual-artifact-teeth.png" /></p>
+<p><em>Figure 4.15. Anatomical implausibility: a visual artifact between teeth.</em></p>
+<p>In the exercise, one image looked convincing in clothing, perspective, and background — and, on magnification, showed a fully formed eye socket without an eyeball. Facial expressions can be subtly wrong; mouths and teeth are frequent failure points.</p>
+<blockquote>
+<div><p><strong>Hands are no longer a reliable tell.</strong> Image generators were famously bad at hands. They have improved substantially. Do not rely on hands.</p>
+</div></blockquote>
+<p><strong>3. Violations of physics.</strong></p>
+<p><img alt="An impossible reflection." src="chapters/assets/ch4-fig-16-violations-of-physics.png" /></p>
+<p><em>Figure 4.16. Violations of physics: an impossible reflection.</em></p>
+<p><strong>Reflections are among the most reliable indicators.</strong> Mirrors, windows, puddles, and lakes are all difficult for generators to render consistently. In the exercise image, the subject’s head and gaze angle did not match the reflection, and the shirt showed incongruities between the direct view and the reflected one.</p>
+<p><strong>Lighting and shadow direction</strong> is the second common physics failure: the sun appears to come from one direction while shadows fall in a way inconsistent with it.</p>
+<p><strong>4. Sociocultural implausibilities.</strong></p>
+<p><img alt="A sociocultural implausibility." src="chapters/assets/ch4-fig-17-sociocultural-implausibility.png" /></p>
+<p><em>Figure 4.17. Sociocultural implausibility — but remember that unlikely does not mean impossible.</em></p>
+<p>Situations that are socially or culturally improbable. The widely circulated image of the Pope in a large white puffer jacket is the canonical example.</p>
+<blockquote>
+<div><p><strong>The essential caution: unlikely does not mean impossible.</strong> Probabilistically, an unusual thing could have happened. This category yields a red flag, not a verdict — which is precisely why it must be combined with the others.</p>
+</div></blockquote>
+<p><strong>5. Stylistic artifacts.</strong></p>
+<p><img alt="Stylistic artifacts in a synthetic image." src="chapters/assets/ch4-fig-18-stylistic-artifacts.png" /></p>
+<p><em>Figure 4.18. Stylistic artifacts: plastic or waxy texture, cinematization, unnatural detail, inconsistent resolution and color.</em></p>
+<ul class="simple">
+<li><p><strong>Plastic or waxy texture</strong>, and skin with no visible texture at all.</p></li>
+<li><p><strong>Cinematization</strong> — professional-grade lighting in a setting where professional lighting would not exist.</p></li>
+<li><p><strong>Hyper-real but unnatural detail</strong> — more detail than the scene would plausibly contain.</p></li>
+<li><p><strong>Inconsistencies in resolution and color</strong> across regions of a single image.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Why this category is hard.</strong> A skilled photographer produces genuinely striking images: highly produced lighting, unusual moments, deliberate stylistic choices. These signals are red flags to weigh, not proof.</p>
+</div></blockquote>
+<p><strong>A sixth cue: text.</strong> Generators remain poor at rendering written language. Signs in the background, product labels, and street names frequently contain text that is not real language, or that resembles words without being them. Where an image contains legible writing, it is worth examining.</p>
+</section>
+<section id="the-technology-is-improving">
+<h3><span class="section-number">4.8.3. </span>4.6.3 The Technology Is Improving<a class="headerlink" href="#the-technology-is-improving" title="Link to this heading">#</a></h3>
+<p><img alt="Newer images from the same synthetic account." src="chapters/assets/ch4-fig-18-stylistic-artifacts.png" /></p>
+<p>The workshop showed two images from the same Instagram account — <code class="docutils literal notranslate"><span class="pre">fit_aitana</span></code> — an earlier one exhibiting several of the artifacts above, and a newer one in which the tells were essentially absent. <strong>The second is not a real person and not a real influencer</strong> — but it is an account with followers, comment activity, and advertising revenue.</p>
+<p>There is a self-financing loop here worth naming: synthetic influencer accounts that sell advertising use the revenue to purchase better generation technology, which produces more convincing images, which sustains the account.</p>
+<p>There is also a hard economic constraint that currently helps:</p>
+<blockquote>
+<div><p><strong>The video heuristic.</strong> Generated video is expensive to produce. Consequently, almost nobody makes long ones, and generation quality degrades as length increases — errors accumulate. <strong>At the time of the workshop, a video running over about a minute, particularly with sustained dialogue, was very likely authentic.</strong></p>
+<p>This heuristic has a shelf life. It will fail as costs fall and quality improves. It is included here as a worked example of the kind of <em>economic</em> reasoning that supplements visual inspection, not as a permanent rule.</p>
+</div></blockquote>
+</section>
+<section id="the-cognitive-cost-of-verification">
+<h3><span class="section-number">4.8.4. </span>4.6.4 The Cognitive Cost of Verification<a class="headerlink" href="#the-cognitive-cost-of-verification" title="Link to this heading">#</a></h3>
+<p>A theme runs through the exercise that is worth making explicit. Detection rarely rests on one decisive artifact. It rests on <strong>accumulated information that does not add up</strong> — the same judgment one exercises reading a paper closely.</p>
+<p>And that judgment cannot be exercised at scrolling speed. <strong>It takes time.</strong> Things we used to be able to assume are most likely true can no longer be taken for granted, and the labor of verification has been transferred to the reader.</p>
+</section>
+<section id="where-to-learn-and-practice">
+<h3><span class="section-number">4.8.5. </span>4.6.5 Where to Learn and Practice<a class="headerlink" href="#where-to-learn-and-practice" title="Link to this heading">#</a></h3>
+<p>Communities have formed around this problem, and they are worth using.</p>
+<ul class="simple">
+<li><p><strong>Reddit communities</strong> devoted to identifying AI-generated images and video, where creators sometimes appear and confirm that a piece was generated, and where the rest is worked out by collective investigation.</p></li>
+<li><p><strong><a class="reference external" href="http://Riddance.ai">Riddance.ai</a></strong>, and the personal account maintained by one of its operators, which focuses specifically on identifying AI-generated video and explaining the tells.</p></li>
+<li><p><strong>Detection quizzes</strong>, of which many now exist: a set of images is presented and the participant judges which are authentic. This is the most efficient way to calibrate, and — as the instructor noted of her own results — remaining difficult after years of practice is the normal outcome, not a personal failing.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="what-to-do-about-it">
+<h2><span class="section-number">4.9. </span>4.7 What to Do About It<a class="headerlink" href="#what-to-do-about-it" title="Link to this heading">#</a></h2>
+<p><img alt="Healthy skepticism, verification, and source analysis." src="chapters/assets/ch4-fig-19-what-to-do-about-it.png" /></p>
+<p><em>Figure 4.19. What to do.</em></p>
+<p><strong>Healthy skepticism.</strong></p>
+<ul class="simple">
+<li><p>Look for improbabilities.</p></li>
+<li><p>Ask whether context and purpose make sense. Is someone selling something? Is the image engineered to make you click — perhaps onto a page that harvests your information?</p></li>
+<li><p>Follow links. <strong>Do not just trust the AI overview.</strong> Even while lateral reading, open the actual sources rather than relying on a generated summary of them.</p></li>
+</ul>
+<p><strong>Verify through other sources.</strong></p>
+<ul class="simple">
+<li><p><strong>Different angles.</strong> If a photograph documents a real event, other photographs of that event, from other people and other vantages, will usually exist. A single sensational image with no corroborating imagery is itself evidence.</p></li>
+<li><p><strong>Reputable textual references.</strong> Is anyone credible writing about this?</p></li>
+</ul>
+<p><strong>Analyze the source.</strong></p>
+<ul class="simple">
+<li><p>Is there a named creator or photographer? Real photographs usually carry attribution, though it can be stripped as an image circulates.</p></li>
+<li><p>What are the credentials of the producer or publisher? What is the website?</p></li>
+</ul>
+<section id="lateral-watching">
+<h3><span class="section-number">4.9.1. </span>4.7.1 Lateral Watching<a class="headerlink" href="#lateral-watching" title="Link to this heading">#</a></h3>
+<p><img alt="Evaluating social media accounts." src="chapters/assets/ch4-fig-20-lateral-watching.png" /></p>
+<p><em>Figure 4.20. “Lateral watching”: applying lateral reading to images and video.</em></p>
+<p>The same tabbed-verification discipline applies to visual media. On social media specifically:</p>
+<ul class="simple">
+<li><p><strong>Are they selling something?</strong> The workshop’s examples were mundane and instructive: an account circulating a fabricated image in order to sell a dental plan, and images purporting to document the aftermath of Hurricane Ian that had been generated rather than photographed. Disaster imagery is a recurring vector, because it travels fast and invites emotional rather than analytic response.</p></li>
+<li><p><strong>How old is the account?</strong></p></li>
+<li><p><strong>What is the account history?</strong></p></li>
+<li><p><strong>Are the videos short?</strong></p></li>
+</ul>
+<blockquote>
+<div><p><strong>Why account history is diagnostic.</strong> One example shown in the workshop was an image that had since been deleted: when the underlying generation technology improved, the account’s operator removed every earlier image that was easy to identify as synthetic, leaving only newer, more convincing material.</p>
+<p><strong>Five hundred thousand followers and two weeks of history is a substantial red flag.</strong></p>
+</div></blockquote>
+<p>Note also that AI influencer accounts frequently do disclose, though not always plainly: the disclosure may be in the account name, in a pun, in the biography, or behind an external link. Enforcement of disclosure requirements on social platforms is currently weak.</p>
+</section>
+<section id="reverse-image-search-and-watermarking">
+<h3><span class="section-number">4.9.2. </span>4.7.2 Reverse Image Search and Watermarking<a class="headerlink" href="#reverse-image-search-and-watermarking" title="Link to this heading">#</a></h3>
+<p><img alt="Reverse image search and digital watermarks." src="chapters/assets/ch4-fig-21-reverse-image-search.png" /></p>
+<p><em>Figure 4.21. Reverse image search and digital watermarks.</em></p>
+<p><strong>Reverse image search.</strong> Take a screenshot and submit it to a reverse image search service — TinEye or Google among them. This surfaces where else the image appears, which can trace it to an original source, show whether reputable news outlets are discussing it, or reveal that fact-checking services have already identified it as fabricated.</p>
+<p><strong>Digital watermarks.</strong> Some generated media carries an embedded watermark — Google DeepMind’s SynthID is one such system. Metadata can also carry provenance information, though it is usually stripped by social media platforms. These signals are chiefly usable by professional fact-checkers rather than by a person scrolling a feed, but the infrastructure is developing.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="case-study-ai-generated-journals">
+<h2><span class="section-number">4.10. </span>4.8 Case Study: AI-Generated Journals<a class="headerlink" href="#case-study-ai-generated-journals" title="Link to this heading">#</a></h2>
+<p>The session closed with a problem posed to the room, and it is the most demanding application of everything in this chapter.</p>
+<blockquote>
+<div><p><strong>The problem.</strong> New journals have appeared in which all of the articles are AI-generated. They present as legitimate peer-reviewed research journals. How would you verify that an article is not AI-generated?</p>
+</div></blockquote>
+<p>Participants proposed a reasonable sequence, and each proposal was met with a complication.</p>
+<p><em>Search for the authors; check whether they have institutional affiliations or personal websites.</em> — A good starting point. But these operations frequently use the <strong>real names of real researchers</strong>, on topics those researchers plausibly write about.</p>
+<p><em>Check the researcher’s other publications.</em> — But the fabricated article is within their actual area, and a recent publication might simply not be listed yet.</p>
+<p><em>Go to the library.</em> — <strong>This is the answer.</strong> Consult the library’s journal databases and the list of journals to which the institution subscribes, which are vetted and reputable. Absence from that list does not prove illegitimacy; it establishes that the item requires substantially more scrutiny.</p>
+<blockquote>
+<div><p><strong>The case that motivated the question.</strong> One such fabricated article took a chapter from a book by a real researcher and converted it into an article — same topic, same subject matter, and language closely resembling the author’s own. Interviewed afterward, the researcher said it could have fooled his best friend and colleagues in his own department. It used his own idiom. He had not written it and had not submitted it anywhere.</p>
+<p>What ultimately exposed it: a passage in the paper <strong>contradicted the researcher’s own body of work</strong>. A reader who knew the field wrote to him asking about the inconsistency.</p>
+</div></blockquote>
+<p><strong>Why would anyone do this?</strong> The motive discussed in the room was corrosive rather than commercial: flooding the literature with plausible-looking bad science degrades trust in the scientific process itself, and scientists cannot readily tell which items are fabricated. (Fee-charging predatory publishing, in which a venue’s revenue does not depend on its contents being real, is a second and well-documented motive, though it was not the one raised in the session.) The instructors’ broader point: this chapter has largely concerned the limitations of the models, but <strong>these tools are also actively used, deliberately, by people whose interests are not yours.</strong> That is a reason for more skepticism, not less, and a reason that verification must move outside the space in which the claim was encountered.</p>
+<p>Three further conclusions were drawn, and they generalize well beyond journals.</p>
+<p><strong>Skepticism is local, not global.</strong> The lesson is not that science is unreliable or that the peer-review process should be distrusted. It is that <em>this particular item in front of you</em> warrants verification. Healthy skepticism is a practice applied to specific claims.</p>
+<p><strong>Read what you cite.</strong> You should never cite something you have not read and judged to be methodologically sound. A fabricated paper can occasionally be good enough to escape detection — but the vast majority of them, read carefully by someone with expertise in the field, contain something that does not make sense or is not scientifically sound. As your expertise develops, use it: read the whole paper rather than the abstract.</p>
+<p><strong>The obligation is not new.</strong> We have always had to verify information; photographs were never simply true. What has changed is that a habit of taking things at face value became widespread, and the current environment punishes it severely. You cannot glance at something, understand it immediately, and use it immediately — and you cannot delegate that understanding to an AI tool either.</p>
+<blockquote>
+<div><p><strong>A closing note from the industry panel.</strong> Employers convened by the workshop organizers were asked what they want from graduates. Their answer: not completed assignments. In professional work there are no grades for turning something in. <em>Did you learn something? Is there something interesting here? Can you think deeply about this topic?</em></p>
+<p>That is the same argument the unremarkable mean makes in Chapter 3, arriving from the employer’s side of the desk.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="chapter-summary">
+<h2><span class="section-number">4.11. </span>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>AI output is engineered to sound confident and friendly. Tone is a product decision, and friendliness may correlate with increased hallucination.</p></li>
+<li><p>Hallucination ranges from the comic (glue in pizza sauce) to the harmful (fabricated content inserted into medical transcripts, disproportionately for patients with aphasia).</p></li>
+<li><p>Search-integrated AI summaries are especially error-prone, because a search query is not a constructed prompt.</p></li>
+<li><p>Models can elaborate confidently on false premises the user supplies. The Jim Henson case shows a hallucination that the user caused.</p></li>
+<li><p>The system is not lying; it is optimized to be a good test-taker, and guessing when uncertain improves test scores.</p></li>
+<li><p>AI output is a claim requiring evidence, never evidence supporting a claim. Citation fabrication rates near 20% have been documented in a peer-reviewed context.</p></li>
+<li><p>You are accountable for work you produce with these tools. Attorneys have been fined; companies have shipped errors in their own advertising.</p></li>
+<li><p>The CRAAP test evaluates currency, relevance, authority, accuracy, and purpose. Applied to AI output, four of the five become difficult or impossible, which puts the weight on accuracy: verify each claim in at least two reputable sources.</p></li>
+<li><p>Lateral reading — break it down, search, analyze, decide, repeat — is the working method. With AI you must check <em>every</em> claim, because reliability does not accumulate across a response.</p></li>
+<li><p>Another chatbot is a poor verification tool; specialized models and library resources are better. Extracting a claim list with an LLM saves labor but is itself fallible.</p></li>
+<li><p>Synthetic images can be assessed across five categories of implausibility: functional, anatomical, physics, sociocultural, and stylistic — plus rendered text. Hands are no longer a reliable tell; reflections and shadows remain among the best.</p></li>
+<li><p>Detection depends on accumulated inconsistency, not a single artifact, and it takes time that scrolling does not allow.</p></li>
+<li><p>Verify through other angles, reputable text sources, creator attribution, account age and history, reverse image search, and where available digital watermarks.</p></li>
+<li><p>Fabricated scholarship using real researchers’ names and idiom is now circulating. The library’s vetted databases and actually reading the work remain the defenses.</p></li>
+</ul>
+</section>
+<section id="key-terms">
+<h2><span class="section-number">4.12. </span>Key Terms<a class="headerlink" href="#key-terms" title="Link to this heading">#</a></h2>
+<p><strong>hallucination</strong> · <strong>AI slop</strong> · <strong>character training</strong> · <strong>sycophancy</strong> · <strong>claim versus evidence</strong> · <strong>accountability</strong> · <strong>CRAAP test</strong> · <strong>currency</strong> · <strong>relevance</strong> · <strong>authority</strong> · <strong>accuracy</strong> · <strong>purpose</strong> · <strong>lateral reading</strong> · <strong>lateral watching</strong> · <strong>data extraction</strong> · <strong>functional implausibility</strong> · <strong>anatomical implausibility</strong> · <strong>violations of physics</strong> · <strong>sociocultural implausibility</strong> · <strong>stylistic artifacts</strong> · <strong>cinematization</strong> · <strong>reverse image search</strong> · <strong>SynthID</strong> · <strong>digital watermark</strong> · <strong>predatory publishing</strong></p>
+</section>
+<section id="review-questions">
+<h2><span class="section-number">4.13. </span>Review Questions<a class="headerlink" href="#review-questions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Explain why an AI-generated summary in a search results page is <em>more</em> likely to contain errors than a response to a carefully constructed prompt.</p></li>
+<li><p>In the Jim Henson example, who introduced the error? What does this case demonstrate about the 20% of users identified in Chapter 3 as seeking confirmation?</p></li>
+<li><p>Restate the “good test-taker” account of hallucination. Why does it imply that hallucination cannot be eliminated by better training alone?</p></li>
+<li><p>Apply the CRAAP test to a specific AI response. Which criteria could you evaluate, which could you not, and what would you have to do to evaluate the remainder?</p></li>
+<li><p>Explain why extending trust to the remainder of an AI response after verifying its first several claims is invalid, while doing the same for a human-authored article may be reasonable.</p></li>
+<li><p>Why is checking one chatbot’s answer against another chatbot generally poor verification? Under what narrow conditions does it have value?</p></li>
+<li><p>Examine an image you encounter this week. Work through all five categories of implausibility and state your conclusion, along with the confidence you have in it and why.</p></li>
+<li><p>The “videos over a minute are probably real” heuristic rests on an economic constraint rather than a technical one. Explain the constraint, and predict what will invalidate the heuristic.</p></li>
+<li><p>You encounter an article in an unfamiliar journal, attributed to a researcher who genuinely works in the field. Describe the full verification sequence, including the step the workshop identified as decisive.</p></li>
+</ol>
+</section>
+<section id="further-reading">
+<h2><span class="section-number">4.14. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kamali, N., et al. (2024). How to distinguish AI-generated images from authentic photographs. arXiv. <a class="reference external" href="https://doi.org/10.48550/arXiv.2406.08651">https://doi.org/10.48550/arXiv.2406.08651</a></p></li>
+<li><p>Kalai, A. T., et al. (2025). Why language models hallucinate. (OpenAI’s account of guessing behavior and test-taking optimization.)</p></li>
+<li><p>Linardon, J., et al. (2025). On citation fabrication rates in AI-assisted mental health literature review.</p></li>
+<li><p>Ibrahim, et al. (2026). On the relationship between conversational warmth and hallucination rates.</p></li>
+<li><p>Van Kampen, K. Evaluating resources and misinformation. University of Chicago Library. <a class="reference external" href="https://guides.lib.uchicago.edu/c.php?g=1241077&amp;amp;p=9082343">https://guides.lib.uchicago.edu/c.php?g=1241077&amp;p=9082343</a></p></li>
+<li><p>University of Maryland Libraries. Artificial intelligence (AI) and information literacy: Fact-checking AI with lateral reading. <a class="reference external" href="https://lib.guides.umd.edu/c.php?g=1340355&amp;amp;p=9880575">https://lib.guides.umd.edu/c.php?g=1340355&amp;p=9880575</a></p></li>
+<li><p>Anthropic. Claude’s character. <a class="reference external" href="https://www.anthropic.com/research/claude-character">https://www.anthropic.com/research/claude-character</a></p></li>
+<li><p>NASA. 2M1207 b — first image of an exoplanet. <a class="reference external" href="https://science.nasa.gov/resource/2m1207-b-first-image-of-an-exoplanet/">https://science.nasa.gov/resource/2m1207-b-first-image-of-an-exoplanet/</a></p></li>
+<li><p><a class="reference external" href="http://Riddance.ai">Riddance.ai</a> and associated commentary on identifying AI-generated video.</p></li>
+<li><p>TinEye reverse image search; Google Images reverse search.</p></li>
+<li><p>Google DeepMind SynthID.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-how-to-talk-to-ai.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Chapter 3. How to Talk to AI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-glossary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Glossary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">4.1. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-and-framing">4.2. Recap and Framing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hallucination-and-ai-slop">4.3. 4.1 Hallucination and AI Slop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-range-of-harm">4.3.1. 4.1.1 The Range of Harm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friendliness-and-sycophancy">4.3.2. 4.1.2 Friendliness and Sycophancy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-ai-lying-to-you">4.3.3. 4.1.3 Is the AI Lying to You?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-outputs-are-not-evidence">4.4. 4.2 AI Outputs Are Not Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-will-be-held-accountable">4.5. 4.3 You Will Be Held Accountable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate">4.6. 4.4 Validate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-craap-test">4.6.1. 4.4.1 The CRAAP Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ai-validation-problem">4.6.2. 4.4.2 The AI Validation Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lateral-reading">4.7. 4.5 Lateral Reading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ai-requires-more">4.7.1. 4.5.1 Why AI Requires More</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstration-evaluating-an-unfamiliar-source">4.7.2. 4.5.2 Demonstration: Evaluating an Unfamiliar Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lateral-reading-an-ai-response">4.7.3. 4.5.3 Lateral Reading an AI Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-lateral-reading">4.7.4. 4.5.4 Tools for Lateral Reading</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synthetic-images-and-video">4.8. 4.6 Synthetic Images and Video</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-diagnostic-exercise">4.8.1. 4.6.1 A Diagnostic Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#five-categories-of-implausibility">4.8.2. 4.6.2 Five Categories of Implausibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-technology-is-improving">4.8.3. 4.6.3 The Technology Is Improving</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cognitive-cost-of-verification">4.8.4. 4.6.4 The Cognitive Cost of Verification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-learn-and-practice">4.8.5. 4.6.5 Where to Learn and Practice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-do-about-it">4.9. 4.7 What to Do About It</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lateral-watching">4.9.1. 4.7.1 Lateral Watching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-image-search-and-watermarking">4.9.2. 4.7.2 Reverse Image Search and Watermarking</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-ai-generated-journals">4.10. 4.8 Case Study: AI-Generated Journals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">4.11. Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-terms">4.12. Key Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">4.13. Review Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">4.14. Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <img alt="CC BY-SA 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"> 
+</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

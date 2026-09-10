@@ -1,0 +1,1144 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Chapter 3. How to Talk to AI &#8212; AI Literacy and Logic</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=dddfd265"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03-how-to-talk-to-ai';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Chapter 4. How AI Talks to You" href="04-how-ai-talks-to-you.html" />
+    <link rel="prev" title="2. Chapter 2. How to Use AI Responsibly" href="02-responsible-ai.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-us"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-light" alt="AI Literacy and Logic - Home"/>
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-dark pst-js-only" alt="AI Literacy and Logic - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-how-ai-thinks.html">1. Chapter 1. How AI Thinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-responsible-ai.html">2. Chapter 2. How to Use AI Responsibly</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Chapter 3. How to Talk to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-how-ai-talks-to-you.html">4. Chapter 4. How AI Talks to You</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-appendices.html">6. Appendices</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/issues/new?title=Issue%20on%20page%20%2Fchapters/03-how-to-talk-to-ai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/03-how-to-talk-to-ai.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 3. How to Talk to AI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">3.1. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#framing">3.2. Framing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-modes-of-engagement">3.3. 3.1 Two Modes of Engagement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-the-searchbot-approach">3.4. 3.2 The Cost of the Searchbot Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-cost">3.4.1. 3.2.1 Cognitive Cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-to-the-output">3.4.2. 3.2.2 Cost to the Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cyborg-approach">3.5. 3.3 The Cyborg Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-levers-of-prompt-engineering">3.6. 3.4 The Three Levers of Prompt Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.7. 3.5 Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">3.8. 3.6 Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-matters">3.8.1. 3.6.1 Position Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chat-history-is-context">3.8.2. 3.6.2 Chat History Is Context</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-you-did-not-supply">3.8.3. 3.6.3 Context You Did Not Supply</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-and-prompt-types">3.9. 3.7 Tuning and Prompt Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-zero-shot-prompting">3.9.1. 3.7.1 Direct (Zero-Shot) Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-few-and-multi-shot-prompting">3.9.2. 3.7.2 One-, Few-, and Multi-Shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-thought-prompting">3.9.3. 3.7.3 Chain-of-Thought Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-from-natural-language-to-structured-prompting">3.10. 3.8 Worked Example: From Natural Language to Structured Prompting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-natural-language-version">3.10.1. 3.8.1 The Natural Language Version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-markdown-prompting-framework">3.10.2. 3.8.2 The Markdown Prompting Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-structured-prompts-in-practice">3.10.3. 3.8.3 Using Structured Prompts in Practice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-do-and-don-t-lists">3.11. 3.9 The Do and Don’t Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do">3.11.1. 3.9.1 Do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t">3.11.2. 3.9.2 Don’t</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#talking-to-the-right-ai">3.12. 3.10 Talking to the Right AI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-from-the-session">3.13. 3.11 Questions from the Session</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-you-use-an-ai-tool-to-write-your-prompts">3.13.1. 3.11.1 Should you use an AI tool to write your prompts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-models-and-orchestration">3.13.2. 3.11.2 Chained models and orchestration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-employers-say-they-want">3.13.3. 3.11.3 What employers say they want</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">3.14. Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-terms">3.15. Key Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">3.16. Review Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">3.17. Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-how-to-talk-to-ai">
+<h1><span class="section-number">3. </span>Chapter 3. How to Talk to AI<a class="headerlink" href="#chapter-3-how-to-talk-to-ai" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><em>Session 3 of the AI Literacy and Logic workshop. Lead instructor: Dr. Carl G. Stahmer, Director, UC Davis DataLab.</em></p>
+</div></blockquote>
+<section id="learning-objectives">
+<h2><span class="section-number">3.1. </span>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>Upon completing this chapter, the reader should be able to:</p>
+<ol class="arabic simple">
+<li><p>Distinguish the <em>searchbot</em> and <em>cyborg</em> modes of AI engagement and describe the empirical consequences of each for cognition and for output quality.</p></li>
+<li><p>Explain the three failure modes of searchbot-style prompting: hallucination, inherited bias, and the unremarkable mean.</p></li>
+<li><p>Manipulate the three levers of prompt engineering — format, context, and tuning — to steer a model’s output.</p></li>
+<li><p>Explain why the <em>position</em> of context within a prompt affects the result, and how chat history and system profiles introduce context the user did not supply.</p></li>
+<li><p>Select among zero-shot, shot-based, chain-of-thought, and combined prompting strategies according to task.</p></li>
+<li><p>Construct a structured prompt using the Markdown Prompting Framework, and explain its advantages for reuse and for the user’s own thinking.</p></li>
+<li><p>Apply the prompting “do” and “don’t” lists, including the argument for precision over verbosity.</p></li>
+<li><p>Identify circumstances in which a local or specialized open model is preferable to a general-purpose commercial chatbot.</p></li>
+</ol>
+</section>
+<section id="framing">
+<h2><span class="section-number">3.2. </span>Framing<a class="headerlink" href="#framing" title="Link to this heading">#</a></h2>
+<p><img alt="How you talk to AI matters — a lot." src="chapters/assets/ch3-fig-01-how-you-talk-matters.png" /></p>
+<p><em>Figure 3.1. Prompting affects both the quality of the output and the user’s own cognition.</em></p>
+<p>Three propositions organize this chapter.</p>
+<ol class="arabic simple">
+<li><p><strong>How you interact with AI has a profound impact on your brain.</strong></p></li>
+<li><p><strong>Good prompting strategies reduce errors and deliver more useful results.</strong></p></li>
+<li><p><strong>Happily, the strategies that deliver the best results are also the best for your brain.</strong></p></li>
+</ol>
+<p>The third proposition is the fortunate one, and it is the reason this chapter can be read either as a guide to productivity or as a guide to cognitive self-preservation without the two diverging.</p>
+<p>A note on scope: this chapter assumes interaction through a chat interface rather than through a programming interface or an agentic system. The text a user submits is the <strong>prompt</strong>, and the discipline of structuring it is <strong>prompt engineering</strong>. It is more involved than most people realize, and it is not difficult to master. The obstacle is chiefly that most users have never considered that there is more than one way to talk to the machine.</p>
+</section>
+<hr class="docutils" />
+<section id="two-modes-of-engagement">
+<h2><span class="section-number">3.3. </span>3.1 Two Modes of Engagement<a class="headerlink" href="#two-modes-of-engagement" title="Link to this heading">#</a></h2>
+<p><img alt="Three patterns of AI use, divided into searchbot and cyborg approaches." src="chapters/assets/ch3-fig-02-types-of-ai-engagement.png" /></p>
+<p><em>Figure 3.2. Types of AI engagement.</em></p>
+<p>Enough time has now elapsed, and enough interest has accumulated, that researchers are able to study what people actually do with these systems. The distribution is not hypothetical.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Share of users</p></th>
+<th class="head"><p>Pattern</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>70%</strong></p></td>
+<td><p>Using AI primarily to generate answers to questions</p></td>
+<td><p><em>“Why has there been so little snow in the Sierras this year?”</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>20%</strong></p></td>
+<td><p>Using AI primarily to validate their own assumptions</p></td>
+<td><p><em>“Why do cats make better pets than dogs?”</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>10%</strong></p></td>
+<td><p>Engaging AI as a collaborator — exploring ideas, challenging assumptions, working jointly toward a solution</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 3.1. Patterns of AI engagement. Framework and figures after Vivienne Ming.</em></p>
+<p>The first two rows constitute the <strong>searchbot approach</strong>: the user asks a question and accepts what comes back. The third row is the <strong>cyborg approach</strong>.</p>
+<p>The 20% figure deserves particular attention, because it is the least visible failure. Asking <em>why do cats make better pets than dogs</em> does not pose a question; it presupposes an answer. The model will supply reasons, because the context supplied has made the conclusion foregone. Users do this constantly without noticing, and the effect is to guarantee that the interaction moves no closer to the truth.</p>
+<p>That only one user in ten engages collaboratively is not primarily a failure of individuals. Nobody has taught most users how to do otherwise; the world is not full of good examples. Worse, the entire apparatus — the chat interface, the conversational tone, the first person — is designed to make it feel as though one is talking to a person. The natural inclination is therefore to talk to it like a person, which turns out to be close to the worst available strategy. This chapter works against that inclination deliberately.</p>
+</section>
+<hr class="docutils" />
+<section id="the-cost-of-the-searchbot-approach">
+<h2><span class="section-number">3.4. </span>3.2 The Cost of the Searchbot Approach<a class="headerlink" href="#the-cost-of-the-searchbot-approach" title="Link to this heading">#</a></h2>
+<section id="cognitive-cost">
+<h3><span class="section-number">3.4.1. </span>3.2.1 Cognitive Cost<a class="headerlink" href="#cognitive-cost" title="Link to this heading">#</a></h3>
+<p><img alt="Research and commentary on the cognitive effects of reflexive AI use." src="chapters/assets/ch3-fig-03-searchbot-cognitive-cost.png" /></p>
+<p><em>Figure 3.3. Student-reported cognitive effects of AI use.</em></p>
+<p>Controlled studies and human-subject research support a claim that is uncomfortable and worth stating plainly: <strong>using AI reflexively, as a substitute for thinking, measurably degrades the capacity to think.</strong></p>
+<p>The mechanism is neuroplasticity operating as designed. When complex problem-solving is repeatedly offloaded to a machine, the brain reallocates: <em>we don’t need that anymore; let us use the energy elsewhere.</em> Neurons rewire, and the ability to solve problems of that kind declines.</p>
+<blockquote>
+<div><p><strong>The Google Maps precedent.</strong> The best-documented case is spatial navigation. Before turn-by-turn navigation, drivers who received directions did not memorize <em>turn left here</em>; they constructed a spatial representation anchored to landmarks and street names, and navigated against that internal model. After widespread adoption of navigation software, human spatial reasoning ability declined measurably and across the board. A person who could solve a class of spatial problems before, and who uses navigation software for a few years, can no longer solve them.</p>
+</div></blockquote>
+<p>The experimental design that establishes the analogous effect for AI is straightforward. Administer a battery of standardized cognitive tests to a cohort. Instruct them to use AI to solve every problem they encounter — simply ask, and act on the answer. Retest six months later. Scores decline.</p>
+<p>Several published assessments in the same vein:</p>
+<ul class="simple">
+<li><p><em>“My conclusion is that artificial intelligence is antithetical to human cognition.”</em> — John Nosta, Nosta Lab</p></li>
+<li><p><em>“Used reflexively as a shortcut, AI creates ‘cognitive debt,’ making people faster while quietly eroding their skills.”</em> — Rebecca Hinds, Work AI Institute</p></li>
+<li><p><em>“AI’s biggest danger is psychological: it can give people the illusion they understand something when they don’t, weakening judgment just as the technology becomes more embedded in our daily work and learning.”</em> — Saul Perlmutter, UC Berkeley</p></li>
+<li><p><em>“Students’ mental and physical health decline due to excessive AI use, as evidenced by their impaired ability to learn independently and communicate verbally… AI tools have heightened anxiety, social withdrawal, and produced lower emotional intelligence among students.”</em> — Cruz-Ocampo et al., 2025</p></li>
+</ul>
+<blockquote>
+<div><p><strong>On being the exception.</strong> A predictable response to this material is that it describes other people. The instructor addressed this directly, and the point generalizes well beyond AI.</p>
+<p>Consider multitasking. Many controlled studies establish that humans perform worse when multitasking: take any population — doctoral students, eighth-graders, it does not matter — have them complete three tasks sequentially, measure accuracy and time, then have them complete three tasks concurrently. Performance is worse on every measure for roughly nine people in ten. And research subjects, shown their own data, will argue with it: <em>I was tired; test me tomorrow.</em></p>
+<p>We are poor at accepting that statistics apply to us. If an effect appears in nine of ten people, the reasonable prior is that you are one of the nine. Assuming otherwise is not a strategy.</p>
+</div></blockquote>
+</section>
+<section id="cost-to-the-output">
+<h3><span class="section-number">3.4.2. </span>3.2.2 Cost to the Output<a class="headerlink" href="#cost-to-the-output" title="Link to this heading">#</a></h3>
+<p><img alt="Three ways searchbot prompting produces poor results." src="chapters/assets/ch3-fig-04-searchbot-bad-results.png" /></p>
+<p><em>Figure 3.4. Searchbot approach: bad results.</em></p>
+<p><strong>Hallucination.</strong> Roughly 95% of humans believe themselves to be self-aware, yet only 10–15% will say <em>I don’t know</em> when asked about something they do not know. Models inherit this behavior from the humans whose text trained them: they are built to produce an answer.</p>
+<p>The instructor made a structural point about this that is easy to miss, and it is worth marking as his position rather than as settled fact: <strong>on this account, hallucination is not a bug that better engineering will remove.</strong> A model that reliably declined to answer when uncertain would not function as a language generator, because the weighting, context, and modeling operations that produce fluent text depend on always producing a next token. If that is right, the behavior will not go away, and the burden falls permanently on the user to understand it and adopt strategies for handling it.</p>
+<p>Chapter 4 presents a related but distinguishable account from OpenAI’s own research — that models are optimized to be good test-takers, and that guessing when uncertain improves measured performance. That framing treats the behavior as a consequence of an optimization target, and optimization targets can in principle be changed. The two accounts are not incompatible, but they differ in how permanent they imply the problem to be. <strong>In either case, the user’s obligation is identical</strong>, and it is the subject of Chapter 4.</p>
+<p>There is also a curious asymmetry in how humans receive it. Information from another person is routinely, and appropriately, treated as possibly wrong. The same information arriving on a screen after typing seems to acquire an unearned presumption of truth. It should not. It is no different from any other communication, and there is a substantial chance it is wrong.</p>
+<p><strong>Bias.</strong> Because the model is built to give you an answer, it will readily accept bias introduced in the prompt and answer accordingly. <em>Tell me why cats are best</em> produces reasons cats are best. The bias in the question becomes the shape of the answer.</p>
+<p><strong>The unremarkable mean.</strong> This is the least discussed and, for a student or early-career professional, potentially the most consequential.</p>
+<p>A model is not answering your question. It is producing <strong>what most people have said about that question</strong>. The weights rise and fall according to how often associations appear in the training corpus. The output is, in a meaningful sense, the average of what has already been written.</p>
+<p>Ask a broad, general question and you will receive the same answer everyone else receives. Even where the answer is correct, it carries no value, because it distinguishes nothing.</p>
+<blockquote>
+<div><p><strong>The team scenario.</strong> You are one of five people on a team. The team leader poses a substantive question. Everyone returns to their desk and puts the question to a chatbot. Everyone comes back quickly, eager to have answered first, and everyone delivers substantially the same answer.</p>
+<p>Nobody has distinguished themselves and nobody has added value. This sounds harsh, but it describes how professional advancement actually works: value comes from contributing something that was not already available. Taking longer and returning with a genuinely novel, well-reasoned answer is the path that leads somewhere.</p>
+</div></blockquote>
+<p>The general principle: unless a task is repetitive, mundane, and genuinely objective — <em>tell me which of these emails need a reply today; summarize my calendar for tomorrow</em> — the point of using these tools is not to save time. It is to <strong>produce a better product</strong>. Doing it well may take as long as, or longer than, doing it unaided. What justifies the effort is that the result is better than what could have been produced otherwise.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-cyborg-approach">
+<h2><span class="section-number">3.5. </span>3.3 The Cyborg Approach<a class="headerlink" href="#the-cyborg-approach" title="Link to this heading">#</a></h2>
+<p><img alt="Quotations from Donna Haraway and Vivienne Ming on human–machine hybridity." src="chapters/assets/ch3-fig-05-cyborg-manifesto.png" /></p>
+<p><em>Figure 3.5. A Cyborg Manifesto.</em></p>
+<p>The term <strong>cyborg</strong> here is used in the sense established by Donna Haraway in <em>A Cyborg Manifesto</em> (collected in <em>Simians, Cyborgs, and Women</em>), a foundational text in cultural studies and feminist science studies. It is not the sense used by the strand of Silicon Valley commentary in which “cyborg” names something to be feared; the usage here follows Vivienne Ming’s, in which the hybrid is a liberating rather than a diminishing figure.</p>
+<blockquote>
+<div><p><em>“The cyborg is resolutely committed to partiality, irony, intimacy, and perversity. It is oppositional, utopian, and completely without innocence.”</em> — Donna Haraway</p>
+<p><em>“It is not clear who makes and who is made in the relation between human and machine. It is not clear what is mind and what is body in machines that resolve into coding practices. Insofar as we know ourselves in both formal discourse (e.g., biology) and in daily practice (e.g., the home-work economy in the integrated circuit), we find ourselves to be cyborgs, hybrids, mosaics, chimeras.”</em> — Donna Haraway</p>
+<p><em>“The best human–AI collaboration isn’t driven by more advanced large language models but by human traits such as curiosity, intellectual humility, perspective-taking, and the ability to reason under uncertainty.”</em> — Vivienne Ming</p>
+</div></blockquote>
+<p><strong>The operational definition.</strong> In the cyborg mode, the AI is a tool that extends your thinking rather than replacing it. You are not asking the machine to think for you and return an answer. You are pushing your own reasoning, your own structure, and your own approach to the problem <em>into</em> the machine, and letting it execute against that structure.</p>
+<p>This is not a new relationship between minds and tools. Before writing, knowledge had to be held in memory; oral tradition was the only transmission mechanism, and people memorized prodigiously. Print allowed cognition to be offloaded onto a physical object, which freed the brain for other work. Scholars of memory have documented what was lost in that transition, and it was real. The offloading was nonetheless, on balance, generative — because what was offloaded was storage, and what was retained was thinking.</p>
+<p>The cyborg approach applies the same logic. Offload execution; retain the reasoning.</p>
+<p>The consequence for output quality follows: <strong>the same strategy that protects cognition also produces novel, interesting results rather than the unremarkable mean.</strong></p>
+</section>
+<hr class="docutils" />
+<section id="the-three-levers-of-prompt-engineering">
+<h2><span class="section-number">3.6. </span>3.4 The Three Levers of Prompt Engineering<a class="headerlink" href="#the-three-levers-of-prompt-engineering" title="Link to this heading">#</a></h2>
+<p><img alt="Format, context, and tuning." src="chapters/assets/ch3-fig-06-elements-of-prompt-engineering.png" /></p>
+<p><em>Figure 3.6. The elements of prompt engineering.</em></p>
+<p>Three properties of a prompt can be varied deliberately.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lever</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Format</strong></p></td>
+<td><p>The structure and style of the prompt and of the desired output</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Context</strong></p></td>
+<td><p>The background information and examples supplied, and — critically — where they are placed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tuning</strong></p></td>
+<td><p>Narrowing the model’s vast general capability toward the specific lane you care about</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 3.2. The three levers.</em></p>
+<p><strong>A note on tuning and bias.</strong> Tuning introduces bias. This is intentional and it is acceptable, because <strong>conscious bias is categorically different from unconscious bias</strong>. If I tune a model toward the technology sense of <em>apple</em>, or toward peer-reviewed scholarly publications after a given date, I have biased the output — but I know the bias, I have a reason for it, and I can state it when I present the work so that others can evaluate what I did. That is a defensible methodological choice. Unconscious bias, absorbed from a corpus and an interface, is not.</p>
+</section>
+<hr class="docutils" />
+<section id="format">
+<h2><span class="section-number">3.7. </span>3.5 Format<a class="headerlink" href="#format" title="Link to this heading">#</a></h2>
+<p><img alt="Three prompt formats: natural language, structured input-output pairs, and markdown." src="chapters/assets/ch3-fig-07-format.png" /></p>
+<p><em>Figure 3.7. Format options.</em></p>
+<p>Different models respond differently to different formats. Understanding what a model expects is essential to prompting it effectively.</p>
+<p><strong>Natural language.</strong> The default, and the format the interface invites. <em>Given that global temperatures have risen by 1 degree Celsius since the pre-industrial era, discuss the potential consequences for sea level rise.</em></p>
+<p><strong>Structured input–output pairs.</strong> A compact and frequently superior format when the task fits it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span>      <span class="n">Output</span><span class="p">:</span> <span class="s2">&quot;A small furry mammal with whiskers.&quot;</span>
+<span class="n">Input</span><span class="p">:</span> <span class="s2">&quot;Dog&quot;</span>      <span class="n">Output</span><span class="p">:</span> <span class="s2">&quot;A domesticated canine known for its loyalty.&quot;</span>
+<span class="n">Input</span><span class="p">:</span> <span class="s2">&quot;Elephant&quot;</span>
+</pre></div>
+</div>
+<p>This will return a four- or five-word description. Compare with asking a chatbot to describe an elephant, which yields three paragraphs — and note that even explicit instructions to be concise are unreliable, because the instruction competes with the general pull toward verbose output. The structured format works better because the next-token machinery follows the established pattern. <strong>The form of the example is itself an instruction, and a more effective one than a description of the form.</strong></p>
+<p><strong>Markdown.</strong> A more highly structured format, treated at length in Section 3.8.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># System Prompt: Estate Planning Attorney</span>
+<span class="gu">## Role</span>
+You are an estate planning professional who uses a formal but friendly tone in your client communications
+<span class="gu">## Audience</span>
+…
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context">
+<h2><span class="section-number">3.8. </span>3.6 Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>Providing sufficient and appropriate context is the single most significant action a user can take to improve AI output.</strong></p>
+</div></blockquote>
+<p><img alt="The question &quot;What is an apple?&quot; without context." src="chapters/assets/ch3-fig-08-context-apple-1.png" /></p>
+<p><em>Figure 3.8. “What is an apple?” — ambiguous.</em></p>
+<p><img alt="The same question with technology context." src="chapters/assets/ch3-fig-09-context-apple-2.png" /></p>
+<p><em>Figure 3.9. With context: “I am interested in technology.”</em></p>
+<p><img alt="The same question with botanical context." src="chapters/assets/ch3-fig-10-context-apple-3.png" /></p>
+<p><em>Figure 3.10. With context: “I am interested in plants.”</em></p>
+<p>The mechanism was established in Chapter 1: the attention layers update each token’s representation according to the tokens around it. Supplying context is therefore not a matter of politeness; it is direct manipulation of the vector arithmetic that produces the answer.</p>
+<section id="position-matters">
+<h3><span class="section-number">3.8.1. </span>3.6.1 Position Matters<a class="headerlink" href="#position-matters" title="Link to this heading">#</a></h3>
+<p><img alt="Two prompts with identical content in different order." src="chapters/assets/ch3-fig-11-word-order-matters.png" /></p>
+<p><em>Figure 3.11. “I am interested in plants. What is an apple?” ≠ “What is an apple? I’m interested in plants.”</em></p>
+<p>These two prompts contain identical words and are <strong>not equivalent</strong>. Recall the generation loop: when the model reaches the token <em>apple</em> in the second prompt, the botanical context has not yet been encountered, and the weighting proceeds accordingly.</p>
+<p><strong>An important caveat, supplied by the instructor.</strong> Model developers are aware of this problem and have invested in mitigating it. Contemporary models perform substantial bidirectional and multi-token processing, and in a short prompt like the example above the two orderings will often now produce similar output. This is a brute-force solution, and it does not scale: <strong>across a long series of exchanges, it cannot compensate.</strong> As the context window fills, early material is pushed out and ceases to inform generation. Ordering therefore remains a real lever, and the operative word throughout this section is <strong>control</strong>: <em>control your context.</em></p>
+</section>
+<section id="chat-history-is-context">
+<h3><span class="section-number">3.8.2. </span>3.6.2 Chat History Is Context<a class="headerlink" href="#chat-history-is-context" title="Link to this heading">#</a></h3>
+<p><img alt="A multi-day chat history feeding into a new question." src="chapters/assets/ch3-fig-12-chat-history-as-context.png" /></p>
+<p><em>Figure 3.12. Chat history as context.</em></p>
+<p>Consider a sequence in a single conversation:</p>
+<ul class="simple">
+<li><p><em>Monday:</em> “I’m writing a paper for my college class. Describe the fundamentals of networking.” → an answer.</p></li>
+<li><p><em>Monday:</em> “What effects do the operating systems of individual connected computers have?” → a good answer, because the model still has the networking framing.</p></li>
+<li><p><em>Monday:</em> “What cost factors need to be considered?” → a good answer, because it knows the costs concern networked computers.</p></li>
+</ul>
+<p>The paper is written and submitted. Then:</p>
+<ul class="simple">
+<li><p><em>Tuesday:</em> “What is an apple?”</p></li>
+</ul>
+<p>All of the preceding material is still attached. The user’s mind has left the topic of computer networks; the context window has not. The answer will be shaped by a framing the user has forgotten supplying.</p>
+<p><strong>Starting a new chat is an act of context control</strong>, and it is one of the most useful habits to develop.</p>
+</section>
+<section id="context-you-did-not-supply">
+<h3><span class="section-number">3.8.3. </span>3.6.3 Context You Did Not Supply<a class="headerlink" href="#context-you-did-not-supply" title="Link to this heading">#</a></h3>
+<p>Chat history is only the visible portion. Every major platform maintains a <strong>user profile</strong> — accumulated settings, preferences, and inferred characteristics — which is injected into the context without appearing in the interface.</p>
+<p>This is a genuine problem for anyone whose interests are heterogeneous. A single person may ask a question as a data scientist, then ask a policy question, then ask something about sailing, then something about family. A profile assembled across all of these will steer answers in ways that are invisible and unrequested.</p>
+<p><strong>The system is constantly supplying context you do not see and do not control. Effective prompting means taking that control back.</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tuning-and-prompt-types">
+<h2><span class="section-number">3.9. </span>3.7 Tuning and Prompt Types<a class="headerlink" href="#tuning-and-prompt-types" title="Link to this heading">#</a></h2>
+<p><img alt="Programmatic tuning versus prompt-level tuning." src="chapters/assets/ch3-fig-13-tuning.png" /></p>
+<p><em>Figure 3.13. Tuning: at the programmatic level, or through the prompt.</em></p>
+<p>Models can be permanently tuned at the programmatic level — taking an existing model and adjusting its weights toward a domain. This requires resources and expertise beyond the scope of this book. The tuning available to every user is <strong>biasing the model through the prompt</strong>, and it is remarkably effective.</p>
+<p><img alt="Four types of prompts." src="chapters/assets/ch3-fig-14-types-of-prompts.png" /></p>
+<p><em>Figure 3.14. Types of prompts.</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Direct (zero-shot)</strong></p></td>
+<td><p>A direct instruction or question with no additional context or examples</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shot-based</strong></p></td>
+<td><p>One or more examples of the desired input–output pairs before the actual prompt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Chain of thought (CoT)</strong></p></td>
+<td><p>Instructions that break complex reasoning into intermediate steps</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shot-based chain of thought</strong></p></td>
+<td><p>Examples to tune the model, followed by an explicit request for reasoning steps</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 3.3. Prompt types.</em></p>
+<section id="direct-zero-shot-prompting">
+<h3><span class="section-number">3.9.1. </span>3.7.1 Direct (Zero-Shot) Prompting<a class="headerlink" href="#direct-zero-shot-prompting" title="Link to this heading">#</a></h3>
+<p><img alt="Zero-shot prompt examples." src="chapters/assets/ch3-fig-15-zero-shot.png" /></p>
+<p><em>Figure 3.15. Zero-shot prompting: most used, least effective.</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Translate the following sentence to French: &#39;I love cats&#39;
+
+What careers would be good for someone who loves to be outside
+and also wants to make a lot of money?
+
+Extract all company names from the attached document.
+</pre></div>
+</div>
+<p>Zero-shot prompting is the most used and least effective strategy. It is not, however, always wrong. The careers example is a legitimate use: the question is exploratory, and the goal is not an exhaustive or authoritative list but a survey of a space. If some of the returned options are appealing, the next move is to narrow — which is where the other strategies enter.</p>
+</section>
+<section id="one-few-and-multi-shot-prompting">
+<h3><span class="section-number">3.9.2. </span>3.7.2 One-, Few-, and Multi-Shot Prompting<a class="headerlink" href="#one-few-and-multi-shot-prompting" title="Link to this heading">#</a></h3>
+<p><img alt="Single-shot, few-shot, and multi-shot examples." src="chapters/assets/ch3-fig-16-shot-based.png" /></p>
+<p><em>Figure 3.16. Shot-based prompting.</em></p>
+<p><strong>Single-shot</strong> — one example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Classify</span> <span class="n">the</span> <span class="n">sentiment</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">text</span> <span class="k">as</span> <span class="n">positive</span><span class="p">,</span> <span class="n">negative</span><span class="p">,</span> <span class="ow">or</span> <span class="n">neutral</span><span class="o">.</span>
+<span class="n">Text</span><span class="p">:</span> <span class="s1">&#39;The product is terrible.&#39;</span>  <span class="n">Sentiment</span><span class="p">:</span> <span class="n">Negative</span>
+<span class="n">Text</span><span class="p">:</span> <span class="s1">&#39;I think the vacation was okay.&#39;</span>  <span class="n">Sentiment</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>The single example establishes the output format and the label vocabulary. The model will likely determine that the second text is not negative; it has less to work with in choosing between neutral and positive.</p>
+<p><strong>Few-shot</strong> — several examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Classify the sentiment of the following text as positive, negative, or neutral.
+Text: &#39;The product is terrible.&#39;   Sentiment: Negative
+Text: &#39;Super helpful, worth it.&#39;   Sentiment: Positive
+Text: &#39;It doesn&#39;t work!&#39;           Sentiment:
+</pre></div>
+</div>
+<p><strong>Multi-shot</strong> — many examples. More examples improve results, up to roughly ten, and the ceiling is content-dependent. The instructor’s candid note: the reasons for the plateau are theorized but not firmly established in the literature, and practitioners’ experience is that gains fall off somewhere past half a dozen.</p>
+<blockquote>
+<div><p><strong>Ordering matters as well as quantity.</strong> With three output classes, supply roughly two examples of each — and <strong>interleave them</strong> rather than grouping them. Positive, negative, neutral, positive, negative, neutral. Presenting all the negatives together and then all the positives establishes a pattern in the ordering itself, which is not the pattern you intended to teach.</p>
+</div></blockquote>
+</section>
+<section id="chain-of-thought-prompting">
+<h3><span class="section-number">3.9.3. </span>3.7.3 Chain-of-Thought Prompting<a class="headerlink" href="#chain-of-thought-prompting" title="Link to this heading">#</a></h3>
+<p><img alt="Chain-of-thought prompt examples." src="chapters/assets/ch3-fig-17-chain-of-thought.png" /></p>
+<p><em>Figure 3.17. Chain-of-thought prompting.</em></p>
+<p>Chain-of-thought prompting improves reasoning by decomposing a complex query into intermediate steps. Rather than requesting a direct answer, the prompt directs the model to work through a sequence, which increases accuracy in mathematical, logical, and commonsense tasks.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>If all dogs are mammals and all mammals breathe, do all dogs breathe?
+Think step-by-step.
+
+I need to compare the population density of Tokyo and New York.
+Break down the required steps to get this answer.
+
+I need to compare the population density of Tokyo and New York.
+Break down the required steps to get this answer. Then do the actual
+Tokyo vs. New York comparison with current figures and cite data sources.
+</pre></div>
+</div>
+<p><strong>Testing a chain-of-thought prompt.</strong> Because output varies between runs, a decomposition prompt is worth running more than once: in several chat windows, or in a different tool so as to escape the accumulated context of the first. A stronger variant is to ask explicitly for <strong>three different methodologies</strong> for the problem and then evaluate them against one another. The evaluation is yours to perform, and performing it is the point.</p>
+<p><strong>Chain of thought is where the cyborg approach becomes concrete.</strong> In supplying the steps, you have done the reasoning and pushed it into the machine; the machine executes your plan. This is the difference between asking for an answer and directing an analysis, and it is the mechanism by which a novel result becomes possible.</p>
+<p>An important distinction: asking a model to <em>report</em> its chain of thought is worth doing, but it is not the same operation. <strong>Making your own chain of thought explicit</strong> — <em>do this, then this, then this</em> — keeps your brain in control of the procedure.</p>
+<blockquote>
+<div><p><strong>A caveat that cannot be overstated: the reported reasoning is not a record of the computation.</strong></p>
+<p>When a model describes the steps by which it reached an answer, it has not introspected on its own processing. The answer was not derived by performing the steps it describes. Both the answer and the description of the method are generated the same way — by predicting likely next tokens. What you receive is a description of a methodology assembled from the way many other people have written about methodologies for problems of that kind. It may be an excellent description. It is not an audit trail.</p>
+<p>This matters because the reported chain of thought is increasingly treated as though it were verification. It is not, and treating it as such gets the architecture exactly backwards.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>A cautionary case.</strong> The instructors described a research paper, co-authored across the DataLab team, that was rejected twice — on both occasions because reviewers asked why the authors had analyzed the data by their stated method when they could simply have asked a chatbot. Told that a chatbot result could not be verified, one reviewer replied that you can ask the model for its reasoning, and then you would know.</p>
+<p>That response, in the instructor’s assessment, completely betrays a misunderstanding of how these models work — and the misunderstanding is becoming endemic, including among people in a position to gatekeep published research.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="worked-example-from-natural-language-to-structured-prompting">
+<h2><span class="section-number">3.10. </span>3.8 Worked Example: From Natural Language to Structured Prompting<a class="headerlink" href="#worked-example-from-natural-language-to-structured-prompting" title="Link to this heading">#</a></h2>
+<p><img alt="A structured natural-language prompting sequence." src="chapters/assets/ch3-fig-18-natural-language-prompt.png" /></p>
+<p><em>Figure 3.18. A well-constructed natural language prompt: context, speaker and audience, controlled chain of thought, references.</em></p>
+<p>The instructor demonstrated a complete task first in natural language and then in structured markdown, producing equivalent results by both routes. The problem was real: a university development officer working in planned giving needed to advise a prospective donor. The sequence is worth following in detail, because it exhibits every principle in this chapter operating together.</p>
+<section id="the-natural-language-version">
+<h3><span class="section-number">3.10.1. </span>3.8.1 The Natural Language Version<a class="headerlink" href="#the-natural-language-version" title="Link to this heading">#</a></h3>
+<p><strong>Step 1 — Establish role and audience.</strong> Define who the model is speaking as, and to whom. In the demonstration: an estate planning professional writing to a college-educated, financially successful retiree.</p>
+<p><strong>Step 1a — Supply tone examples.</strong> The prompt included a short set of shot-based style examples — <em>this would be a poor version, this would be better, this would be best</em> — to fix the register of the output. Shot-based prompting and chain-of-thought prompting are combined here, exactly as Section 3.7 describes.</p>
+<p><strong>Step 2 — Supply constraints as context.</strong> Client jurisdiction; net worth; annual income; stated goals (maximize return, minimize tax burden, maximize the net worth transferred to heirs). These constraints <em>are</em> the tuning.</p>
+<p><strong>Step 3 — Request analysis with an explicit chain of thought and sources.</strong> <em>Determine the best investment alternative to achieve these goals. Explain your reasoning step by step and cite sources.</em> The model returned three candidate strategies with a step-by-step breakdown and citations, several of which pointed to published IRS material.</p>
+<p><strong>Step 4 — Verify before proceeding.</strong> This is the critical step and the one most often skipped.</p>
+<blockquote>
+<div><p><strong>Why verification must precede the next prompt.</strong> Once a wrong answer is in the context window, saying <em>that’s wrong, give me a different answer</em> accomplishes less than users expect — the erroneous material remains in context and continues to shape everything downstream. <strong>Verify at each step, before asking the next question.</strong></p>
+</div></blockquote>
+<p><strong>Step 5 — Request quantitative detail.</strong> With the reasoning validated, ask for the calculations: term and tax burden for each option, presented as a table.</p>
+<p><strong>Step 6 — Verify again</strong>, then request the deliverable: a comparison table suitable for a client, and a summary paragraph derived from the findings.</p>
+<p><strong>Step 7 — Verify the deliverable independently.</strong> In this case the recommendation — a charitable remainder trust — was, in fact, correct, and was confirmed by a certified financial planner who reviewed it. The gift was subsequently arranged on that basis. That confirmation is the reason the instructor could report the result as correct. Without it, there would have been an authoritative-looking document and no knowledge.</p>
+<blockquote>
+<div><p><strong>A practical aside on output formats.</strong> The instructor initially requested a downloadable file and found it faster to request a plain paragraph for copying and pasting. These interface behaviors change frequently. Choose the output format deliberately — list, narrative, table, downloadable file — and revisit the choice as tools change.</p>
+</div></blockquote>
+</section>
+<section id="the-markdown-prompting-framework">
+<h3><span class="section-number">3.10.2. </span>3.8.2 The Markdown Prompting Framework<a class="headerlink" href="#the-markdown-prompting-framework" title="Link to this heading">#</a></h3>
+<p><img alt="The Markdown Prompting Framework." src="chapters/assets/ch3-fig-19-markdown-prompting-framework.png" /></p>
+<p><em>Figure 3.19. MPF: simple to learn, and prompts can be saved for reuse.</em></p>
+<p>The <strong>Markdown Prompting Framework (MPF)</strong> is emerging as an industry standard for structured prompting. Its virtues are that it is simple, that it is easy to learn, and that prompts can be saved and reused.</p>
+<p>The instructor’s more interesting claim concerns its effect on the user: <strong>markdown forces you to structure your thinking before you ask.</strong> That constraint is the point. It is what keeps the interaction in the creative, cyborg mode rather than the reflexive one.</p>
+<p>Markdown requires only a few special characters, and a working prompt needs roughly three. The prompt below reconstructs the structure of the demonstration; the specific client figures are illustrative.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># System Prompt: Estate Planning Professional</span>
+
+<span class="gu">## Role</span>
+You are an estate planning professional who uses a formal but friendly
+tone in client communications.
+
+<span class="gu">## Audience</span>
+A college-educated, financially successful retiree.
+
+<span class="gu">## Constraints</span>
+<span class="k">*</span><span class="w"> </span>jurisdiction: United States
+<span class="k">*</span><span class="w"> </span>net_worth: $1.5M
+<span class="k">*</span><span class="w"> </span>annual_income: [client&#39;s annual income]
+<span class="k">*</span><span class="w"> </span>objectives: maximize return; minimize tax burden; maximize transfer to heirs
+
+<span class="gu">## Tasks</span>
+<span class="k">1.</span> Determine the best investment alternatives to achieve these goals.
+<span class="k">2.</span> Explain your reasoning step by step and cite sources.
+<span class="k">3.</span> Calculate the term and tax burden for each alternative; present as a table.
+<span class="k">4.</span> Produce a client-ready comparison table.
+<span class="k">5.</span> Write a summary paragraph suitable for an email.
+</pre></div>
+</div>
+<p>The components:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">#</span></code> — the system prompt.</strong> All major chat interfaces treat a top-level heading as a system-level instruction. This is where you tell the model what it is — <em>you are a financial professional</em> — in an attempt to steer it away from what it has inferred about you from your profile and settings. It does not overwrite the platform’s own system context; the two coexist and interact. But it gives you a lever on material you otherwise cannot touch.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Role</span></code> and <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Audience</span></code>.</strong> Standard sections that reduce ambiguity substantially.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Constraints</span></code>.</strong> The tuning. Constraint names are not a controlled vocabulary — <code class="docutils literal notranslate"><span class="pre">jurisdiction</span></code> is used here because it is the operative legal term in the United States, and the model interprets it as natural language. This section is where you must actually think about your problem: what is it, what is in scope, how does this need to be narrowed.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Tasks</span></code>.</strong> A numbered list. <strong>This is the chain of thought made structural.</strong> The model executes step one, then step two, and so on. It performs the same work that was distributed across several turns in the natural language version, with the sequence specified in advance.</p></li>
+</ul>
+<p>Run this way, the markdown prompt produced the same results as the multi-turn natural language session — minor textual variation, identical data, identical conclusions.</p>
+</section>
+<section id="using-structured-prompts-in-practice">
+<h3><span class="section-number">3.10.3. </span>3.8.3 Using Structured Prompts in Practice<a class="headerlink" href="#using-structured-prompts-in-practice" title="Link to this heading">#</a></h3>
+<p>An MPF prompt is a plain text file. It can be written in any text editor and saved. There are then two ways to use it: <strong>drag the file into the prompt window</strong>, or <strong>copy and paste its contents</strong>. Both work in essentially every major chat interface.</p>
+<p>The value of a file is reuse.</p>
+<blockquote>
+<div><p><strong>For coursework.</strong> At the start of each term, create one markdown file per course containing the syllabus, the course context, and the relevant framing. As readings are assigned, add them. Before working on anything for that course, start a new chat and drag in that file, which fully establishes the context before the first question.</p>
+<p>The instructor was explicit about the boundary: <strong>this applies only where the use of AI is permitted.</strong> Where a course prohibits AI, it is prohibited, and no technique changes that. Where it is permitted, this is among the best available uses.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>For work.</strong> Every job comprises multiple roles and recurring tasks. Build a prepared prompt for each recurring task.</p>
+<p>Expect to spend a couple of weeks tuning it. You will discover where results fail validation, where the model drifts out of the intended lane, where the output length is wrong — and you will add constraints accordingly. Over time you accumulate purpose-built context for your work. <strong>And you must still validate every result.</strong></p>
+</div></blockquote>
+<p><strong>Shared prompt libraries.</strong> GitHub — the platform on which developers share code, and on which enormous quantities of open-source software are published freely — now hosts communities that share markdown prompts. Large curated repositories exist, some assembled from thousands of contributors, organized by profession and task. A user who is comfortable doing so can retrieve pre-built context and, in the open-source spirit, contribute improvements back.</p>
+<blockquote>
+<div><p><strong>A professional note from the instructor.</strong> Learning the Markdown Prompting Framework is not difficult and it makes a visible difference. Employers are increasingly asking candidates how they use AI. A candidate who can describe structured prompting and context control is answering a question that most candidates cannot.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-do-and-don-t-lists">
+<h2><span class="section-number">3.11. </span>3.9 The Do and Don’t Lists<a class="headerlink" href="#the-do-and-don-t-lists" title="Link to this heading">#</a></h2>
+<section id="do">
+<h3><span class="section-number">3.11.1. </span>3.9.1 Do<a class="headerlink" href="#do" title="Link to this heading">#</a></h3>
+<p><img alt="The prompting &quot;do&quot; list." src="chapters/assets/ch3-fig-20-prompting-dos.png" /></p>
+<p><em>Figure 3.20. Prompting “do” list.</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Practice</p></th>
+<th class="head"><p>Rationale</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Define the speaker</strong></p></td>
+<td><p>Establishes the role the model should adopt and displaces inferred profile context</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Define the audience</strong></p></td>
+<td><p>Determines register, depth, and vocabulary</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Provide other relevant context</strong></p></td>
+<td><p>The single highest-leverage action available</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Consider and define input and output format</strong></p></td>
+<td><p>Decide before prompting: list, narrative, table, file</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Make chain of thought explicit</strong></p></td>
+<td><p><em>Do this, then this, then this</em> — your plan, your control</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ask for references</strong></p></td>
+<td><p>They may be hallucinated and often will be, but they give you places to start. Knowing this, they remain useful as leads, never as citations</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Be precise</strong></p></td>
+<td><p>See below</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Provide examples</strong></p></td>
+<td><p>Examples of the desired output consistently improve results</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 3.4. Prompting practices to adopt.</em></p>
+<blockquote>
+<div><p><strong>On precision versus verbosity.</strong> More words in a prompt is not more context. This is a place where models behave much as human speech does.</p>
+<p>The instructor’s illustration: <em>I love you</em> is more powerful than <em>I love you so much.</em> Adjectives are excellent descriptors, but they dilute, because each adjective applies to an enormous range of things. <em>Beautiful</em> applies to people, rabbits, cats, dogs, and mountains.</p>
+<p>Recall the mechanism. A verbose prompt full of general modifiers introduces tokens with associations to thousands of unrelated concepts, which spreads the model’s attention and <strong>undoes your tuning.</strong> You leave the lane you worked to establish.</p>
+<p><strong>Be precise. Do not be verbose.</strong> As a secondary benefit, it costs less when running against a paid programming interface.</p>
+</div></blockquote>
+</section>
+<section id="don-t">
+<h3><span class="section-number">3.11.2. </span>3.9.2 Don’t<a class="headerlink" href="#don-t" title="Link to this heading">#</a></h3>
+<p><img alt="The prompting &quot;don't&quot; list." src="chapters/assets/ch3-fig-21-prompting-donts.png" /></p>
+<p><em>Figure 3.21. Prompting “don’t” list.</em></p>
+<p><strong>Don’t think of it as a search engine.</strong> If the question is a search engine question, use a search engine. (The instructor noted this advice with some hesitation, since search platforms are themselves increasingly returning AI summaries by default — which he characterized as a significant loss, because the ability to look through a range of sources and judge them yourself is precisely the capacity at issue in Chapter 4.)</p>
+<p><strong>Don’t introduce your own bias by asking leading questions.</strong> Introduce bias <em>consciously</em>, through framing and tuning, where you can name it and defend it — never accidentally, through the shape of the question.</p>
+<p><strong>Don’t get average answers by asking vague questions.</strong> Use chain of thought. Write down your reasoning. Do the thinking.</p>
+<p><strong>Don’t include information you wouldn’t want made public.</strong> Once submitted, the data has left your control.</p>
+<blockquote>
+<div><p>The instructor, who has worked on internet technologies since the internet’s early years, offered a hard-won position: institutional agreements stating that prompts are not retained have been made by many organizations about many kinds of data, and there eventually comes a point at which a breach is disclosed and it emerges that the data existed somewhere unanticipated, retained for some ancillary purpose. What it was retained <em>for</em> is of no consequence to the person whose data it was. At minimum, the content traversed the internet. <strong>Unless you want it public, do not submit it.</strong></p>
+</div></blockquote>
+<p><strong>Don’t trust the answer.</strong> This is the subject of Chapter 4.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="talking-to-the-right-ai">
+<h2><span class="section-number">3.12. </span>3.10 Talking to the Right AI<a class="headerlink" href="#talking-to-the-right-ai" title="Link to this heading">#</a></h2>
+<p><img alt="Ollama and Hugging Face." src="chapters/assets/ch3-fig-22-open-tools-and-models.png" /></p>
+<p><em>Figure 3.22. Open tools and open models.</em></p>
+<p>A qualification before the recommendation. Because the major commercial models were trained on approximately the same material — essentially the whole scrapeable internet — they are more similar to one another than marketing suggests. Real differences exist, and they lie substantially in the surrounding logic: the safety filters, the context engineering, the interface, the tokenization and retrieval choices. Practitioners do develop preferences by task. But the underlying models are far more alike than different.</p>
+<p>The more consequential choice is between running someone else’s model on someone else’s hardware and running your own.</p>
+<p><strong>Ollama</strong> (<a class="reference external" href="https://ollama.com/">https://ollama.com/</a>) runs on Windows, macOS, and Linux, requires administrator privileges and no programming ability, and starts a local large language model environment on your own machine. You select which model to run. At the time of the workshop the instructor’s recommendation was <strong>Qwen</strong>, which he judged the strongest open model then available for general natural-language work.</p>
+<p><strong>Hugging Face</strong> (<a class="reference external" href="https://huggingface.co/">https://huggingface.co/</a>) hosts thousands of specialized open-source models built for particular disciplines — law, medicine, and narrower subfields still. A great many of these can be loaded into a local runtime.</p>
+<p>The combination is powerful. You can run a model locally, with nothing leaving your laptop, that was trained specifically on scholarly literature in your field. For privacy-sensitive work this resolves the confidentiality problem outright, and for domain-specific work it substantially improves the odds of a useful answer.</p>
+<blockquote>
+<div><p><strong>A caution.</strong> Treat a model repository as you would any online repository. That a model is available does not mean it is correct, well-built, or appropriate for your use case. These are artifacts contributed by people who wished to share them, and the platform validates format rather than quality. Apply the FACT framework from Chapter 2 and determine whether the model actually fits your purpose.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="questions-from-the-session">
+<h2><span class="section-number">3.13. </span>3.11 Questions from the Session<a class="headerlink" href="#questions-from-the-session" title="Link to this heading">#</a></h2>
+<p>Three exchanges from the discussion period bear directly on practice.</p>
+<section id="should-you-use-an-ai-tool-to-write-your-prompts">
+<h3><span class="section-number">3.13.1. </span>3.11.1 Should you use an AI tool to write your prompts?<a class="headerlink" href="#should-you-use-an-ai-tool-to-write-your-prompts" title="Link to this heading">#</a></h3>
+<p>The question arises constantly, and the honest answer is that it works — a model will produce a serviceable markdown prompt, and that is a reasonable starting point which you then edit.</p>
+<p><strong>But you should not do it while you are learning.</strong> The reason returns to the argument of this entire chapter: the value of the Markdown Prompting Framework is that it forces you to think about what you are doing — <em>why do I want this, what are the bounds, what are the constraints, what do I actually need?</em> Delegating that step removes precisely the part that was valuable.</p>
+<p>The analogy offered was translation. We have translators for all sorts of things: between human languages, between programming languages. Something is always lost in translation. If you have done the work yourself, you know where the losses tend to occur and what to check for. If you have not, you cannot see them.</p>
+<p>The instructors’ recommendation: <strong>write your own prompts until you know your space well enough to know what to check.</strong> Once you genuinely know the domain and the tool, delegation becomes a defensible efficiency.</p>
+</section>
+<section id="chained-models-and-orchestration">
+<h3><span class="section-number">3.13.2. </span>3.11.2 Chained models and orchestration<a class="headerlink" href="#chained-models-and-orchestration" title="Link to this heading">#</a></h3>
+<p>An increasingly common architecture has one model’s output feed the construction of the next model’s prompt, with a coordinating system driving the sequence. This is the mechanism underlying much of what is marketed as agentic AI, and it is improving as more structured prompting conventions enter the training data. Early models handled markdown poorly precisely because markdown was not well represented in their corpora; that has changed.</p>
+<p>The implication for the reader is not that they must build such systems. It is that the skill of specifying a task precisely, in structured form, is the same skill whether the recipient is a model, a chain of models, or a colleague.</p>
+</section>
+<section id="what-employers-say-they-want">
+<h3><span class="section-number">3.13.3. </span>3.11.3 What employers say they want<a class="headerlink" href="#what-employers-say-they-want" title="Link to this heading">#</a></h3>
+<p>An external advisory panel of industry, government, and technology-sector participants convened by the workshop organizers was asked what capabilities graduates need. Their list contained almost nothing technical:</p>
+<ul class="simple">
+<li><p><strong>Critical thinking</strong></p></li>
+<li><p><strong>Problem solving</strong></p></li>
+<li><p><strong>Resilience</strong></p></li>
+<li><p><strong>Communication</strong> — oral and written, and specifically the ability to communicate and coordinate across teams comprising both humans and AI systems</p></li>
+</ul>
+<p>The panel resisted describing this last capability as management, settling instead on <strong>orchestration</strong>: the coordination of activity across human collaborators and machine systems. Their assessment was that regardless of sector, and regardless of whether a role is technical, work is now technology-driven enough that everyone will operate in mixed human–machine teams — and that many people already do without having confronted the fact explicitly.</p>
+<p>The convergence with this chapter is not coincidental. Chain-of-thought prompting, context control, structured specification, and the discipline of validating results are orchestration skills. They are also, as Section 3.2 argued, the practices that keep the human capable of doing the work.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="chapter-summary">
+<h2><span class="section-number">3.14. </span>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Seventy percent of users treat AI as a search engine; twenty percent use it to confirm their existing beliefs; ten percent collaborate with it. Only the last produces good results.</p></li>
+<li><p>Reflexive AI use measurably degrades cognitive capacity, by the same mechanism through which navigation software degraded spatial reasoning. Assume the statistics apply to you.</p></li>
+<li><p>Searchbot prompting fails in three ways: hallucination, which is architectural rather than fixable; inherited bias from leading questions; and the unremarkable mean — the average of what has already been said, which distinguishes nothing.</p></li>
+<li><p>The cyborg approach pushes your own reasoning into the tool rather than outsourcing the reasoning itself.</p></li>
+<li><p>Three levers: format, context, and tuning. Tuning introduces bias deliberately, which is defensible precisely because it can be named.</p></li>
+<li><p>Context is the highest-leverage variable, and its <em>position</em> matters. Chat history and platform profiles inject context you did not supply and cannot see. Starting a new chat is an act of control.</p></li>
+<li><p>Prompt types run from zero-shot through shot-based to chain of thought. Explicit chain of thought is where cyborg practice becomes concrete.</p></li>
+<li><p>Verify at every step, because a wrong answer left in context contaminates everything after it.</p></li>
+<li><p>The Markdown Prompting Framework provides system prompt, role, audience, constraints, and a numbered task list; it makes prompts reusable and forces the user to think before asking.</p></li>
+<li><p>Be precise, not verbose: general modifiers dilute tuning by importing broad associations.</p></li>
+<li><p>Local runtimes and specialized open models resolve the confidentiality problem and often improve domain accuracy.</p></li>
+</ul>
+</section>
+<section id="key-terms">
+<h2><span class="section-number">3.15. </span>Key Terms<a class="headerlink" href="#key-terms" title="Link to this heading">#</a></h2>
+<p><strong>prompt</strong> · <strong>prompt engineering</strong> · <strong>searchbot approach</strong> · <strong>cyborg approach</strong> · <strong>cognitive debt</strong> · <strong>unremarkable mean</strong> · <strong>format</strong> · <strong>context</strong> · <strong>tuning</strong> · <strong>context window</strong> · <strong>system prompt</strong> · <strong>zero-shot prompting</strong> · <strong>one-shot / few-shot / multi-shot prompting</strong> · <strong>chain of thought (CoT)</strong> · <strong>Markdown Prompting Framework (MPF)</strong> · <strong>constraints</strong> · <strong>conscious bias</strong> · <strong>local model</strong> · <strong>open model</strong></p>
+</section>
+<section id="review-questions">
+<h2><span class="section-number">3.16. </span>Review Questions<a class="headerlink" href="#review-questions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Distinguish the searchbot approach from the cyborg approach in terms of <em>where the reasoning happens</em>. Why does the distinction have consequences for cognition as well as for output quality?</p></li>
+<li><p>Why does the instructor argue that hallucination cannot be engineered away? Reconstruct the argument from Chapter 1’s account of generation.</p></li>
+<li><p>Explain the unremarkable mean, and describe a professional situation in which producing it would be actively harmful to your interests.</p></li>
+<li><p>“I am interested in plants. What is an apple?” and “What is an apple? I’m interested in plants.” Explain why these differ, and explain the caveat regarding contemporary models.</p></li>
+<li><p>A user has spent a week discussing a networking assignment with a chatbot and now asks an unrelated question in the same conversation. What will happen and why? What should they have done?</p></li>
+<li><p>Rewrite a vague prompt of your own devising into a chain-of-thought prompt with explicit steps. Identify which step in your sequence requires verification before proceeding.</p></li>
+<li><p>Construct an MPF prompt for a task you perform regularly. Identify the system prompt, role, audience, constraints, and task list, and state which constraint does the most tuning work.</p></li>
+<li><p>Why does adding descriptive adjectives to a prompt tend to <em>degrade</em> results? Answer in terms of embeddings and attention.</p></li>
+<li><p>Under what circumstances would a locally-run specialized open model be preferable to a commercial chatbot, and what new obligations does that choice create?</p></li>
+</ol>
+</section>
+<section id="further-reading">
+<h2><span class="section-number">3.17. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Haraway, D. (1985). A Cyborg Manifesto. In <em>Simians, Cyborgs, and Women: The Reinvention of Nature</em> (1991). Routledge.</p></li>
+<li><p>Ming, V. — work on human–AI collaboration; source of the searchbot/cyborg engagement framework and the usage statistics in Table 3.1.</p></li>
+<li><p>Cruz-Ocampo, et al. (2025). Student-reported cognitive effects of artificial intelligence use.</p></li>
+<li><p>Markdown Prompting Framework overview: <a class="reference external" href="https://tenacity.io/snippets/supercharge-ai-prompts-with-markdown-for-better-results/">https://tenacity.io/snippets/supercharge-ai-prompts-with-markdown-for-better-results/</a></p></li>
+<li><p>Ollama (local model runtime): <a class="reference external" href="https://ollama.com/">https://ollama.com/</a></p></li>
+<li><p>Hugging Face (open model repository): <a class="reference external" href="https://huggingface.co/">https://huggingface.co/</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-responsible-ai.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Chapter 2. How to Use AI Responsibly</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04-how-ai-talks-to-you.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Chapter 4. How AI Talks to You</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">3.1. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#framing">3.2. Framing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-modes-of-engagement">3.3. 3.1 Two Modes of Engagement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-the-searchbot-approach">3.4. 3.2 The Cost of the Searchbot Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-cost">3.4.1. 3.2.1 Cognitive Cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-to-the-output">3.4.2. 3.2.2 Cost to the Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cyborg-approach">3.5. 3.3 The Cyborg Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-levers-of-prompt-engineering">3.6. 3.4 The Three Levers of Prompt Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.7. 3.5 Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">3.8. 3.6 Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-matters">3.8.1. 3.6.1 Position Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chat-history-is-context">3.8.2. 3.6.2 Chat History Is Context</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-you-did-not-supply">3.8.3. 3.6.3 Context You Did Not Supply</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-and-prompt-types">3.9. 3.7 Tuning and Prompt Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-zero-shot-prompting">3.9.1. 3.7.1 Direct (Zero-Shot) Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-few-and-multi-shot-prompting">3.9.2. 3.7.2 One-, Few-, and Multi-Shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-thought-prompting">3.9.3. 3.7.3 Chain-of-Thought Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-from-natural-language-to-structured-prompting">3.10. 3.8 Worked Example: From Natural Language to Structured Prompting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-natural-language-version">3.10.1. 3.8.1 The Natural Language Version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-markdown-prompting-framework">3.10.2. 3.8.2 The Markdown Prompting Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-structured-prompts-in-practice">3.10.3. 3.8.3 Using Structured Prompts in Practice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-do-and-don-t-lists">3.11. 3.9 The Do and Don’t Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do">3.11.1. 3.9.1 Do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t">3.11.2. 3.9.2 Don’t</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#talking-to-the-right-ai">3.12. 3.10 Talking to the Right AI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-from-the-session">3.13. 3.11 Questions from the Session</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-you-use-an-ai-tool-to-write-your-prompts">3.13.1. 3.11.1 Should you use an AI tool to write your prompts?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-models-and-orchestration">3.13.2. 3.11.2 Chained models and orchestration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-employers-say-they-want">3.13.3. 3.11.3 What employers say they want</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">3.14. Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-terms">3.15. Key Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">3.16. Review Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">3.17. Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <img alt="CC BY-SA 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"> 
+</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

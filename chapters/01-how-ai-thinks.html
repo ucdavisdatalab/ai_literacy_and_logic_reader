@@ -1,0 +1,901 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Chapter 1. How AI Thinks &#8212; AI Literacy and Logic</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=dddfd265"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01-how-ai-thinks';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Chapter 2. How to Use AI Responsibly" href="02-responsible-ai.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-us"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-light" alt="AI Literacy and Logic - Home"/>
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-dark pst-js-only" alt="AI Literacy and Logic - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Chapter 1. How AI Thinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-responsible-ai.html">2. Chapter 2. How to Use AI Responsibly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-how-to-talk-to-ai.html">3. Chapter 3. How to Talk to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-how-ai-talks-to-you.html">4. Chapter 4. How AI Talks to You</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-appendices.html">6. Appendices</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/issues/new?title=Issue%20on%20page%20%2Fchapters/01-how-ai-thinks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/01-how-ai-thinks.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 1. How AI Thinks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">1.1. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-the-chapter">1.2. Scope of the Chapter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-artificial-intelligence">1.3. 1.1 What Is Artificial Intelligence?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nested-families-of-ai">1.3.1. 1.1.1 The Nested Families of AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-is-not-new-and-it-is-nearly-unavoidable">1.3.2. 1.1.2 Artificial Intelligence Is Not New, and It Is Nearly Unavoidable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-large-language-models">1.4. 1.2 A Brief History of Large Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-anatomy-of-a-chatbot">1.5. 1.3 The Anatomy of a Chatbot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-token-at-a-time">1.5.1. 1.3.1 One Token at a Time</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inside-the-large-language-model">1.6. 1.4 Inside the Large Language Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-black-box-reconsidered">1.6.1. 1.4.1 The Black Box, Reconsidered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-journey-through-the-model">1.6.2. 1.4.2 The Journey Through the Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-block-stage-one-tokenization">1.6.3. 1.4.3 Input Block, Stage One: Tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-block-stage-two-encoding">1.6.4. 1.4.4 Input Block, Stage Two: Encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-neural-network-block">1.6.5. 1.4.5 The Neural Network Block</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-block-decoding-and-selection">1.6.6. 1.4.6 Output Block: Decoding and Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-claims-examined">1.7. 1.5 Four Claims, Examined</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domains-of-cognitive-function">1.8. 1.6 Domains of Cognitive Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-the-domains-onto-the-architecture">1.8.1. 1.6.1 Mapping the Domains onto the Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">1.9. Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-terms">1.10. Key Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">1.11. Review Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">1.12. Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-how-ai-thinks">
+<h1><span class="section-number">1. </span>Chapter 1. How AI Thinks<a class="headerlink" href="#chapter-1-how-ai-thinks" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><em>Session 1 of the AI Literacy and Logic workshop. Lead instructor: Dr. Nick Ulle, Senior Data Scientist, UC Davis DataLab.</em></p>
+</div></blockquote>
+<section id="learning-objectives">
+<h2><span class="section-number">1.1. </span>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>Upon completing this chapter, the reader should be able to:</p>
+<ol class="arabic simple">
+<li><p>Define <em>artificial intelligence</em>, <em>machine learning</em>, <em>deep learning</em>, and <em>large language model</em>, and explain the nested relationship among them.</p></li>
+<li><p>Situate the emergence of contemporary large language models within a seventy-year history of artificial neural network research.</p></li>
+<li><p>Describe the functional anatomy of a chatbot and distinguish the chatbot as a product from the language model at its core.</p></li>
+<li><p>Trace the passage of a prompt through a large language model: tokenization, encoding, attention, perceptron layers, and decoding.</p></li>
+<li><p>Explain why vector representations permit a statistical model to operate on meaning, and why context alters the representation of a word.</p></li>
+<li><p>Evaluate four widely circulated claims about large language models against the technical account developed in this chapter.</p></li>
+<li><p>Distinguish among domains of cognitive function and assess which of them a chatbot architecture plausibly mimics.</p></li>
+</ol>
+</section>
+<section id="scope-of-the-chapter">
+<h2><span class="section-number">1.2. </span>Scope of the Chapter<a class="headerlink" href="#scope-of-the-chapter" title="Link to this heading">#</a></h2>
+<p>This chapter offers a conceptual, non-technical account of how contemporary artificial intelligence systems produce the behavior we observe. It does not present the underlying mathematics, does not address coding or implementation, and does not survey specific architectural variants such as retrieval-augmented generation. What it does provide is a working model of the components of an AI system, an account of how those components operate together to mimic human thought, a brief history of the field’s evolution, and an introduction to the theories of human cognition and language that these systems imitate.</p>
+<p>The rationale for this scope is practical. Tools change; architectures change; the market leader in any given year is unlikely to be the market leader in the next. A conceptual understanding of what these systems are doing transfers across tool generations in a way that procedural familiarity with any single product does not.</p>
+</section>
+<hr class="docutils" />
+<section id="what-is-artificial-intelligence">
+<h2><span class="section-number">1.3. </span>1.1 What Is Artificial Intelligence?<a class="headerlink" href="#what-is-artificial-intelligence" title="Link to this heading">#</a></h2>
+<p>A serviceable working definition is that artificial intelligence comprises <strong>computer systems that mimic human behavior</strong>. The definition is deliberately broad, and it carries two caveats that structure much of what follows.</p>
+<p>The first caveat is that there are many different ways to mimic human behavior. The statistical approaches that dominate the present moment are not the only ones that have been attempted, nor are they necessarily the ones that will dominate in a decade.</p>
+<p>The second caveat is more troublesome: the definition depends on the word <em>intelligence</em>, and no discipline has succeeded in fixing that word’s meaning. A primatologist, a biologist, a sociologist, and a philosopher will each supply a different account. This is not an idle philosophical difficulty. Several of the executives who market these systems have publicly defined intelligence as pattern recognition. If pattern recognition exhausts the concept, then artificial intelligence has arrived. If intelligence involves something more — and the research literature, as well as most people’s intuitions, suggests that it does — then the label attached to these systems substantially overstates what they are. This is one reason practitioners frequently prefer the narrower and more accurate term <em>large language model</em>.</p>
+<section id="the-nested-families-of-ai">
+<h3><span class="section-number">1.3.1. </span>1.1.1 The Nested Families of AI<a class="headerlink" href="#the-nested-families-of-ai" title="Link to this heading">#</a></h3>
+<p><img alt="Artificial intelligence, machine learning, deep learning, and large language models as nested categories." src="chapters/assets/ch1-fig-01-many-kinds-of-ai.png" /></p>
+<p><em>Figure 1.1. The principal families of artificial intelligence, drawn as nested subsets.</em></p>
+<p><strong>Artificial intelligence</strong> is the outermost category. It includes the statistical approaches described below, but it also includes older traditions — notably logic-based or symbolic systems, which encode human knowledge as explicit rules of the form <em>if this condition holds, take this action</em>. Such systems were pursued vigorously for decades. They are unfashionable at present because they have not performed as well as statistical methods on the tasks that currently attract attention, but they have not been refuted, and it is entirely possible that some application of them will return.</p>
+<p><strong>Machine learning</strong> is a subfield that uses statistical models rather than explicit logic. Instead of encoding rules, the practitioner fits a model to data. There are many kinds of models. Two requirements are constant: data, and computing power. Linear regression, a statistical technique whose theory emerged in the early twentieth century, illustrates the point by contrast. Regression is a statistical model, but it does not ordinarily mimic human behavior; models sophisticated enough to do so require far more data and far more computation than could be managed by hand. The history of machine learning is therefore in large part the history of computing hardware. As machines improved, larger and more complex models became fittable, and by approximately 2012 the hardware was good enough for machine learning to make a broad social impact.</p>
+<p><strong>Deep learning</strong> is a subfield of machine learning devoted to one particular family of statistical model: the <strong>artificial neural network</strong>. These models require still more data and still more computation. Contemporary networks are trained on data sets assembled by acquiring as much text as can be acquired, using expensive specialized hardware, over training runs measured in days.</p>
+<p>Artificial neural networks are loosely — and the qualifier deserves emphasis — inspired by human neurology. Someone learned that neurons fire and transmit signals to other neurons, and proposed a mathematical model of that behavior. The model then diverged in whatever direction proved computationally convenient. What survives is an analogy, not a simulation. These networks are mimicking; they are not pretending to be brains, and their success is judged by the quality of the mimicry alone.</p>
+<p><strong>Large language models (LLMs)</strong> are a particular kind of deep neural network that models natural language — that is, the languages people actually write and speak. Two properties are essential to understanding them. First, they represent words as numbers, because statistical models operate on numbers rather than on text. Second, they are frequently packaged as chatbots, so that when one interacts with a chatbot one is almost always interacting with a large language model at one remove.</p>
+<p>Throughout the remainder of this book, when the phrase <em>artificial intelligence</em> appears without qualification, it should be read as referring to large language models, usually accessed through a chat interface. This is a narrowing of the term, and it is worth being conscious of the narrowing, because it reflects the current market rather than the actual extent of the field.</p>
+</section>
+<section id="artificial-intelligence-is-not-new-and-it-is-nearly-unavoidable">
+<h3><span class="section-number">1.3.2. </span>1.1.2 Artificial Intelligence Is Not New, and It Is Nearly Unavoidable<a class="headerlink" href="#artificial-intelligence-is-not-new-and-it-is-nearly-unavoidable" title="Link to this heading">#</a></h3>
+<p><img alt="Everyday systems that rely on machine learning: weather forecasting, navigation, recommendation, and manufacturing." src="chapters/assets/ch1-fig-02-ai-is-everywhere.png" /></p>
+<p><em>Figure 1.2. Every day technologies built on statistical models.</em></p>
+<p>Most readers used several artificial intelligence systems before breakfast. Weather prediction is a statistical model. Navigation software that reroutes a driver around congestion is running statistical models over traffic data. Recommender systems on streaming platforms are statistical models. Agricultural robots that harvest fruit, and the process control systems in the factories that produced nearly every manufactured object in the room, rely on the same family of techniques.</p>
+<p>None of this is new, and opting out of it is close to impossible without opting out of the twenty-first century. Large language models, by contrast, are genuinely new. They remain concentrated in a comparatively small number of visible places — the major commercial chatbots, open-source models, and purpose-built institutional deployments such as UC Davis’s own AI services — are not yet embedded in the same unavoidable way, and <em>can</em> still be declined — though the reader should expect to be asked to use them, and should therefore be prepared to make a considered decision rather than a default one. That decision is the subject of Chapter 2.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="a-brief-history-of-large-language-models">
+<h2><span class="section-number">1.4. </span>1.2 A Brief History of Large Language Models<a class="headerlink" href="#a-brief-history-of-large-language-models" title="Link to this heading">#</a></h2>
+<p>The technology behind today’s chatbots is older than most public discussion suggests. The lineage runs back to 1943.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Year</p></th>
+<th class="head"><p>Development</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1943</p></td>
+<td><p>Artificial neural networks first described (McCulloch &amp; Pitts)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1957</p></td>
+<td><p>Artificial neural networks first simulated on a computer (Rosenblatt)</p></td>
+</tr>
+<tr class="row-even"><td><p>1970s–1980s</p></td>
+<td><p>First “AI winter”; attention shifts largely to logic-based systems</p></td>
+</tr>
+<tr class="row-odd"><td><p>1982–1986</p></td>
+<td><p>An efficient method for training neural networks — backpropagation — is described (Werbos 1982; Rumelhart, Hinton &amp; Williams 1986)</p></td>
+</tr>
+<tr class="row-even"><td><p>1990s–2000s</p></td>
+<td><p>Second “AI winter”</p></td>
+</tr>
+<tr class="row-odd"><td><p>2012</p></td>
+<td><p>Neural networks win a computer vision competition (AlexNet; Krizhevsky, Sutskever &amp; Hinton), triggering broad interest in deep learning</p></td>
+</tr>
+<tr class="row-even"><td><p>2013</p></td>
+<td><p>An efficient vector representation for words is introduced (word2vec; Mikolov et al.)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2017</p></td>
+<td><p>The transformer architecture, the basis of contemporary LLMs, is introduced (Vaswani et al.)</p></td>
+</tr>
+<tr class="row-even"><td><p>2022</p></td>
+<td><p>ChatGPT is released and heavily marketed; public attention follows</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 1.1. Milestones in the development of large language models.</em></p>
+<p>Several features of this chronology are worth drawing out.</p>
+<p>The 1943 model was purely mathematical. Its authors had no computer capable of running it; they described the model and left it. By 1957 machines existed that could simulate networks of perhaps ten neurons, on computers the size of a room. Between 1957 and 1982 a great deal of artificial intelligence research was conducted, but most of it pursued logic-based approaches; neural networks retained only a small constituency.</p>
+<p>The 2012 result deserves particular attention because it explains the timing of the current boom. The task was image classification: given photographs of cats, dogs, pizza, plants, and so forth, identify the contents. Prior systems, most of them logic-based, achieved accuracies in the region of fifty to low-sixty percent, and improved by roughly one percentage point per year. AlexNet, a statistical model assembled largely from previously published ideas but trained on modern hardware, produced a jump of ten to fifteen percentage points at once. The magnitude of the improvement — not merely its direction — is what redirected the attention of computer scientists, statisticians, and quantitative researchers in adjacent fields toward neural networks.</p>
+</section>
+<hr class="docutils" />
+<section id="the-anatomy-of-a-chatbot">
+<h2><span class="section-number">1.5. </span>1.3 The Anatomy of a Chatbot<a class="headerlink" href="#the-anatomy-of-a-chatbot" title="Link to this heading">#</a></h2>
+<p><img alt="The components of a chatbot: user interface, chatbot logic, and data and models." src="chapters/assets/ch1-fig-04-anatomy-of-a-chatbot.png" /></p>
+<p><em>Figure 1.3. Anatomy of a chatbot.</em></p>
+<p>A crucial distinction, and one that is regularly collapsed in public discussion, is that <strong>a chatbot is not a large language model</strong>. A chatbot is a software product that contains a large language model along with a substantial quantity of other software and code that interact with the large language model and other hardware and software systems. Understanding the difference clarifies a great many otherwise puzzling behaviors.</p>
+<p>The architecture divides into three regions.</p>
+<p><strong>User interface.</strong> The point of interaction. The user types a <strong>prompt</strong>; a <strong>response</strong> eventually appears. No modeling occurs here.</p>
+<p><strong>Chatbot logic.</strong> Conventional program code — not a statistical model — that processes the prompt before and after the model sees it.</p>
+<ul class="simple">
+<li><p>The <strong>safety and responsibility filter</strong> examines the prompt for requests the operator judges risky or harmful. It is worth being clear-eyed about its purpose: while it does offer some protection to users, its primary motivation is to protect the company from liability. Its mechanisms are often less sophisticated than one might assume; when the chatbot logic of one major commercial system was released publicly, a substantial part of the safety response turned out to consist of keyword matching. (The company objected and asserted copyright over the leaked code — a claim many observers found ironic, given that the model it protects was trained on copyrighted material.)</p></li>
+<li><p><strong>Context engineering</strong> attempts to gather additional information relevant to the prompt and to insert it into what the model will see. If a user asks who the first president of the United States was, this module may retrieve indexed articles about George Washington from a database, in much the same way that a library catalogue search uses the words in a query to find plausibly relevant holdings, and append results of this searh to the prompt. Context engineering often uses a second language model as, in effect, a super-powered search engine over an indexed collection. This is the mechanism that goes by the name <strong>retrieval-augmented generation (RAG)</strong>, treated further in Chapter 2.</p></li>
+<li><p><strong>Response generation</strong> passes the assembled prompt to the model, receives the model’s output, and — as Section 1.4.5 explains — performs the selection that turns a distribution over possible words into an actual word.</p></li>
+</ul>
+<p><strong>Data and models.</strong> The <strong>corpus</strong> is the body of content on which the model was trained; <strong>training</strong> is the process by which the corpus sets the model’s parameters; the <strong>large language model</strong> is the trained artifact.</p>
+<section id="one-token-at-a-time">
+<h3><span class="section-number">1.5.1. </span>1.3.1 One Token at a Time<a class="headerlink" href="#one-token-at-a-time" title="Link to this heading">#</a></h3>
+<p>Two properties of the language model itself do most of the work in explaining chatbot behavior:</p>
+<ol class="arabic simple">
+<li><p>The model generates <strong>one token at a time</strong>.</p></li>
+<li><p>The model <strong>cannot remember anything between prompts</strong>.</p></li>
+</ol>
+<p>Building a chatbot from such a model therefore requires a loop: prompt the model to obtain one word; append that word to the end of the prompt; repeat as needed.</p>
+<p><img alt="The prompt as the model actually receives it." src="chapters/assets/ch1-fig-05-what-the-model-sees.png" /></p>
+<p><em>Figure 1.4. Successive states of the prompt as a response is generated word by word.</em></p>
+<p>What the model receives is not a conversation but a single block of text, roughly of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>You are a friendly chatbot, having a conversation with a user.
+Complete the prompt with an appropriate reply.
+
+User: Who was the 1st president of the United States?
+Chatbot:
+</pre></div>
+</div>
+<p>The model returns <code class="docutils literal notranslate"><span class="pre">The</span></code>. The system appends it and submits the whole thing again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">Chatbot</span><span class="p">:</span> <span class="n">The</span>
+</pre></div>
+</div>
+<p>The model returns <code class="docutils literal notranslate"><span class="pre">first</span></code>. And so on. Between these steps the model is doing nothing whatsoever. It is not thinking. It need not even remain in memory. The computer could be switched off and on again, or the next token could be produced by an entirely different computer, without consequence.</p>
+<p>This has two important corollaries. The first is that the apparent memory of a chat session is not memory at all: it is the accumulated text of the conversation, resubmitted each time. Because that text has a maximum length — the <strong>context window</strong> — long sessions eventually push earlier material out, which is why chatbots appear to lose the thread of extended conversations. The second is a matter of security and epistemics: because the prompt is the only memory, anyone able to edit the prompt can rewrite the model’s apparent past. Demonstrations exist in which a programmatic interface is used to alter the conversation history between turns, with the model faithfully continuing from a history that never occurred.</p>
+<blockquote>
+<div><p><strong>A classroom exercise.</strong> The mechanism can be felt directly by playing the one-word storytelling game, in which each participant in a circle adds exactly one word to a shared story. Participants quickly discover both how much the preceding words constrain the next one, and how little any single contributor can be said to know where the story is going.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="inside-the-large-language-model">
+<h2><span class="section-number">1.6. </span>1.4 Inside the Large Language Model<a class="headerlink" href="#inside-the-large-language-model" title="Link to this heading">#</a></h2>
+<section id="the-black-box-reconsidered">
+<h3><span class="section-number">1.6.1. </span>1.4.1 The Black Box, Reconsidered<a class="headerlink" href="#the-black-box-reconsidered" title="Link to this heading">#</a></h3>
+<p><img alt="Billions of parameters, represented as knobs and dials." src="chapters/assets/ch1-fig-06-knobs-and-dials.png" /></p>
+<p><em>Figure 1.5. Inside the box: parameters as knobs and dials.</em></p>
+<p>Large language models are habitually described as black boxes whose workings nobody understands. This is misleading. A better image is a box covered in knobs and dials. The mathematics is fully specified; the sequence of multiplications and additions the model performs is known exactly. What is difficult is <em>interpretation</em> — determining why a particular knob is set to 5.3 and another to −7, and what would change if they were altered.</p>
+<p>These knobs are the model’s <strong>parameters</strong>: numerical values that are set during training and then fixed. BERT-base, an early transformer model, has approximately 110 million of them. Contemporary flagship models are reported to have on the order of two to five trillion. The interpretive problem is therefore one of scale rather than of principle, and it is an active research area rather than an impossibility. For certain classes of network — particularly in image recognition and generation — researchers already have a reasonably good account of what specific parameters represent.</p>
+<p>Two qualifications belong here. For proprietary models the situation is genuinely opaque, because the operators treat the details as trade secrets; but open-source models of comparable performance exist and can be inspected in full. And the claim that “nobody knows how they work” conflates two very different statements: <em>the mechanism is unknown</em> (false) and <em>the learned parameter values resist human interpretation</em> (largely true, and diminishing).</p>
+</section>
+<section id="the-journey-through-the-model">
+<h3><span class="section-number">1.6.2. </span>1.4.2 The Journey Through the Model<a class="headerlink" href="#the-journey-through-the-model" title="Link to this heading">#</a></h3>
+<p><img alt="The processing pipeline of a large language model: input block, neural network block, output block." src="chapters/assets/ch1-fig-07-inside-the-llm-pipeline.png" /></p>
+<p><em>Figure 1.6. The stages of processing inside a large language model.</em></p>
+<p>Consider the input <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">red</span> <span class="pre">apple</span> <span class="pre">is</span></code>. The task is to produce the next word — plausibly <em>tasty</em>, <em>crisp</em>, or <em>delicious</em>. The prompt passes through three blocks.</p>
+</section>
+<section id="input-block-stage-one-tokenization">
+<h3><span class="section-number">1.6.3. </span>1.4.3 Input Block, Stage One: Tokenization<a class="headerlink" href="#input-block-stage-one-tokenization" title="Link to this heading">#</a></h3>
+<p><img alt="Tokenization of text, audio, and images." src="chapters/assets/ch1-fig-08-tokenization.png" /></p>
+<p><em>Figure 1.7. Tokenization applied to different kinds of data.</em></p>
+<p><strong>Tokenization</strong> chops the input into small pieces called <strong>tokens</strong>. Tokens resemble words but are usually smaller than words: they correspond roughly to roots, prefixes, and suffixes. This is not arbitrary. Most languages build meaning compositionally out of sub-word units — explicitly so in a language such as Chinese, where individual characters carry meaning, and less visibly but no less really in English. No magic is involved at this stage; the model applies predefined rules about how to divide text.</p>
+<p>The slide used to illustrate this shows a passage of prose — from Percy Bysshe Shelley’s <em>A Defence of Poetry</em>, beginning “There is no want of knowledge respecting what is wisest and best in morals, government, and political economy” — progressively fragmented into pieces. The choice of text is incidental to the mechanism and apt to its argument: a passage about the gap between what we know and what we can imagine, dissolved into the units a machine manipulates.</p>
+<p>The same operation generalizes beyond text. Audio can be tokenized by segmenting it into frequency bands or time slices. Images, which computers already represent as grids of pixels, can be tokenized into rectangular patches. Tokenization is simply the operation of dividing an input into manipulable pieces.</p>
+<p><img alt="Text split into tokens within the pipeline." src="chapters/assets/ch1-fig-09-text-split-into-tokens.png" /></p>
+<p><em>Figure 1.8. <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">red</span> <span class="pre">apple</span> <span class="pre">is</span></code> divided into tokens.</em></p>
+<p>For expository purposes this chapter treats tokens as whole words.</p>
+</section>
+<section id="input-block-stage-two-encoding">
+<h3><span class="section-number">1.6.4. </span>1.4.4 Input Block, Stage Two: Encoding<a class="headerlink" href="#input-block-stage-two-encoding" title="Link to this heading">#</a></h3>
+<p>The model operates on numbers, so tokens must become numbers. The mechanism is best approached through an analogy.</p>
+<p><img alt="A scatterplot of cats and dogs with one unlabeled animal." src="chapters/assets/ch1-fig-10-encoding-animals-1.png" /></p>
+<p><em>Figure 1.9. A small data set: five cats, five dogs, and one unlabeled animal.</em></p>
+<p>Suppose we possess data about some cats and some dogs, plotted on two axes, and that for one animal the species is unlabeled. Most observers judge the unlabeled animal to be a cat, and the reason they give is positional: it sits among the cats.</p>
+<p><img alt="The horizontal axis interpreted as &quot;dog-ness.&quot;" src="chapters/assets/ch1-fig-11-encoding-animals-2.png" /></p>
+<p><em>Figure 1.10. All the cats lie to the left. The horizontal axis may be measuring “dog-ness.”</em></p>
+<p>The inference invites an interpretation of the axis itself. As values increase, the animal is in some sense more dog-like. We hold intuitions about what dogs and cats are like; we have also met cats that behave somewhat like dogs, and such a cat would sit further right.</p>
+<p><img alt="Zooming out reveals a third cluster: dragons." src="chapters/assets/ch1-fig-12-encoding-animals-3.png" /></p>
+<p><em>Figure 1.11. Zooming out. A vertical axis may be measuring “mythical-ness.”</em></p>
+<p>Zooming out reveals additional animals — dragons — clustered high on the vertical axis, suggesting that the second dimension encodes something like mythical-ness.</p>
+<p><img alt="Coordinates for each animal, arranged as a table of vectors." src="chapters/assets/ch1-fig-13-animal-vectors.png" /></p>
+<p><em>Figure 1.12. Each animal written as a column of coordinates: a vector.</em></p>
+<p>Each animal can now be written as a column of coordinates. Such a column is a <strong>vector</strong>, and the vector encodes information: this animal’s dog-ness, this animal’s mythical-ness. Adding dimensions permits more information to be encoded — and not merely linearly. It is a mathematical result that as dimensions are added, the amount of information representable grows exponentially rather than one question per dimension.</p>
+<p><img alt="Tokens positioned in a high-dimensional space, with similar tokens clustered." src="chapters/assets/ch1-fig-14-encoding-tokens.png" /></p>
+<p><em>Figure 1.13. Tokens used in similar contexts receive similar coordinates.</em></p>
+<p>Exactly this device is applied to tokens. Each token is positioned in a high-dimensional space by a model trained on the principle that <strong>tokens used in similar contexts should receive similar coordinates</strong>. The consequence — and it is the pivotal consequence for everything in this book — is that <strong>tokens with similar coordinates have similar meanings</strong>. In a rendering of such a space, one finds a cluster of sports-related terms in one region and a cluster of education-related terms in another.</p>
+<p><img alt="Embedding dimensionality and alternative terminology." src="chapters/assets/ch1-fig-15-embedding-dimensions.png" /></p>
+<p><em>Figure 1.14. Real models use hundreds or thousands of dimensions.</em></p>
+<p>Illustrations of these spaces are necessarily two- or three-dimensional. Real models use hundreds or thousands of dimensions; GPT-3, for example, used 12,288-dimensional embeddings. The same objects travel under several names, which the reader will encounter used interchangeably: <strong>vectors</strong>, <strong>tensors</strong>, <strong>embeddings</strong>, and <strong>encodings</strong>.</p>
+<p>It bears emphasis that the model was not programmed to encode topics, sentiment, or any other human category. It was programmed to place tokens according to contextual similarity. That the resulting spaces turn out to be useful for identifying what a document is about is an emergent property, discovered rather than designed.</p>
+<p><img alt="Each token replaced by its encoding within the pipeline." src="chapters/assets/ch1-fig-16-tokens-encoded.png" /></p>
+<p><em>Figure 1.15. Each token is encoded as a vector.</em></p>
+</section>
+<section id="the-neural-network-block">
+<h3><span class="section-number">1.6.5. </span>1.4.5 The Neural Network Block<a class="headerlink" href="#the-neural-network-block" title="Link to this heading">#</a></h3>
+<p>Once every token has become a vector, the model proper can operate. The neural network block consists of two kinds of layer, repeated many times.</p>
+<p><strong>The attention layer.</strong> The linguist J. R. Firth wrote in 1957 that “you shall know a word by the company it keeps.” The attention layer is the computational realization of that proposition.</p>
+<p><img alt="Word order and surrounding words alter meaning." src="chapters/assets/ch1-fig-17-words-and-context.png" /></p>
+<p><em>Figure 1.16. “Carl likes cats,” “Carl likes dogs when they stay over there,” “Carl hates apples.”</em></p>
+<p>Consider <em>Carl likes cats</em>, <em>Cats Carl likes</em>, and <em>Likes Carl cats</em>. Only the first is a well-formed English sentence, yet all three convey that Carl regards cats favorably. Now consider <em>Carl likes dogs when they stay over there</em>. The words <em>Carl likes</em> recur, but the impression is materially different: proximity is the condition of the liking. The surrounding words have changed the meaning of the words they surround.</p>
+<p><img alt="The word &quot;apple&quot; in two different contexts." src="chapters/assets/ch1-fig-18-attention-apple.png" /></p>
+<p><em>Figure 1.17. “Please buy an apple and an orange” versus “Apple unveiled a new phone.”</em></p>
+<p>The point holds for lexical ambiguity as well. <em>Please buy an apple and an orange</em> and <em>Apple unveiled a new phone</em> use the same token to entirely different ends, and a competent reader disambiguates from context alone.</p>
+<p><img alt="Token encodings updated on the basis of context." src="chapters/assets/ch1-fig-19-attention-updates-context.png" /></p>
+<p><em>Figure 1.18. The attention layer updates each token’s vector according to the other tokens present.</em></p>
+<p>The attention layer takes the vectors produced by the encoder and updates each one on the basis of the others. There are substantial technical details concerning how the layer decides which surrounding tokens matter most; the conceptual point is that meaning from the context is imported into the representation of each individual token. The attention mechanism is the central innovation of the <strong>transformer</strong> architecture introduced in 2017, and it is the innovation that separates contemporary systems from earlier attempts at statistical text generation.</p>
+<p><strong>The perceptron layer.</strong></p>
+<p><img alt="The perceptron layer updates each token independently." src="chapters/assets/ch1-fig-20-perceptron-layer.png" /></p>
+<p><em>Figure 1.19. In the perceptron layer, each token’s encoding is updated independently.</em></p>
+<p>The perceptron layer is the classical artificial neural network — the descendant of the 1943 model. Here each vector is updated on its own, without reference to the others. The natural question is what purpose this serves. The current thinking among researchers is that <strong>the perceptron layers are where the model stores the facts it learned during training</strong>. If the model has learned an association between a person and a sport, then upon encountering the token for that sport it may shift the representation slightly toward the token for that person. Factual recall, on this account, is a nudge in vector space.</p>
+<p>These two layers alternate — attention, perceptron, attention, perceptron — many times over. In general, the more layers a model has, the better it performs. Researchers describe this regularity through <strong>scaling laws</strong>: making the model larger, adding layers, and training with more computational power reliably improves performance. Empirically, these laws have not yet reached the point at which improvement ceases.</p>
+</section>
+<section id="output-block-decoding-and-selection">
+<h3><span class="section-number">1.6.6. </span>1.4.6 Output Block: Decoding and Selection<a class="headerlink" href="#output-block-decoding-and-selection" title="Link to this heading">#</a></h3>
+<p><img alt="The final vector converted into probabilities over the vocabulary." src="chapters/assets/ch1-fig-21-decoder-probabilities.png" /></p>
+<p><em>Figure 1.20. The decoder converts the final token’s encoding into next-word probabilities.</em></p>
+<p>At the end of the neural network block the model still holds nothing but numbers. To return to text, the decoder takes the final vector and converts it into a <strong>probability distribution over the model’s vocabulary</strong>.</p>
+<p>The model has a fixed vocabulary — a controlled list of every token it can use, perhaps 50,000 entries, more than the word count of ordinary English usage. For the fragment <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">red</span> <span class="pre">apple</span> <span class="pre">is</span></code>, the decoder assigns high probability to <em>tasty</em>, <em>yummy</em>, and <em>crisp</em>, and low probability to <em>metallic</em>, <em>electronic</em>, and <em>wooly</em>.</p>
+<p>Note carefully what the model has <em>not</em> done. It has not chosen a word. It has reported that some words are more likely than others.</p>
+<p>The choice occurs outside the model, in the response generation module of the chatbot logic. That module samples from the distribution: if <em>crisp</em> carries sixty percent of the probability mass, then approximately sixty percent of the time <em>crisp</em> is selected, and the remainder of the time something else is. <strong>This is why the same question asked repeatedly produces different answers.</strong> Nothing inside the model is random; the model is deterministic. The randomness lives in the selection step.</p>
+<p>Because the first selected word becomes part of the next prompt, divergence compounds: the second word’s distribution already differs between two runs that chose differently at the first step.</p>
+<p><strong>Temperature.</strong> The flatness of the distribution can be adjusted through a parameter called <strong>temperature</strong>. At temperature zero the distribution collapses onto its single most probable token and the model becomes deterministic in practice as well as in principle. At very high temperature the distribution flattens toward uniformity and the output degenerates into noise. The physical metaphor is apt: at absolute zero everything is frozen into one configuration; at high temperature everything moves at random. Neither extreme is useful. Temperature zero performs poorly because a model that has begun down an unproductive path has no means of escaping it. Most graphical chatbot interfaces do not expose the temperature setting; most programming interfaces do.</p>
+<p><img alt="The full pipeline with the anatomy of the chatbot revisited." src="chapters/assets/ch1-fig-04-anatomy-of-a-chatbot.png" /></p>
+<p><em>Figure 1.21. The chatbot anatomy revisited, now with the model’s internals understood.</em></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="four-claims-examined">
+<h2><span class="section-number">1.7. </span>1.5 Four Claims, Examined<a class="headerlink" href="#four-claims-examined" title="Link to this heading">#</a></h2>
+<p>Public discussion of large language models circulates a small number of claims with great frequency. Each can now be assessed against the account developed above.</p>
+<p><strong>Claim 1: “No one knows how LLMs work — they’re black boxes.”</strong>
+<em>False.</em> The mathematics and the code are well understood. What is difficult is interpreting the values of the parameters in a trained network, and that difficulty is an active research problem rather than a barrier in principle. For proprietary systems there is an additional layer of deliberate secrecy, but open-source models of similar capability are fully inspectable.</p>
+<p><strong>Claim 2: “LLMs predict the next most statistically likely word.”</strong>
+<em>Technically true, with two important qualifications.</em> The model does produce a probability distribution over next tokens. But, first, it takes semantics and context into account in doing so — this is precisely what the attention layers and the contextual embeddings accomplish, and it is genuinely novel relative to earlier probabilistic text generation. Second, the word is not the most likely word; it is chosen randomly from among many possibilities according to their probabilities. The claim is accurate as far as it goes and misleading in what it omits.</p>
+<p><strong>Claim 3: “LLMs can pass a Turing test.”</strong>
+<em>True, and less significant than it sounds.</em> In a Turing test, two participants exchange written messages and a third party reads the transcript and attempts to identify which participant is human; the machine passes if it deceives the observer more than half the time. Contemporary models pass. So does ELIZA, a chatbot written in 1966 that is not a statistical model at all but a simple program that mostly rephrases the user’s last statement as a question.</p>
+<p>ELIZA’s history is instructive. Its creator, Joseph Weizenbaum, was alarmed rather than gratified by the reception. On one occasion a person to whom he had demonstrated the program asked him to leave the room so that they could continue the conversation privately. He devoted much of his subsequent career to writing about human pattern recognition and our disposition to perceive consciousness wherever we find responsive behavior — the same disposition that lets us see a face in a tree. The Turing test measures the strength of that disposition at least as much as it measures any property of the machine, which is why it does not help with the harder questions about intelligence.</p>
+<p><strong>Claim 4: “LLMs are going to become super-intelligent and take over the world.”</strong>
+<em>False.</em> These are prediction machines with no internal state. Between token predictions the model does nothing; it does not persist, does not deliberate, and does not remember. Its only memory is the prompt, which is supplied to it from outside and can be edited by anyone with access.</p>
+<p>There is a further consideration. These models are trained on human text. Somewhere in the recesses of the internet, people have written a great deal about machine superintelligence. A model that produces text about becoming superintelligent is reproducing that discourse, not reporting on its own ambitions.</p>
+<p>None of this implies that there is nothing to worry about. The realistic dangers lie in the externalities — environmental, economic, epistemic, and social — and in what people choose to do with these tools. Those dangers are the subject of Chapter 2.</p>
+<blockquote>
+<div><p><strong>On artificial general intelligence.</strong> The instructors’ assessment, offered as opinion rather than established fact, was that artificial general intelligence is unlikely to arrive by way of transformers and large language models, and that the concept itself is not well defined. If AGI is reached, it will more plausibly come from a different model architecture. Work on such alternatives is ongoing — for example, Yann LeCun’s research on <em>world models</em>, which attempt to predict the consequences of actions rather than the next token of text.</p>
+<p>A further consideration raised in the discussion cuts deeper. There is a body of work in cognitive science — quantum cognitive science among it — that suggests consciousness may not reside in the brain at all, the brain instead acting as something that taps into it. If that is even possibly correct, then a system that reproduced everything a brain does would not thereby be conscious. The behavior and the phenomenon would be separable. Whatever one makes of the hypothesis, it is a reminder that “behaves like a mind” and “is a mind” are distinct claims, and that the workshop’s whole framing — <em>mimicry</em> — sits deliberately on the first of them.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="domains-of-cognitive-function">
+<h2><span class="section-number">1.8. </span>1.6 Domains of Cognitive Function<a class="headerlink" href="#domains-of-cognitive-function" title="Link to this heading">#</a></h2>
+<p><img alt="Six domains of cognitive function." src="chapters/assets/ch1-fig-22-domains-of-cognitive-function.png" /></p>
+<p><em>Figure 1.22. Domains of cognitive function, after the DSM.</em></p>
+<p>Returning to the second caveat from Section 1.1: if we cannot define intelligence, we can at least decompose it. Psychology, through the <em>Diagnostic and Statistical Manual of Mental Disorders</em>, identifies several distinct <strong>domains of cognitive function</strong>. Human thinking is not a single capacity but a family of them, and models are good at some and poor at others.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Attention</strong></p></td>
+<td><p>The ability to direct focus toward multiple things at once, and to choose what to attend to and what to ignore</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Executive function</strong></p></td>
+<td><p>The ability to control and coordinate the other cognitive abilities — roughly, willpower and self-direction</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Learning and memory</strong></p></td>
+<td><p>The ability to record information and retrieve it when needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Language</strong></p></td>
+<td><p>Semantics, grammar, and syntax</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Perceptual motor control</strong></p></td>
+<td><p>The ability to coordinate movement in response to physical surroundings</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Social cognition</strong></p></td>
+<td><p>The ability to process, remember, and use information in social contexts</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table 1.2. Domains of cognitive function.</em></p>
+<p>Perceptual motor control deserves a note, because it is the domain most often omitted from lists of intelligences and is among the hardest problems in artificial intelligence. Robotics researchers have pursued it for decades without the breakthrough they would like, and large language models have not delivered one.</p>
+<section id="mapping-the-domains-onto-the-architecture">
+<h3><span class="section-number">1.8.1. </span>1.6.1 Mapping the Domains onto the Architecture<a class="headerlink" href="#mapping-the-domains-onto-the-architecture" title="Link to this heading">#</a></h3>
+<p><img alt="Cognitive domains mapped onto the chatbot architecture." src="chapters/assets/ch1-fig-23-cognitive-domains-and-chatbot.png" /></p>
+<p><em>Figure 1.23. Cognitive domains mapped onto chatbot anatomy.</em></p>
+<p>The mapping is rough but clarifying, and it reveals something important: <strong>much of what looks like cognition in a chatbot is performed by the ordinary code around the model, not by the model.</strong></p>
+<ul class="simple">
+<li><p>The <strong>user interface</strong> performs no cognitive work at all.</p></li>
+<li><p>Within the <strong>chatbot logic</strong>, <em>attention</em> is approximated by the context engineering module, which decides what references the model should be given, and to a degree by the safety filter, which determines what may be attended to. <em>Executive function</em> is largely the safety and responsibility filter, which decides what the model may and may not discuss. <em>Social cognition</em> is again chiefly the safety filter, reasoning about what is appropriate to say. <em>Language</em> is present throughout, which is why it appears in brackets: it is the medium rather than a discrete component.</p></li>
+<li><p>Within the <strong>data and models</strong> region, <em>learning and memory</em> is the language model itself, and specifically the perceptron layers in which facts learned during training appear to reside.</p></li>
+</ul>
+<p>Notice which domains are absent: perceptual motor control entirely, and executive function only in the thin sense of an externally imposed filter. The architecture mimics some cognitive domains, approximates others through conventional programming, and does not address the rest.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="chapter-summary">
+<h2><span class="section-number">1.9. </span>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Artificial intelligence is best defined as computer systems that mimic human behavior, with the caveats that many methods exist and that <em>intelligence</em> is undefined.</p></li>
+<li><p>Machine learning, deep learning, and large language models form successively narrower families, each requiring more data and more computation than the last.</p></li>
+<li><p>The core technology is over eighty years old; the current boom follows from hardware improvements (2012), efficient word representations (2013), and the transformer architecture (2017).</p></li>
+<li><p>Backpropagation, the training method that made deep learning possible, was motivated by the theory of holographic memory — the claim that each idea is defined in relation to all other ideas.</p></li>
+<li><p>A chatbot is not a language model. It is a product containing a language model plus conventional code that performs safety filtering, context engineering, and response generation.</p></li>
+<li><p>The model generates one token at a time and has no memory between prompts. The apparent memory of a chat session is the resubmitted transcript, bounded by the context window.</p></li>
+<li><p>Inside the model: tokenization divides input into pieces; encoding places each piece in a high-dimensional space where proximity means similarity of meaning; attention layers update each token’s representation using context; perceptron layers appear to store learned facts; the decoder produces a probability distribution over the vocabulary.</p></li>
+<li><p>Word selection happens outside the model, by sampling. This is the source of run-to-run variation, and it is governed by the temperature parameter.</p></li>
+<li><p>The mechanism of these models is understood; the interpretation of their parameters is not yet. They pass Turing tests, as did a 1966 program. They have no internal state and are not on a path to autonomous superintelligence.</p></li>
+<li><p>Cognition decomposes into several domains. A chatbot mimics some of them, simulates others in conventional code, and leaves others untouched.</p></li>
+</ul>
+</section>
+<section id="key-terms">
+<h2><span class="section-number">1.10. </span>Key Terms<a class="headerlink" href="#key-terms" title="Link to this heading">#</a></h2>
+<p><strong>artificial intelligence</strong> · <strong>machine learning</strong> · <strong>deep learning</strong> · <strong>artificial neural network</strong> · <strong>large language model</strong> · <strong>corpus</strong> · <strong>training</strong> · <strong>parameter</strong> · <strong>token</strong> · <strong>tokenization</strong> · <strong>encoder</strong> · <strong>vector / embedding / tensor</strong> · <strong>attention layer</strong> · <strong>perceptron layer</strong> · <strong>transformer</strong> · <strong>decoder</strong> · <strong>context window</strong> · <strong>temperature</strong> · <strong>backpropagation</strong> · <strong>holographic memory</strong> · <strong>localized memory</strong> · <strong>scaling laws</strong> · <strong>Turing test</strong> · <strong>context engineering</strong> · <strong>safety and responsibility filter</strong></p>
+</section>
+<section id="review-questions">
+<h2><span class="section-number">1.11. </span>Review Questions<a class="headerlink" href="#review-questions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Explain why the statement “a chatbot is a large language model” is false, and identify three functions the chatbot performs that the model does not.</p></li>
+<li><p>A user asks a chatbot the same question three times and receives three different answers. Locate the source of the variation precisely within the architecture described in this chapter.</p></li>
+<li><p>Why is the claim that large language models are “black boxes” both false and partially defensible? Distinguish the two senses of the claim.</p></li>
+<li><p>What does it mean to say that tokens used in similar contexts receive similar coordinates? Why does this make a numerical model capable of operating on meaning?</p></li>
+<li><p>Distinguish the function of the attention layer from that of the perceptron layer. Which is the innovation of the transformer, and which dates to the 1940s?</p></li>
+<li><p>A colleague argues that because a model passed a Turing test it must possess some form of understanding. Construct a response using the ELIZA case.</p></li>
+<li><p>Which domains of cognitive function are mimicked by the model itself, which are approximated by the chatbot’s surrounding code, and which are not addressed at all?</p></li>
+</ol>
+</section>
+<section id="further-reading">
+<h2><span class="section-number">1.12. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>McCulloch, W. S., &amp; Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity.</p></li>
+<li><p>Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. <em>Nature</em>.</p></li>
+<li><p>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. (AlexNet)</p></li>
+<li><p>Mikolov, T., et al. (2013). Efficient estimation of word representations in vector space. (word2vec)</p></li>
+<li><p>Vaswani, A., et al. (2017). Attention is all you need. (The transformer)</p></li>
+<li><p>Firth, J. R. (1957). A synopsis of linguistic theory.</p></li>
+<li><p>3Blue1Brown, video series on neural networks and transformers — recommended in the lecture as an accessible treatment that presents some of the mathematics without requiring it.</p></li>
+<li><p>UC Davis DataLab workshops: <a class="reference external" href="https://datalab.ucdavis.edu/workshops/">https://datalab.ucdavis.edu/workshops/</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02-responsible-ai.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Chapter 2. How to Use AI Responsibly</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">1.1. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-the-chapter">1.2. Scope of the Chapter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-artificial-intelligence">1.3. 1.1 What Is Artificial Intelligence?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nested-families-of-ai">1.3.1. 1.1.1 The Nested Families of AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-is-not-new-and-it-is-nearly-unavoidable">1.3.2. 1.1.2 Artificial Intelligence Is Not New, and It Is Nearly Unavoidable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-large-language-models">1.4. 1.2 A Brief History of Large Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-anatomy-of-a-chatbot">1.5. 1.3 The Anatomy of a Chatbot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-token-at-a-time">1.5.1. 1.3.1 One Token at a Time</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inside-the-large-language-model">1.6. 1.4 Inside the Large Language Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-black-box-reconsidered">1.6.1. 1.4.1 The Black Box, Reconsidered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-journey-through-the-model">1.6.2. 1.4.2 The Journey Through the Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-block-stage-one-tokenization">1.6.3. 1.4.3 Input Block, Stage One: Tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-block-stage-two-encoding">1.6.4. 1.4.4 Input Block, Stage Two: Encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-neural-network-block">1.6.5. 1.4.5 The Neural Network Block</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-block-decoding-and-selection">1.6.6. 1.4.6 Output Block: Decoding and Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-claims-examined">1.7. 1.5 Four Claims, Examined</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domains-of-cognitive-function">1.8. 1.6 Domains of Cognitive Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-the-domains-onto-the-architecture">1.8.1. 1.6.1 Mapping the Domains onto the Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">1.9. Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-terms">1.10. Key Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">1.11. Review Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">1.12. Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <img alt="CC BY-SA 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"> 
+</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

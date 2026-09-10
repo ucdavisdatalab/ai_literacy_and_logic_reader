@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; AI Literacy and Logic</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=dddfd265"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Chapter 1. How AI Thinks" href="01-how-ai-thinks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-us"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-light" alt="AI Literacy and Logic - Home"/>
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-dark pst-js-only" alt="AI Literacy and Logic - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-how-ai-thinks.html">1. Chapter 1. How AI Thinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-responsible-ai.html">2. Chapter 2. How to Use AI Responsibly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-how-to-talk-to-ai.html">3. Chapter 3. How to Talk to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-how-ai-talks-to-you.html">4. Chapter 4. How AI Talks to You</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-appendices.html">6. Appendices</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/issues/new?title=Issue%20on%20page%20%2Fchapters/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-book">About This Book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-instructional-team">The Instructional Team</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-subject-and-why-now">Why This Subject, and Why Now</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-book-is-organized">How the Book Is Organized</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparatus">Apparatus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-ideas-that-recur">Four Ideas That Recur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-uc-davis-datalab">About the UC Davis DataLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-sources-and-currency">A Note on Sources and Currency</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<section id="about-this-book">
+<h2>About This Book<a class="headerlink" href="#about-this-book" title="Link to this heading">#</a></h2>
+<p><em>AI Literacy and Logic</em> provides reference material in support of the one-day workshop of the same name offered by the <a class="reference external" href="https://datalab.ucdavis.edu">UC Davis DataLab</a> and the College of Letters and Science. Its contents are drawn from the workshop’s four instructional sessions — the presentation slides and the recorded lectures, including the questions, demonstrations, and discussions that arose during delivery.</p>
+<p>The intended audience for both the workshops and this material is undergraduate and graduate students in any discipline, and for staff and faculty who wish to develop a principled rather than incidental relationship to generative artificial intelligence. It presumes no mathematical background, no programming experience, and no prior exposure to machine learning.</p>
+<section id="the-instructional-team">
+<h3>The Instructional Team<a class="headerlink" href="#the-instructional-team" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instructor</p></th>
+<th class="head"><p>Role</p></th>
+<th class="head"><p>Session led</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Dr. Carl G. Stahmer</strong></p></td>
+<td><p>Director, UC Davis DataLab; Science and Technology Studies; L&amp;S AI</p></td>
+<td><p>Introduction; Session 3, <em>How to Talk to AI</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dr. Nick Ulle</strong></p></td>
+<td><p>Senior Data Scientist, UC Davis DataLab</p></td>
+<td><p>Session 1, <em>How AI Thinks</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Dr. Pamela Reynolds</strong></p></td>
+<td><p>Associate Director, UC Davis DataLab</p></td>
+<td><p>Session 2, <em>How to Use AI Responsibly</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rebeccah Yterdal</strong></p></td>
+<td><p>STEM Librarian, Researcher Services, UC Davis Library</p></td>
+<td><p>Session 4, <em>How AI Talks to You</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table I.1. The instructional team.</em></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="why-this-subject-and-why-now">
+<h2>Why This Subject, and Why Now<a class="headerlink" href="#why-this-subject-and-why-now" title="Link to this heading">#</a></h2>
+<p><img alt="Society is at an inflection point." src="chapters/assets/ch0-fig-01-why-were-here.png" /></p>
+<p><em>Figure I.1. The rationale for the course.</em></p>
+<p>The premises of the course can be stated in four propositions.</p>
+<p><strong>Society is at an inflection point.</strong> Artificial intelligence technologies are permeating education, industry, and government at a rate without clear precedent in the history of technology adoption.</p>
+<p><strong>Understanding how to use AI tools is becoming a condition of participation.</strong> Effective use bears on professional prospects, on the conduct of ordinary life, and on the capacity to participate in collective decisions about how these systems should be governed.</p>
+<p><strong>The pace of change is exponential.</strong> Any curriculum organized around the features of particular products is obsolete before it is delivered.</p>
+<p><strong>Because of this last fact, understanding how AI works matters more than knowing how to operate any particular tool.</strong> Conceptual understanding of the components of these systems is what allows a person to interpret, evaluate, and adapt to technologies that do not yet exist. This is the central pedagogical commitment of this material, and it explains why a text nominally about using AI devotes its first chapter to how a language model represents the world.</p>
+<p>A note on the choice framed by the course as a whole: the question is no longer whether these systems will be present in professional and academic life. The question is how they should be governed and wielded, and by whom. These materials aim to leave the reader capable of answering that question for themselves rather than deferring it to whoever designed the tool.</p>
+</section>
+<hr class="docutils" />
+<section id="how-the-book-is-organized">
+<h2>How the Book Is Organized<a class="headerlink" href="#how-the-book-is-organized" title="Link to this heading">#</a></h2>
+<p>The book follows the structure of the workshop day as the workshop was presented. Each chapter corresponds to one session.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time</p></th>
+<th class="head"><p>Session</p></th>
+<th class="head"><p>Lead instructor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9:00 am</p></td>
+<td><p>Welcome</p></td>
+<td><p>Carl Stahmer</p></td>
+</tr>
+<tr class="row-odd"><td><p>9:15 am</p></td>
+<td><p>How AI Thinks</p></td>
+<td><p>Nick Ulle</p></td>
+</tr>
+<tr class="row-even"><td><p>10:45 am</p></td>
+<td><p>Break</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>11:00 am</p></td>
+<td><p>Responsible AI</p></td>
+<td><p>Pamela Reynolds</p></td>
+</tr>
+<tr class="row-even"><td><p>12:30 pm</p></td>
+<td><p>Lunch</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>1:15 pm</p></td>
+<td><p>How to Talk to AI</p></td>
+<td><p>Carl Stahmer</p></td>
+</tr>
+<tr class="row-even"><td><p>2:30 pm</p></td>
+<td><p>Break</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>2:45 pm</p></td>
+<td><p>How AI Talks to You</p></td>
+<td><p>Rebeccah Yterdal</p></td>
+</tr>
+<tr class="row-even"><td><p>4:00 pm</p></td>
+<td><p>Wrap-up and Reflection</p></td>
+<td><p>All</p></td>
+</tr>
+<tr class="row-odd"><td><p>4:30 pm</p></td>
+<td><p>Dismissal</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table I.2. The orignial workshop schedule.</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Chapter</p></th>
+<th class="head"><p>Title</p></th>
+<th class="head"><p>Question it answers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1</strong></p></td>
+<td><p>How AI Thinks</p></td>
+<td><p><em>How do these systems do what they do?</em> A conceptual, non-technical account of the machinery.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2</strong></p></td>
+<td><p>How to Use AI Responsibly</p></td>
+<td><p><em>Should I use this, and when?</em> Ethics, bias, veracity, environmental cost, and a decision framework.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3</strong></p></td>
+<td><p>How to Talk to AI</p></td>
+<td><p><em>How do I get useful results?</em> Prompting strategy, and its consequences for one’s own thinking.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4</strong></p></td>
+<td><p>How AI Talks to You</p></td>
+<td><p><em>How do I know whether to believe it?</em> Hallucination, validation, lateral reading, and synthetic media.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Table I.3. Chapter structure.</em></p>
+<p>The order is not arbitrary. Chapter 1 establishes the mechanism; Chapter 2 asks whether and when the mechanism should be invoked; Chapter 3 addresses the input side of the interaction; Chapter 4 addresses the output side. A reader who begins at Chapter 3 in search of prompting techniques will find them, but will not understand why they work.</p>
+<p>Supporting material follows the chapters:</p>
+<ul class="simple">
+<li><p><strong>Chapter 5, Glossary</strong> — definitions of the technical and conceptual vocabulary introduced throughout.</p></li>
+<li><p><strong>Chapter 6, Appendices</strong> — prompt templates, decision aids, evaluation checklists, tool tables, and consolidated references.</p></li>
+</ul>
+<section id="apparatus">
+<h3>Apparatus<a class="headerlink" href="#apparatus" title="Link to this heading">#</a></h3>
+<p>Each chapter opens with <strong>learning objectives</strong> and closes with a <strong>chapter summary</strong>, a list of <strong>key terms</strong>, <strong>review questions</strong>, and <strong>further reading</strong>. Figures are reproduced from the workshop slides. Case studies, demonstrations, and classroom exercises from the recorded sessions are preserved and set off from the main exposition.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="four-ideas-that-recur">
+<h2>Four Ideas That Recur<a class="headerlink" href="#four-ideas-that-recur" title="Link to this heading">#</a></h2>
+<p>Four propositions appear in every chapter of this book, in different registers, because the four instructors arrived at them independently from statistics and data science, from science and technology studies, from the biological and environmental sciences, and from librarianship. They are worth stating at the outset.</p>
+<p><strong>1. Statistical probability is not truth.</strong> These systems produce what is probable given their training data. Probability and truth coincide often enough to be useful and diverge often enough to be dangerous. Nothing in the architecture distinguishes the two cases.</p>
+<p><strong>2. Every tool embodies values.</strong> An AI system reflects the values of those who funded it and those who built it — in what entered the corpus, in what the guardrails forbid, in what the interface makes easy. Choosing a tool is participating in those values.</p>
+<p><strong>3. You are the human in the loop, and you will be held accountable.</strong> Responsibility for a work product does not transfer to the instrument used to produce it. This is true academically, professionally, and increasingly in law.</p>
+<p><strong>4. Knowing when <em>not</em> to use AI is perhaps the highest level of AI literacy.</strong> Much popular instruction concerns when and how to use these tools. The harder and more valuable judgment is recognizing when a search, a calculator, a library database, a colleague, or one’s own thinking is the better instrument.</p>
+</section>
+<hr class="docutils" />
+<section id="about-the-uc-davis-datalab">
+<h2>About the UC Davis DataLab<a class="headerlink" href="#about-the-uc-davis-datalab" title="Link to this heading">#</a></h2>
+<p>The workshop from which this book derives was produced by the <em>UC Davis DataLab: Data Science and Informatics</em> in collaboration with the College of Letters and Science.</p>
+<p>DataLab is a cross-university effort that fosters, promotes, and facilitates data science to accelerate discovery within and across the scientific, engineering, social and humanities disciplines.</p>
+<p>We collaborate and problem solve with researchers to enable qualitatively novel, interdisciplinary research. We also provide an innovative training environment for students at all levels to meet academic and industry needs for skilled graduates. We partner with external agencies and organizations to grow our impact and further opportunities for our students.</p>
+<p>Further learning opportunities are listed at <a class="reference external" href="https://datalab.ucdavis.edu">https://datalab.ucdavis.edu</a> and <a class="reference external" href="https://datalab.ucdavis.edu/workshops/">https://datalab.ucdavis.edu/workshops/</a>.</p>
+<p>Participants who completed the live workshop received a certificate issued by the College of Letters and Science upon completion of the post-workshop reflection survey.</p>
+</section>
+<hr class="docutils" />
+<section id="a-note-on-sources-and-currency">
+<h2>A Note on Sources and Currency<a class="headerlink" href="#a-note-on-sources-and-currency" title="Link to this heading">#</a></h2>
+<p>This book was assembled from a specific delivery of the workshop. Two consequences follow.</p>
+<p>First, the quantitative claims about model sizes, energy consumption, water use, and the capabilities of named products were accurate as presented and will drift. Where the instructors themselves flagged a figure as contested or model-dependent, that qualification is preserved in the text. The reader should treat every number in this book as a figure to be re-verified rather than a constant.</p>
+<p>Second, the reasoning is more durable than the numbers. The argument that training a large model carries a substantial and largely invisible resource cost does not depend on the specific multiple by which a prompt exceeds a search query. The argument that a citation produced by a language model is a claim requiring verification rather than evidence supporting one does not depend on which model produced it.</p>
+<p>Applied to this book itself, the fourth chapter’s advice holds: read laterally, verify the claims, and consult the primary sources listed at the end of each chapter.</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="01-how-ai-thinks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Chapter 1. How AI Thinks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-book">About This Book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-instructional-team">The Instructional Team</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-subject-and-why-now">Why This Subject, and Why Now</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-book-is-organized">How the Book Is Organized</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparatus">Apparatus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-ideas-that-recur">Four Ideas That Recur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-uc-davis-datalab">About the UC Davis DataLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-sources-and-currency">A Note on Sources and Currency</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <img alt="CC BY-SA 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"> 
+</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

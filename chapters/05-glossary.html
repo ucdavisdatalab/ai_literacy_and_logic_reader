@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Glossary &#8212; AI Literacy and Logic</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=dddfd265"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/05-glossary';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Appendices" href="06-appendices.html" />
+    <link rel="prev" title="4. Chapter 4. How AI Talks to You" href="04-how-ai-talks-to-you.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-us"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-light" alt="AI Literacy and Logic - Home"/>
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-dark pst-js-only" alt="AI Literacy and Logic - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-how-ai-thinks.html">1. Chapter 1. How AI Thinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-responsible-ai.html">2. Chapter 2. How to Use AI Responsibly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-how-to-talk-to-ai.html">3. Chapter 3. How to Talk to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-how-ai-talks-to-you.html">4. Chapter 4. How AI Talks to You</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-appendices.html">6. Appendices</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/issues/new?title=Issue%20on%20page%20%2Fchapters/05-glossary.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/05-glossary.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Glossary</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="glossary">
+<h1><span class="section-number">5. </span>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h1>
+<p>Terms are defined as they are used in this book. Chapter references indicate where each term is introduced or treated most fully.</p>
+<hr class="docutils" />
+<p><strong>Accountability.</strong> The principle that responsibility for a work product remains with the person who produced it, regardless of the tools used. One of the four criteria of the FACT framework. <em>(Ch. 2, Ch. 4)</em></p>
+<p><strong>Accuracy.</strong> In the CRAAP test, the question of whether a claim can be verified in at least two other reputable sources. When CRAAP is applied to AI output, accuracy carries disproportionate weight because the other four criteria are largely foreclosed. <em>(Ch. 4)</em></p>
+<p><strong>Agent.</strong> An AI system capable of taking actions — executing code, making purchases, communicating with other systems — rather than only producing text. Agents substantially expand the security and liability surface. <em>(Ch. 2)</em></p>
+<p><strong>AI slop.</strong> The flood of low-quality, frequently hallucination-laden AI-generated content circulating on the internet, including material that ranks well in search results and presents as news or research. <em>(Ch. 4)</em></p>
+<p><strong>Algorithmic bias.</strong> Bias embodied and perpetuated by an algorithmic system. Distinct from a defect: these systems produce biased output because they are working exactly as designed on the data they were given. <em>(Ch. 2)</em></p>
+<p><strong>Anatomical implausibility.</strong> A category of cue for identifying synthetic images: bodies, faces, and features that do not make anatomical sense. Note that hands, once the canonical example, are no longer a reliable tell. <em>(Ch. 4)</em></p>
+<p><strong>Annotation bias.</strong> Bias introduced when human annotators label training data, arising from differing interpretations shaped by cultural and personal bias. <em>(Ch. 2)</em></p>
+<p><strong>Artificial intelligence (AI).</strong> Computer systems that mimic human behavior. The definition is broad and carries two caveats: many methods exist, and <em>intelligence</em> has no agreed definition. In this book and in most contemporary usage, the term usually means large language models accessed through a chat interface. <em>(Ch. 1)</em></p>
+<p><strong>Artificial neural network (ANN).</strong> A statistical model loosely inspired by neurons and synapses. First described mathematically in 1943; the basis of deep learning. The inspiration is an analogy, not a simulation. <em>(Ch. 1)</em></p>
+<p><strong>Attention layer.</strong> The component of a transformer that updates each token’s vector representation on the basis of the other tokens present, importing contextual meaning. The central innovation of the transformer architecture (2017). <em>(Ch. 1)</em></p>
+<p><strong>Authority.</strong> In the CRAAP test, whether the person or organization making a claim has the credentials and experience to be reliable on the topic. <strong>An AI tool does not itself have authority.</strong> <em>(Ch. 4)</em></p>
+<p><strong>Backpropagation.</strong> The method for training artificial neural networks, described by Rumelhart, Hinton, and Williams (1986), following Werbos (1982). Motivated by the holographic memory hypothesis: what is learned should propagate throughout the network rather than adjust a single unit. <em>(Ch. 1)</em></p>
+<p><strong>Chain of thought (CoT).</strong> A prompting strategy that decomposes a complex query into intermediate steps. Making one’s own chain of thought explicit — as distinct from asking the model to report its reasoning — is where cyborg practice becomes concrete. <strong>A model’s reported chain of thought is not a record of its computation:</strong> the description of the method is generated the same way the answer is, by predicting likely tokens. It is not an audit trail. <em>(Ch. 3)</em></p>
+<p><strong>Common Crawl.</strong> A large-scale periodic snapshot of the public web, and the canonical mechanism by which “the whole internet” enters a training corpus. <em>(Ch. 2)</em></p>
+<p><strong>Character training.</strong> The deliberate shaping of a model’s conversational persona — tone, warmth, engagement style — as a product decision. <em>(Ch. 4)</em></p>
+<p><strong>Chatbot.</strong> A software product containing a large language model together with substantial conventional code: a user interface, a safety and responsibility filter, a context engineering module, and a response generation module. <strong>A chatbot is not a large language model.</strong> <em>(Ch. 1)</em></p>
+<p><strong>Cinematization.</strong> A stylistic artifact of synthetic images: professional-grade cinematic lighting in a setting where such lighting would not plausibly exist. <em>(Ch. 4)</em></p>
+<p><strong>Concept drift.</strong> Degradation of a model’s performance over time as the world it was trained on diverges from the world it operates in. Also called model decay. <em>(Ch. 2)</em></p>
+<p><strong>Conscious bias.</strong> Bias introduced deliberately through tuning or framing, which the user can name, justify, and disclose. Distinguished sharply from unconscious bias, which is absorbed without awareness. <em>(Ch. 3)</em></p>
+<p><strong>Constraints.</strong> In the Markdown Prompting Framework, the section specifying the boundaries of the task. Constraints are the tuning, and writing them is where the user is forced to think through the problem. <em>(Ch. 3)</em></p>
+<p><strong>Context.</strong> The background information supplied to a model, including both what the user provides and what the system injects (chat history, user profile, retrieved documents). Providing sufficient and appropriate context is the single highest-leverage action a user can take. <em>(Ch. 3)</em></p>
+<p><strong>Context engineering.</strong> The module in a chatbot that gathers additional information relevant to a prompt and inserts it before the model sees it. In cognitive terms it approximates attention. <em>(Ch. 1)</em></p>
+<p><strong>Context window.</strong> The maximum length of text a model can consider at once. Because a chatbot’s apparent memory is the resubmitted transcript, exceeding the context window causes earlier material to be dropped — which is why long conversations lose the thread. <em>(Ch. 1, Ch. 3)</em></p>
+<p><strong>Corpus.</strong> The body of content on which a model was trained. Typically scraped from the internet, and therefore over-representing the famous, the Western, and the freely available while excluding the paywalled and the recent. <em>(Ch. 1, Ch. 2)</em></p>
+<p><strong>CRAAP test.</strong> A framework for evaluating content validity — Currency, Relevance, Authority, Accuracy, Purpose — developed by librarian Sarah Blakeslee at the Meriam Library, CSU Chico. <em>(Ch. 4)</em></p>
+<p><strong>Currency.</strong> In the CRAAP test, whether the production date of the information makes it relevant. Time bias can be introduced accidentally through a prompt. <em>(Ch. 4)</em></p>
+<p><strong>Cyborg approach.</strong> Engaging AI as a collaborator, pushing one’s own reasoning and structure into the tool rather than outsourcing the reasoning. Practiced by roughly ten percent of users. The term follows Donna Haraway’s usage. <em>(Ch. 3)</em></p>
+<p><strong>Data extraction (as a verification technique).</strong> Pasting an AI response into a separate session and asking a model to extract its factual claims as a list, in order to produce a checklist for verification. Labor-saving but itself fallible. <em>(Ch. 4)</em></p>
+<p><strong>Data sovereignty.</strong> Concerns arising from the training of models on personal, sensitive, or child-related data without consent. <em>(Ch. 2)</em></p>
+<p><strong>Decoder.</strong> The component that converts the final token representation into a probability distribution over the model’s vocabulary. <em>(Ch. 1)</em></p>
+<p><strong>Deep learning.</strong> A subfield of machine learning that uses artificial neural networks. Requires substantially more data and computation than other machine learning approaches. <em>(Ch. 1)</em></p>
+<p><strong>Deepfake.</strong> Synthetic media that simulates a real person’s likeness or voice without authorization. <em>(Ch. 2)</em></p>
+<p><strong>Deskilling.</strong> The degradation of human capability that follows from sustained reliance on a tool. In the AI context, concerns center on critical thinking, writing, and creativity. <em>(Ch. 2, Ch. 3)</em></p>
+<p><strong>Digital watermark.</strong> An embedded, machine-detectable marker indicating that media was AI-generated. Google DeepMind’s SynthID is one example. Usually stripped by social media platforms when carried as metadata. <em>(Ch. 4)</em></p>
+<p><strong>Embedding.</strong> See <em>vector</em>.</p>
+<p><strong>Encoder.</strong> The component that converts tokens into vectors. <em>(Ch. 1)</em></p>
+<p><strong>Ethics.</strong> The systematic study of what is good or right. Operationally: where the engineer asks whether a thing <em>can</em> be built or used, the ethicist asks whether it <em>should</em> be. <em>(Ch. 2)</em></p>
+<p><strong>Executive function.</strong> A domain of cognitive function: the ability to control and coordinate other cognitive abilities. In a chatbot, approximated by the safety and responsibility filter. <em>(Ch. 1)</em></p>
+<p><strong>FACT framework.</strong> A framework for assessing AI tools: <strong>F</strong>airness, <strong>A</strong>ccountability, <strong>C</strong>onfidentiality, <strong>T</strong>ransparency. <em>(Ch. 2)</em></p>
+<p><strong>Feedback loop.</strong> A source of bias in deployed systems, in which a model’s predictions influence the world in ways that generate data confirming those predictions. <em>(Ch. 2)</em></p>
+<p><strong>Few-shot prompting.</strong> Supplying several examples of the desired input–output pattern before the actual request. See also <em>one-shot</em>, <em>multi-shot</em>, <em>zero-shot</em>. <em>(Ch. 3)</em></p>
+<p><strong>Format.</strong> One of the three levers of prompt engineering: the structure and style of the prompt and of the desired output — natural language, structured input–output pairs, or markdown. <em>(Ch. 3)</em></p>
+<p><strong>Functional implausibility.</strong> A category of cue for identifying synthetic images: objects that could not perform their evident function — staircases to nowhere, non-supporting poles, asymmetrical fastenings. <em>(Ch. 4)</em></p>
+<p><strong>Garbage in, garbage out (GIGO).</strong> The principle that output quality is bounded by input quality. Applied to AI: a biased corpus produces biased output, delivered with polish. <em>(Ch. 2)</em></p>
+<p><strong>Ghost work.</strong> The labor — often performed in the Global South at low wages — of tagging training data and filtering toxic content, on which the apparent automation of these systems depends. <em>(Ch. 2)</em></p>
+<p><strong>Hallucination.</strong> Misleading, inaccurate, or fabricated content in an AI response. Not a defect that better engineering will remove: a system that reliably declined to answer when uncertain could not function as a language generator. <em>(Ch. 3, Ch. 4)</em></p>
+<p><strong>Historical bias.</strong> Bias arising because a model is trained on the historical record, which encodes past inequities. Treating output as objective truth therefore risks automating past injustice. <em>(Ch. 2)</em></p>
+<p><strong>Holographic memory.</strong> The hypothesis that the definition of each discrete token of information is distributed across the entire vocabulary of tokens, so that every idea is defined in relation to every other. Contrasted with localized memory; the motivation for backpropagation. <em>(Ch. 1)</em></p>
+<p><strong>Human in the loop.</strong> The person who exercises judgment over an AI system’s output — and who bears responsibility for it. <em>(Ch. 2, Ch. 4)</em></p>
+<p><strong>Intersectionality.</strong> In the bias context, the compounding of disadvantage where multiple marginalized characteristics coincide — a pattern that aggregate accuracy metrics conceal. <em>(Ch. 2)</em></p>
+<p><strong>Large language model (LLM).</strong> A deep neural network that models natural language, representing words as numbers. Generates one token at a time and retains no memory between prompts. <em>(Ch. 1)</em></p>
+<p><strong>Lateral reading.</strong> A verification method: leaving the source in front of you and opening other sources to check its facts, claims, references, and authorities. Break it down, search, analyze, decide, repeat. <em>(Ch. 4)</em></p>
+<p><strong>Lateral watching.</strong> The application of lateral reading to images and video, including analysis of account age, history, and commercial motive. <em>(Ch. 4)</em></p>
+<p><strong>Local model.</strong> A model run on one’s own hardware, so that no data leaves the machine. Tools such as Ollama make this accessible without programming. <em>(Ch. 3)</em></p>
+<p><strong>Localized memory.</strong> The hypothesis that discrete pieces of information are stored by defined collections of neurons and synapses, such that destroying the location destroys the memory. Contrasted with holographic memory. <em>(Ch. 1)</em></p>
+<p><strong>Machine learning.</strong> A subfield of AI that uses statistical models rather than explicit logic. Requires data and computing power. <em>(Ch. 1)</em></p>
+<p><strong>Markdown Prompting Framework (MPF).</strong> A structured prompting convention using markdown headings and lists to specify system prompt, role, audience, constraints, and a numbered task list. Prompts are reusable files, and the format compels the user to structure their thinking. <em>(Ch. 3)</em></p>
+<p><strong>Multi-shot prompting.</strong> Supplying many examples before the request. Gains typically plateau somewhere around ten examples, content-dependent. <em>(Ch. 3)</em></p>
+<p><strong>One-shot prompting.</strong> Supplying a single example of the desired input–output pattern. <em>(Ch. 3)</em></p>
+<p><strong>Open model.</strong> A model whose weights are publicly available and can be inspected, downloaded, and run locally. Repositories such as Hugging Face host thousands, many domain-specialized. <em>(Ch. 3)</em></p>
+<p><strong>Parameter.</strong> A numerical value inside a model, set during training and fixed thereafter. Contemporary models have billions to trillions. Interpreting them is difficult; the mechanism that uses them is not mysterious. <em>(Ch. 1)</em></p>
+<p><strong>Parametric memory.</strong> The blending of training information into a model’s parameters, such that the model retains what it learned without retaining where it learned it. The reason models cannot genuinely cite sources. <em>(Ch. 2)</em></p>
+<p><strong>Perceptron layer.</strong> The classical neural network component within a transformer block, updating each token’s representation independently of the others. Current research suggests these layers are where learned facts are stored. <em>(Ch. 1)</em></p>
+<p><strong>Perceptual motor control.</strong> A domain of cognitive function: coordinating movement in response to physical surroundings. Among the hardest problems in AI, and not addressed by language models. <em>(Ch. 1)</em></p>
+<p><strong>Predatory publishing.</strong> Journals that publish for fees without meaningful peer review. Now including venues whose contents are entirely AI-generated, sometimes attributed to real researchers. <em>(Ch. 4)</em></p>
+<p><strong>Prompt.</strong> The text submitted to a model. In a chatbot, the model receives the accumulated conversation as a single block of text — the prompt is the model’s only memory. <em>(Ch. 1, Ch. 3)</em></p>
+<p><strong>Prompt engineering.</strong> The practice of structuring prompts deliberately. Its three levers are format, context, and tuning. <em>(Ch. 3)</em></p>
+<p><strong>Prompt injection.</strong> An attack in which a model’s instructions are manipulated to bypass its safety protocols. Of particular concern in agentic systems. <em>(Ch. 2)</em></p>
+<p><strong>Purpose.</strong> In the CRAAP test, why the information was created at its source: fact, opinion, entertainment, satire, or propaganda. Applied to AI, purpose is doubled — the purpose of the original information and the purpose and bias of the tool. <em>(Ch. 4)</em></p>
+<p><strong>Relevance.</strong> In the CRAAP test, whether the fact or argument is relevant to the question at hand, and for whom it was intended. <em>(Ch. 4)</em></p>
+<p><strong>Reproducibility.</strong> The ability to obtain a consistent, verifiable result. A cornerstone of research, and not how these tools work, since word selection is a sampling process. <em>(Ch. 1, Ch. 2)</em></p>
+<p><strong>Response generation.</strong> The chatbot module that samples a specific token from the model’s probability distribution. <strong>This, not the model, is where the randomness lives.</strong> <em>(Ch. 1)</em></p>
+<p><strong>Retrieval-augmented generation (RAG).</strong> Adding retrieved documents to the context window before generation. Improves the likelihood that a cited source exists; does not establish that the source supports the claim. <em>(Ch. 2)</em></p>
+<p><strong>Reverse image search.</strong> Submitting an image to a service such as TinEye or Google Images to find where else it appears, trace it to an original source, or discover that it has been debunked. <em>(Ch. 4)</em></p>
+<p><strong>Safety and responsibility filter.</strong> The chatbot module that screens prompts and responses for material the operator judges risky. Its primary motivation is protecting the operator from liability. Mechanisms are often simpler than assumed. <em>(Ch. 1)</em></p>
+<p><strong>Scaling laws.</strong> The empirical regularity that larger models, with more layers and more training compute, perform better. No ceiling has yet been observed. <em>(Ch. 1)</em></p>
+<p><strong>Searchbot approach.</strong> Using AI as a question-answering machine — either to obtain answers or to confirm existing beliefs. Practiced by roughly ninety percent of users. Associated with cognitive decline and with the unremarkable mean. <em>(Ch. 3)</em></p>
+<p><strong>Social cognition.</strong> A domain of cognitive function: processing, remembering, and using information in social contexts. In a chatbot, approximated chiefly by the safety filter. <em>(Ch. 1)</em></p>
+<p><strong>Sociocultural implausibility.</strong> A category of cue for identifying synthetic images: situations that are socially or culturally improbable. A red flag rather than a verdict — unlikely does not mean impossible. <em>(Ch. 4)</em></p>
+<p><strong>Stylistic artifact.</strong> A category of cue for identifying synthetic images: waxy or plastic texture, absent skin texture, cinematization, hyper-real but unnatural detail, inconsistencies in resolution and color. <em>(Ch. 4)</em></p>
+<p><strong>SynthID.</strong> A digital watermarking system for AI-generated media developed by Google DeepMind. <em>(Ch. 4)</em></p>
+<p><strong>System prompt.</strong> Instructions supplied at the system level, above the conversational turn. In the Markdown Prompting Framework, denoted by a top-level <code class="docutils literal notranslate"><span class="pre">#</span></code> heading. Does not override the platform’s own system context but coexists with it. <em>(Ch. 3)</em></p>
+<p><strong>Temperature.</strong> A parameter controlling the flatness of the probability distribution from which the next token is sampled. At zero the model becomes deterministic and brittle; at high values output degenerates toward noise. Rarely exposed in graphical interfaces. <em>(Ch. 1)</em></p>
+<p><strong>Tensor.</strong> See <em>vector</em>.</p>
+<p><strong>Token.</strong> The unit into which input is divided for processing. Usually smaller than a word — roughly corresponding to roots, prefixes, and suffixes. Audio and images can be tokenized as well. <em>(Ch. 1)</em></p>
+<p><strong>Tokenization.</strong> The process of dividing input into tokens, according to predefined rules. <em>(Ch. 1)</em></p>
+<p><strong>Transformer.</strong> The model architecture introduced in 2017 (Vaswani et al.), built around the attention mechanism. The basis of contemporary large language models. <em>(Ch. 1)</em></p>
+<p><strong>Tuning.</strong> One of the three levers of prompt engineering: narrowing a model’s general capability toward a specific domain. May be done programmatically (adjusting weights) or, more accessibly, through the prompt. Tuning introduces bias deliberately. <em>(Ch. 3)</em></p>
+<p><strong>Turing test.</strong> A test in which an observer reads a transcript of a text exchange and attempts to identify which participant is human; the machine passes if it deceives the observer more than half the time. Contemporary models pass; so did ELIZA in 1966. <em>(Ch. 1)</em></p>
+<p><strong>Unremarkable mean.</strong> The tendency of a broad, general question to elicit the average of what has already been written on the subject — the same answer everyone else receives, carrying no distinguishing value even when correct. <em>(Ch. 3)</em></p>
+<p><strong>Values.</strong> What a person or society holds as important. Individual values function as an internal compass; social values are inherited through membership in communities and institutions. Ethics is values put into action. <em>(Ch. 2)</em></p>
+<p><strong>Vector.</strong> An ordered list of numbers representing a token’s position in a high-dimensional space, where proximity corresponds to similarity of meaning. Also called an <em>embedding</em>, a <em>tensor</em>, or an <em>encoding</em>. Contemporary models use hundreds to thousands of dimensions. <em>(Ch. 1)</em></p>
+<p><strong>Veracity.</strong> The property of being true. A principal category of concern about AI systems, encompassing accuracy, reproducibility, and hallucination. <em>(Ch. 2)</em></p>
+<p><strong>Violations of physics.</strong> A category of cue for identifying synthetic images: impossible reflections, inconsistent shadows, and lighting that does not follow from the apparent source. Among the most reliable indicators. <em>(Ch. 4)</em></p>
+<p><strong>Zero-shot prompting.</strong> Supplying a direct instruction or question with no additional context or examples. The most used and least effective strategy, though legitimate for exploratory questions. <em>(Ch. 3)</em></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04-how-ai-talks-to-you.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Chapter 4. How AI Talks to You</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06-appendices.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Appendices</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <img alt="CC BY-SA 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"> 
+</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

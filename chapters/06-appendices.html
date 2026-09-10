@@ -1,0 +1,1147 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6. Appendices &#8212; AI Literacy and Logic</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=dddfd265"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/06-appendices';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="5. Glossary" href="05-glossary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en-us"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-light" alt="AI Literacy and Logic - Home"/>
+    <img src="../_static/datalab-logo-full-color-rgb.png" class="logo__image only-dark pst-js-only" alt="AI Literacy and Logic - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-how-ai-thinks.html">1. Chapter 1. How AI Thinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-responsible-ai.html">2. Chapter 2. How to Use AI Responsibly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-how-to-talk-to-ai.html">3. Chapter 3. How to Talk to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-how-ai-talks-to-you.html">4. Chapter 4. How AI Talks to You</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-glossary.html">5. Glossary</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Appendices</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/issues/new?title=Issue%20on%20page%20%2Fchapters/06-appendices.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/06-appendices.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Appendices</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-a-the-ai-use-roadmap-as-a-checklist">6.1. Appendix A. The AI Use Roadmap as a Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-b-the-fact-framework-as-a-checklist">6.2. Appendix B. The FACT Framework as a Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-c-prompting-quick-reference">6.3. Appendix C. Prompting Quick Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-1-do">6.3.1. C.1 Do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2-don-t">6.3.2. C.2 Don’t</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3-context-control-habits">6.3.3. C.3 Context Control Habits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-d-prompt-type-selection">6.4. Appendix D. Prompt Type Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-e-markdown-prompting-framework-template">6.5. Appendix E. Markdown Prompting Framework Template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-f-the-craap-test-print-version">6.6. Appendix F. The CRAAP Test — Print Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-g-the-lateral-reading-workflow-print-version">6.7. Appendix G. The Lateral Reading Workflow — Print Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-h-identifying-synthetic-images-field-checklist">6.8. Appendix H. Identifying Synthetic Images — Field Checklist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-steps">6.8.1. Verification steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#social-media-specifically">6.8.2. Social media specifically</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-i-choosing-an-instrument">6.9. Appendix I. Choosing an Instrument</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-1-alternatives-to-ai">6.9.1. I.1 Alternatives to AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-2-ai-tools-by-task">6.9.2. I.2 AI Tools by Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-3-running-your-own">6.9.3. I.3 Running Your Own</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-j-resource-costs-figures-cited-in-the-workshop">6.10. Appendix J. Resource Costs — Figures Cited in the Workshop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-k-a-brief-chronology">6.11. Appendix K. A Brief Chronology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-l-consolidated-references">6.12. Appendix L. Consolidated References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-technical-papers">6.12.1. Foundational technical papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics-bias-and-social-impact">6.12.2. Ethics, bias, and social impact</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-cost">6.12.3. Environmental cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hallucination-validation-and-information-literacy">6.12.4. Hallucination, validation, and information literacy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-and-practical-resources">6.12.5. Tools and practical resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-uc-davis-coursework">6.12.6. Related UC Davis coursework</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-m-sources-for-this-book">6.13. Appendix M. Sources for This Book</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="appendices">
+<h1><span class="section-number">6. </span>Appendices<a class="headerlink" href="#appendices" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="appendix-a-the-ai-use-roadmap-as-a-checklist">
+<h2><span class="section-number">6.1. </span>Appendix A. The AI Use Roadmap as a Checklist<a class="headerlink" href="#appendix-a-the-ai-use-roadmap-as-a-checklist" title="Link to this heading">#</a></h2>
+<p>Work through the questions in order. A “stop” answer at any point ends the inquiry.</p>
+<p><strong>Stage 1 — Define the use case</strong></p>
+<ul class="simple">
+<li><p>[ ] <strong>Is it allowed?</strong> Syllabus, workplace policy, publication rules, community norms. <em>(Check first; a negative answer ends the inquiry.)</em></p></li>
+<li><p>[ ] <strong>Is an AI tool the right instrument?</strong> Mathematics → calculator or statistical software. Verified facts → library database. Deterministic tasks → deterministic tools.</p></li>
+<li><p>[ ] <strong>Can you do it yourself?</strong> <em>If yes, you probably do not need AI.</em></p></li>
+<li><p>[ ] <strong>Is the data restricted?</strong> Personal, protected, confidential, or belonging to someone else. <em>If yes, stop — or use a local, non-connected tool.</em></p></li>
+</ul>
+<p><strong>Stage 2 — Evaluate the risk</strong></p>
+<ul class="simple">
+<li><p>[ ] <strong>Does truth or accuracy matter?</strong></p></li>
+<li><p>[ ] <strong>Do you have the expertise to verify the result?</strong> <em>If no, stop.</em></p></li>
+<li><p>[ ] <strong>Will you actually verify it?</strong> <em>A different question from the previous one, and where most failures occur.</em></p></li>
+<li><p>[ ] <strong>Are you willing to be held accountable for the outcome?</strong> <em>If no, stop.</em></p></li>
+</ul>
+<p><strong>Stage 3 — Review the options</strong></p>
+<ul class="simple">
+<li><p>[ ] Is there an <strong>approved, licensed</strong> institutional tool?</p></li>
+<li><p>[ ] Is there an <strong>open-source</strong> tool that is adequate?</p></li>
+<li><p>[ ] If neither, and only then: a <strong>proprietary chatbot</strong>.</p></li>
+<li><p>[ ] <strong>Does the tool align with your values?</strong> <em>(Apply Appendix B.)</em></p></li>
+</ul>
+<p><strong>Terminal state: <em>maybe</em> use AI.</strong></p>
+</section>
+<hr class="docutils" />
+<section id="appendix-b-the-fact-framework-as-a-checklist">
+<h2><span class="section-number">6.2. </span>Appendix B. The FACT Framework as a Checklist<a class="headerlink" href="#appendix-b-the-fact-framework-as-a-checklist" title="Link to this heading">#</a></h2>
+<p><strong>Fairness</strong></p>
+<ul class="simple">
+<li><p>Does this tool treat all groups equitably?</p></li>
+<li><p>Does the output reinforce stereotypes or exclude groups?</p></li>
+<li><p>Assume it is biased. Can you discover the bias? Can you mitigate it?</p></li>
+</ul>
+<p><strong>Accountability</strong></p>
+<ul class="simple">
+<li><p>If it makes a mistake, who is responsible? <em>(You.)</em></p></li>
+<li><p>Are you comfortable with that?</p></li>
+<li><p>Can you stand behind the work if your supervisor asks?</p></li>
+</ul>
+<p><strong>Confidentiality</strong></p>
+<ul class="simple">
+<li><p>Was private data used to build this tool?</p></li>
+<li><p>How does it use prompts and user data?</p></li>
+<li><p>Would you be comfortable seeing your prompt published on a front page?</p></li>
+<li><p>Can you delete your data? Are there opt-out settings? <em>(No opt-out is a red flag.)</em></p></li>
+</ul>
+<p><strong>Transparency</strong></p>
+<ul class="simple">
+<li><p>How was this built, by whom, and for what purpose?</p></li>
+<li><p>Who benefits, and who is affected?</p></li>
+<li><p>Does the company disclose training data and environmental impact?</p></li>
+<li><p>Can you explain how the result was reached? <em>If not, you are guessing rather than researching.</em></p></li>
+</ul>
+<p><strong>If a tool fails these four tests, find a different solution.</strong></p>
+</section>
+<hr class="docutils" />
+<section id="appendix-c-prompting-quick-reference">
+<h2><span class="section-number">6.3. </span>Appendix C. Prompting Quick Reference<a class="headerlink" href="#appendix-c-prompting-quick-reference" title="Link to this heading">#</a></h2>
+<section id="c-1-do">
+<h3><span class="section-number">6.3.1. </span>C.1 Do<a class="headerlink" href="#c-1-do" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Practice</p></th>
+<th class="head"><p>Why</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Define the speaker</p></td>
+<td><p>Sets the role; displaces inferred profile context</p></td>
+</tr>
+<tr class="row-odd"><td><p>Define the audience</p></td>
+<td><p>Sets register, depth, vocabulary</p></td>
+</tr>
+<tr class="row-even"><td><p>Provide relevant context</p></td>
+<td><p>The highest-leverage action available</p></td>
+</tr>
+<tr class="row-odd"><td><p>Decide input and output format in advance</p></td>
+<td><p>List, narrative, table, file</p></td>
+</tr>
+<tr class="row-even"><td><p>Make chain of thought explicit</p></td>
+<td><p><em>Do this, then this, then this</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Ask for references</p></td>
+<td><p>As leads to follow, never as citations</p></td>
+</tr>
+<tr class="row-even"><td><p>Be precise</p></td>
+<td><p>Verbosity dilutes tuning</p></td>
+</tr>
+<tr class="row-odd"><td><p>Provide examples</p></td>
+<td><p>Form is a stronger instruction than description of form</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="c-2-don-t">
+<h3><span class="section-number">6.3.2. </span>C.2 Don’t<a class="headerlink" href="#c-2-don-t" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Avoid</p></th>
+<th class="head"><p>Why</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Treating it as a search engine</p></td>
+<td><p>If it is a search question, use a search engine</p></td>
+</tr>
+<tr class="row-odd"><td><p>Leading questions</p></td>
+<td><p>Introduces unconscious bias into the answer</p></td>
+</tr>
+<tr class="row-even"><td><p>Vague questions</p></td>
+<td><p>Produces the unremarkable mean</p></td>
+</tr>
+<tr class="row-odd"><td><p>Anything you would not want public</p></td>
+<td><p>Once submitted, it is out of your control</p></td>
+</tr>
+<tr class="row-even"><td><p>Trusting the answer</p></td>
+<td><p>See Chapter 4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="c-3-context-control-habits">
+<h3><span class="section-number">6.3.3. </span>C.3 Context Control Habits<a class="headerlink" href="#c-3-context-control-habits" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Start a new chat</strong> when the topic changes. Chat history is context.</p></li>
+<li><p><strong>Verify before the next prompt.</strong> A wrong answer left in context contaminates everything after it.</p></li>
+<li><p><strong>Audit your platform profile.</strong> The system injects context you did not supply.</p></li>
+<li><p><strong>Order matters.</strong> Put context before the question, not after.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="appendix-d-prompt-type-selection">
+<h2><span class="section-number">6.4. </span>Appendix D. Prompt Type Selection<a class="headerlink" href="#appendix-d-prompt-type-selection" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>Strategy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Exploring a space; no exhaustive answer needed</p></td>
+<td><p><strong>Zero-shot</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>The output format matters and is easy to demonstrate</p></td>
+<td><p><strong>One- / few-shot</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Classification or extraction against a fixed scheme</p></td>
+<td><p><strong>Few- / multi-shot</strong> (gains plateau around ten examples)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multi-step analysis; reasoning must be inspectable</p></td>
+<td><p><strong>Chain of thought</strong>, with steps you specify</p></td>
+</tr>
+<tr class="row-even"><td><p>Recurring task with a stable structure</p></td>
+<td><p><strong>Markdown Prompting Framework</strong> file, reused</p></td>
+</tr>
+<tr class="row-odd"><td><p>Complex task with a required output style</p></td>
+<td><p><strong>Shot-based chain of thought</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="appendix-e-markdown-prompting-framework-template">
+<h2><span class="section-number">6.5. </span>Appendix E. Markdown Prompting Framework Template<a class="headerlink" href="#appendix-e-markdown-prompting-framework-template" title="Link to this heading">#</a></h2>
+<p>Save as a plain <code class="docutils literal notranslate"><span class="pre">.md</span></code> text file. Drag into the prompt window, or copy and paste.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># System Prompt: [short title]</span>
+
+<span class="gu">## Role</span>
+You are a [role] who [relevant characteristics, tone, expertise].
+
+<span class="gu">## Audience</span>
+[Who the output is for: expertise level, context, what they need from it.]
+
+<span class="gu">## Context</span>
+[Background the model needs. Documents, prior decisions, constraints of the situation.]
+
+<span class="gu">## Constraints</span>
+<span class="k">*</span><span class="w"> </span>jurisdiction: [if relevant]
+<span class="k">*</span><span class="w"> </span>scope: [what is in and out of scope]
+<span class="k">*</span><span class="w"> </span>sources: [e.g. peer-reviewed literature after 2020]
+<span class="k">*</span><span class="w"> </span>length: [if relevant]
+<span class="k">*</span><span class="w"> </span>format: [table / narrative / bulleted list]
+
+<span class="gu">## Tasks</span>
+<span class="k">1.</span> [First step.]
+<span class="k">2.</span> [Second step. Explain reasoning step by step and cite sources.]
+<span class="k">3.</span> [Third step.]
+<span class="k">4.</span> [Produce the deliverable.]
+
+<span class="gu">## Output</span>
+[What you want back, in what form.]
+</pre></div>
+</div>
+<p><strong>Notes on use</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> is read as a system-level instruction by all major chat interfaces. It does not override the platform’s system context; it coexists with it.</p></li>
+<li><p>Constraint keys are not a controlled vocabulary. The model interprets them as natural language. Choose terms that are precise in your domain.</p></li>
+<li><p>The <strong>Tasks</strong> list is your chain of thought made structural.</p></li>
+<li><p>Expect to spend a couple of weeks tuning a prompt you intend to reuse. Add constraints where you observe drift.</p></li>
+<li><p><strong>Validate every result</strong>, every time.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="appendix-f-the-craap-test-print-version">
+<h2><span class="section-number">6.6. </span>Appendix F. The CRAAP Test — Print Version<a class="headerlink" href="#appendix-f-the-craap-test-print-version" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>General source</p></th>
+<th class="head"><p>AI output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Currency</strong></p></td>
+<td><p>Is the production date such that the information is relevant?</p></td>
+<td><p><em>How do you know the date of the information?</em> Beware time bias introduced by your prompt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Relevance</strong></p></td>
+<td><p>Is the fact or argument relevant to my question? Who is the intended audience?</p></td>
+<td><p>Is it relevant to your prompt — and did your prompt ask what you meant?</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Authority</strong></p></td>
+<td><p>Does the person or organization have the credentials and experience to be reliable?</p></td>
+<td><p><em>How do you know the original source?</em> Does the tool have the training and corpus for this question? <strong>The tool has no authority.</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Accuracy</strong></p></td>
+<td><p>Can you verify the claim in at least two other reputable sources?</p></td>
+<td><p><strong>The same — and this is now the essential step.</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Purpose</strong></p></td>
+<td><p>Why was this created? Fact, opinion, entertainment, satire, propaganda?</p></td>
+<td><p>Can you find the purpose at the source? <em>And:</em> what is the purpose of the tool, and what bias does it carry?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="appendix-g-the-lateral-reading-workflow-print-version">
+<h2><span class="section-number">6.7. </span>Appendix G. The Lateral Reading Workflow — Print Version<a class="headerlink" href="#appendix-g-the-lateral-reading-workflow-print-version" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Break it down.</strong> Identify specific facts, claims, references, and sources of authority.</p></li>
+<li><p><strong>Search.</strong> Consult other sources to verify facts, references, and credentials.</p></li>
+<li><p><strong>Analyze.</strong> Weigh what the external sources show.</p></li>
+<li><p><strong>Decide.</strong> Determine whether the claim is valid.</p></li>
+<li><p><strong>Repeat.</strong> For every claim, fact, and source.</p></li>
+</ol>
+<p><strong>With AI, check every claim.</strong> Reliability does not accumulate across a response: the first ten claims may be true and the eleventh may be fabricated.</p>
+<p><strong>When the tool supplies a source, verify the source too.</strong> Click it. Follow the link. Read it. Apply CRAAP. A real source may still fail to support the claim attached to it.</p>
+</section>
+<hr class="docutils" />
+<section id="appendix-h-identifying-synthetic-images-field-checklist">
+<h2><span class="section-number">6.8. </span>Appendix H. Identifying Synthetic Images — Field Checklist<a class="headerlink" href="#appendix-h-identifying-synthetic-images-field-checklist" title="Link to this heading">#</a></h2>
+<p><strong>The overarching question: what generally doesn’t make sense?</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Look for</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Functional implausibility</strong></p></td>
+<td><p>Objects that could not do their job: staircases to nowhere, non-supporting poles, holes in columns, asymmetrical fastenings, railings at impossible levels, merged eyeglass earpieces</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Anatomical implausibility</strong></p></td>
+<td><p>Missing or malformed features, incoherent facial expressions, mouths and teeth, artifacts between teeth. <em>(Hands are no longer reliable.)</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Violations of physics</strong></p></td>
+<td><p>Reflections that do not match the subject — mirrors, windows, puddles, lakes. Shadows inconsistent with the light source.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Sociocultural implausibility</strong></p></td>
+<td><p>Situations that are socially or culturally improbable. <em>(Red flag only: unlikely ≠ impossible.)</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Stylistic artifacts</strong></p></td>
+<td><p>Waxy or plastic texture, absent skin texture, cinematization, hyper-real but unnatural detail, inconsistent resolution or color</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rendered text</strong></p></td>
+<td><p>Signs, labels, and street names that are not real language</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Detection depends on accumulated inconsistency, not one decisive artifact — and it takes more time than scrolling allows.</strong></p>
+<section id="verification-steps">
+<h3><span class="section-number">6.8.1. </span>Verification steps<a class="headerlink" href="#verification-steps" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Different angles.</strong> A real event usually generates multiple images from multiple people.</p></li>
+<li><p><strong>Reputable text references.</strong> Is anyone credible writing about this?</p></li>
+<li><p><strong>Creator attribution.</strong> Is there a named photographer or creator?</p></li>
+<li><p><strong>Publisher credentials.</strong> Who is the source? What is the site?</p></li>
+<li><p><strong>Reverse image search.</strong> TinEye, Google Images — trace it to origin, or find it debunked.</p></li>
+<li><p><strong>Digital watermarks.</strong> SynthID and comparable systems; metadata is usually stripped by social platforms.</p></li>
+</ul>
+</section>
+<section id="social-media-specifically">
+<h3><span class="section-number">6.8.2. </span>Social media specifically<a class="headerlink" href="#social-media-specifically" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Are they selling something? Is the image engineered to make you click?</p></li>
+<li><p><strong>How old is the account?</strong> <em>500,000 followers and two weeks of history is a red flag.</em></p></li>
+<li><p>What is the account history? Have earlier, more obviously synthetic images been deleted?</p></li>
+<li><p>Are all the videos short? <em>(At the time of writing, video over about a minute — particularly with sustained dialogue — is likely authentic, because generation is expensive and degrades with length. Expect this heuristic to expire.)</em></p></li>
+<li><p>AI influencer accounts often disclose, but obliquely: in the account name, in a pun, in the biography, or behind an external link.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="appendix-i-choosing-an-instrument">
+<h2><span class="section-number">6.9. </span>Appendix I. Choosing an Instrument<a class="headerlink" href="#appendix-i-choosing-an-instrument" title="Link to this heading">#</a></h2>
+<section id="i-1-alternatives-to-ai">
+<h3><span class="section-number">6.9.1. </span>I.1 Alternatives to AI<a class="headerlink" href="#i-1-alternatives-to-ai" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Alternative</p></th>
+<th class="head"><p>Why</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fact-checking</p></td>
+<td><p>Library databases, Google Scholar</p></td>
+<td><p>Real, verified citations</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data analysis</p></td>
+<td><p>R, Python</p></td>
+<td><p>Transparency, accuracy, reproducibility</p></td>
+</tr>
+<tr class="row-even"><td><p>Literature review</p></td>
+<td><p>Library database search; abstracts; Zotero</p></td>
+<td><p>Nuance, context, organization</p></td>
+</tr>
+<tr class="row-odd"><td><p>Math and logic</p></td>
+<td><p>Calculator, specialized software</p></td>
+<td><p>Calculation rather than prediction</p></td>
+</tr>
+<tr class="row-even"><td><p>Privacy-sensitive work</p></td>
+<td><p>Local software, non-connected tools, paper</p></td>
+<td><p>Data security</p></td>
+</tr>
+<tr class="row-odd"><td><p>Deep thinking</p></td>
+<td><p>Socratic dialogue with peers</p></td>
+<td><p>Creativity and logic; knowable biases</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>All of these use less energy and water than a large language model.</em></p>
+</section>
+<section id="i-2-ai-tools-by-task">
+<h3><span class="section-number">6.9.2. </span>I.2 AI Tools by Task<a class="headerlink" href="#i-2-ai-tools-by-task" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Example tools</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>General chatbots, brainstorming</p></td>
+<td><p>ChatGPT, Copilot, Claude, Gemini</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coding</p></td>
+<td><p>Claude Code, Copilot</p></td>
+</tr>
+<tr class="row-even"><td><p>Literature searching</p></td>
+<td><p>Elicit, Consensus, Scite</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reading and summarizing</p></td>
+<td><p>NotebookLM, Scholarcy, SciSpace</p></td>
+</tr>
+<tr class="row-even"><td><p>Text editing</p></td>
+<td><p>Grammarly, LanguageTool</p></td>
+</tr>
+<tr class="row-odd"><td><p>Note taking</p></td>
+<td><p>Zoom AI Companion, <a class="reference external" href="http://Otter.ai">Otter.ai</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Tool names date rapidly; the categories do not.</em></p>
+<blockquote>
+<div><p><strong>Private or sensitive data should be used only with institution-approved or licensed tools, for approved purposes.</strong></p>
+</div></blockquote>
+</section>
+<section id="i-3-running-your-own">
+<h3><span class="section-number">6.9.3. </span>I.3 Running Your Own<a class="headerlink" href="#i-3-running-your-own" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Resource</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Ollama</strong> — <a class="reference external" href="https://ollama.com/">https://ollama.com/</a></p></td>
+<td><p>Local model runtime for Windows, macOS, Linux. No programming required; administrator privileges needed. Nothing leaves your machine.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hugging Face</strong> — <a class="reference external" href="https://huggingface.co/">https://huggingface.co/</a></p></td>
+<td><p>Repository of thousands of open models, many specialized by discipline.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Caution:</strong> availability is not endorsement. Apply the FACT framework and confirm the model fits your use case.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="appendix-j-resource-costs-figures-cited-in-the-workshop">
+<h2><span class="section-number">6.10. </span>Appendix J. Resource Costs — Figures Cited in the Workshop<a class="headerlink" href="#appendix-j-resource-costs-figures-cited-in-the-workshop" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>Read this appendix with its caveat.</strong> These figures are simultaneously right and wrong depending on model, data center, region, and methodology. Precise numbers are difficult to obtain because the companies are private and are not obliged to disclose. What follows represents researchers’ best efforts as presented in the workshop. <strong>Treat every figure as an order of magnitude to be re-verified, not a constant.</strong></p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Measure</p></th>
+<th class="head"><p>Figure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>U.S. electricity used by data centers, 2023</p></td>
+<td><p>4.4% of annual use</p></td>
+</tr>
+<tr class="row-odd"><td><p>Projected, 2028</p></td>
+<td><p>12%</p></td>
+</tr>
+<tr class="row-even"><td><p>Water use, one medium-sized data center</p></td>
+<td><p>≈ 110 million gallons/year</p></td>
+</tr>
+<tr class="row-odd"><td><p>Projected AI-sector freshwater use, 2027</p></td>
+<td><p>≈ 1.7 trillion gallons/year — more than the total water use of Denmark</p></td>
+</tr>
+<tr class="row-even"><td><p>Training GPT-3 — carbon</p></td>
+<td><p>≈ lifetime emissions of 5 gasoline cars</p></td>
+</tr>
+<tr class="row-odd"><td><p>Training GPT-3 — water</p></td>
+<td><p>≈ 1.5 Olympic swimming pools of drinking water evaporated</p></td>
+</tr>
+<tr class="row-even"><td><p>Writing a 100-word email</p></td>
+<td><p>≈ 3 bottles of fresh water</p></td>
+</tr>
+<tr class="row-odd"><td><p>Generating one high-resolution image</p></td>
+<td><p>≈ one full smartphone battery charge</p></td>
+</tr>
+<tr class="row-even"><td><p>One AI prompt vs. one conventional search</p></td>
+<td><p>≈ 10× the electricity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Sources:</strong> Strubell, Ganesh &amp; McCallum (2019), <a class="reference external" href="https://doi.org/10.48550/arXiv.1906.02243">https://doi.org/10.48550/arXiv.1906.02243</a>; Li, Yang, Islam &amp; Ren (2023), <a class="reference external" href="https://arxiv.org/pdf/2304.03271">https://arxiv.org/pdf/2304.03271</a>; Congressional Research Service R48646, <a class="reference external" href="https://www.congress.gov/crs-product/R48646">https://www.congress.gov/crs-product/R48646</a>.</p>
+</section>
+<hr class="docutils" />
+<section id="appendix-k-a-brief-chronology">
+<h2><span class="section-number">6.11. </span>Appendix K. A Brief Chronology<a class="headerlink" href="#appendix-k-a-brief-chronology" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Year</p></th>
+<th class="head"><p>Development</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1943</p></td>
+<td><p>Artificial neural networks first described (McCulloch &amp; Pitts)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1957</p></td>
+<td><p>First computer simulation of an ANN (Rosenblatt)</p></td>
+</tr>
+<tr class="row-even"><td><p>1966</p></td>
+<td><p>ELIZA chatbot (Weizenbaum)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1970s–80s</p></td>
+<td><p>First “AI winter”; logic-based systems dominate</p></td>
+</tr>
+<tr class="row-even"><td><p>1982–1986</p></td>
+<td><p>Backpropagation described (Werbos; Rumelhart, Hinton &amp; Williams)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1990s–2000s</p></td>
+<td><p>Second “AI winter”</p></td>
+</tr>
+<tr class="row-even"><td><p>2012</p></td>
+<td><p>AlexNet wins an image classification competition, triggering the deep learning boom</p></td>
+</tr>
+<tr class="row-odd"><td><p>2013</p></td>
+<td><p>word2vec introduces efficient word embeddings (Mikolov et al.)</p></td>
+</tr>
+<tr class="row-even"><td><p>2017</p></td>
+<td><p>The transformer architecture (Vaswani et al.)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2022</p></td>
+<td><p>ChatGPT released and marketed; public attention follows</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="appendix-l-consolidated-references">
+<h2><span class="section-number">6.12. </span>Appendix L. Consolidated References<a class="headerlink" href="#appendix-l-consolidated-references" title="Link to this heading">#</a></h2>
+<section id="foundational-technical-papers">
+<h3><span class="section-number">6.12.1. </span>Foundational technical papers<a class="headerlink" href="#foundational-technical-papers" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>McCulloch, W. S., &amp; Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity.</p></li>
+<li><p>Rosenblatt, F. (1957–58). Work on the perceptron — the first computer simulation of an artificial neural network. <em>(Cited in the workshop by year and contribution; consult the primary literature for the exact reference.)</em></p></li>
+<li><p>Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. <em>Nature</em>.</p></li>
+<li><p>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks.</p></li>
+<li><p>Mikolov, T., et al. (2013). Efficient estimation of word representations in vector space.</p></li>
+<li><p>Vaswani, A., et al. (2017). Attention is all you need.</p></li>
+<li><p>Firth, J. R. (1957). A synopsis of linguistic theory.</p></li>
+</ul>
+</section>
+<section id="ethics-bias-and-social-impact">
+<h3><span class="section-number">6.12.2. </span>Ethics, bias, and social impact<a class="headerlink" href="#ethics-bias-and-social-impact" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? <em>FAccT ‘21</em>.</p></li>
+<li><p>Buolamwini, J., &amp; Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. <em>PMLR</em>.</p></li>
+<li><p>D’Ignazio, C., &amp; Klein, L. F. (2020). <em>Data Feminism</em>. MIT Press.</p></li>
+<li><p>Noble, S. U. (2018). <em>Algorithms of Oppression: How Search Engines Reinforce Racism</em>. NYU Press.</p></li>
+<li><p>Haraway, D. (1985/1991). A Cyborg Manifesto. In <em>Simians, Cyborgs, and Women</em>. Routledge.</p></li>
+<li><p><em>Coded Bias</em> (documentary, dir. Shalini Kantayya, 2020).</p></li>
+</ul>
+</section>
+<section id="environmental-cost">
+<h3><span class="section-number">6.12.3. </span>Environmental cost<a class="headerlink" href="#environmental-cost" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Strubell, E., Ganesh, A., &amp; McCallum, A. (2019). Energy and policy considerations for deep learning in NLP. <a class="reference external" href="https://doi.org/10.48550/arXiv.1906.02243">https://doi.org/10.48550/arXiv.1906.02243</a></p></li>
+<li><p>Li, P., Yang, J., Islam, M. A., &amp; Ren, S. (2023). Making AI less “thirsty.” <a class="reference external" href="https://arxiv.org/pdf/2304.03271">https://arxiv.org/pdf/2304.03271</a></p></li>
+<li><p>Luccioni, A. S., Viguier, S., &amp; Ligozat, A.-L. (2023). Estimating the carbon footprint of BLOOM. <em>JMLR</em>.</p></li>
+<li><p>Congressional Research Service, R48646. <a class="reference external" href="https://www.congress.gov/crs-product/R48646">https://www.congress.gov/crs-product/R48646</a></p></li>
+</ul>
+</section>
+<section id="hallucination-validation-and-information-literacy">
+<h3><span class="section-number">6.12.4. </span>Hallucination, validation, and information literacy<a class="headerlink" href="#hallucination-validation-and-information-literacy" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Kalai, A. T., et al. (2025). Why language models hallucinate.</p></li>
+<li><p>Linardon, J., et al. (2025). Citation fabrication in AI-assisted mental health literature review.</p></li>
+<li><p>Ibrahim, et al. (2026). Conversational warmth and hallucination rates.</p></li>
+<li><p>Kamali, N., et al. (2024). How to distinguish AI-generated images from authentic photographs. <a class="reference external" href="https://doi.org/10.48550/arXiv.2406.08651">https://doi.org/10.48550/arXiv.2406.08651</a></p></li>
+<li><p>Van Kampen, K. Evaluating resources and misinformation. University of Chicago Library. <a class="reference external" href="https://guides.lib.uchicago.edu/c.php?g=1241077&amp;amp;p=9082343">https://guides.lib.uchicago.edu/c.php?g=1241077&amp;p=9082343</a></p></li>
+<li><p>University of Maryland Libraries. AI and information literacy: Fact-checking AI with lateral reading. <a class="reference external" href="https://lib.guides.umd.edu/c.php?g=1340355&amp;amp;p=9880575">https://lib.guides.umd.edu/c.php?g=1340355&amp;p=9880575</a></p></li>
+<li><p>Cruz-Ocampo, et al. (2025). Student-reported cognitive effects of AI use.</p></li>
+<li><p>NASA. 2M1207 b — first image of an exoplanet. <a class="reference external" href="https://science.nasa.gov/resource/2m1207-b-first-image-of-an-exoplanet/">https://science.nasa.gov/resource/2m1207-b-first-image-of-an-exoplanet/</a></p></li>
+</ul>
+</section>
+<section id="tools-and-practical-resources">
+<h3><span class="section-number">6.12.5. </span>Tools and practical resources<a class="headerlink" href="#tools-and-practical-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Markdown Prompting Framework: <a class="reference external" href="https://tenacity.io/snippets/supercharge-ai-prompts-with-markdown-for-better-results/">https://tenacity.io/snippets/supercharge-ai-prompts-with-markdown-for-better-results/</a></p></li>
+<li><p>Ollama: <a class="reference external" href="https://ollama.com/">https://ollama.com/</a></p></li>
+<li><p>Hugging Face: <a class="reference external" href="https://huggingface.co/">https://huggingface.co/</a></p></li>
+<li><p>Anthropic, Claude’s character: <a class="reference external" href="https://www.anthropic.com/research/claude-character">https://www.anthropic.com/research/claude-character</a></p></li>
+<li><p>3Blue1Brown — video series on neural networks and transformers.</p></li>
+<li><p>UC Davis DataLab: <a class="reference external" href="https://datalab.ucdavis.edu">https://datalab.ucdavis.edu</a> · Workshops: <a class="reference external" href="https://datalab.ucdavis.edu/workshops/">https://datalab.ucdavis.edu/workshops/</a></p></li>
+</ul>
+</section>
+<section id="related-uc-davis-coursework">
+<h3><span class="section-number">6.12.6. </span>Related UC Davis coursework<a class="headerlink" href="#related-uc-davis-coursework" title="Link to this heading">#</a></h3>
+<p>SOC 195 · STS 111, 115, 195 · PHI 133</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="appendix-m-sources-for-this-book">
+<h2><span class="section-number">6.13. </span>Appendix M. Sources for This Book<a class="headerlink" href="#appendix-m-sources-for-this-book" title="Link to this heading">#</a></h2>
+<p>This textbook was assembled from the materials of a single delivery of the UC Davis <em>AI Literacy and Logic</em> workshop:</p>
+<p><strong>Presentation decks</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">session_a_welcome.pptx</span></code> — 8 slides</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session_1_how_ai_thinks.pptx</span></code> — 48 slides</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session_2_responsible_AI.pptx</span></code> — 29 slides</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session_3_talk_to_AI.pptx</span></code> — 33 slides</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session_4_ai_talks_to_you.pptx</span></code> — 55 slides</p></li>
+</ul>
+<p><strong>Recordings</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">Workshop</span> <span class="pre">modules</span> <span class="pre">1-3</span> <span class="pre">May</span> <span class="pre">30.m4a</span></code> — 5 hours 0 minutes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">Workshop</span> <span class="pre">module</span> <span class="pre">4</span> <span class="pre">May</span> <span class="pre">30.m4a</span></code> — 1 hour 33 minutes</p></li>
+</ul>
+<p>Slide text, speaker notes, and embedded tables were extracted programmatically. Recordings were transcribed automatically and used as the source for the expository narrative, the case studies, the classroom exercises, and the instructors’ qualifications and asides. Figures are rendered directly from the original slides.</p>
+<p>Where an automatic transcript was ambiguous, the slide text and speaker notes were treated as authoritative. Quantitative claims are reproduced as delivered, with the instructors’ own caveats preserved.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05-glossary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Glossary</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-a-the-ai-use-roadmap-as-a-checklist">6.1. Appendix A. The AI Use Roadmap as a Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-b-the-fact-framework-as-a-checklist">6.2. Appendix B. The FACT Framework as a Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-c-prompting-quick-reference">6.3. Appendix C. Prompting Quick Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-1-do">6.3.1. C.1 Do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2-don-t">6.3.2. C.2 Don’t</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3-context-control-habits">6.3.3. C.3 Context Control Habits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-d-prompt-type-selection">6.4. Appendix D. Prompt Type Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-e-markdown-prompting-framework-template">6.5. Appendix E. Markdown Prompting Framework Template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-f-the-craap-test-print-version">6.6. Appendix F. The CRAAP Test — Print Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-g-the-lateral-reading-workflow-print-version">6.7. Appendix G. The Lateral Reading Workflow — Print Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-h-identifying-synthetic-images-field-checklist">6.8. Appendix H. Identifying Synthetic Images — Field Checklist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-steps">6.8.1. Verification steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#social-media-specifically">6.8.2. Social media specifically</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-i-choosing-an-instrument">6.9. Appendix I. Choosing an Instrument</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-1-alternatives-to-ai">6.9.1. I.1 Alternatives to AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-2-ai-tools-by-task">6.9.2. I.2 AI Tools by Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-3-running-your-own">6.9.3. I.3 Running Your Own</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-j-resource-costs-figures-cited-in-the-workshop">6.10. Appendix J. Resource Costs — Figures Cited in the Workshop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-k-a-brief-chronology">6.11. Appendix K. A Brief Chronology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-l-consolidated-references">6.12. Appendix L. Consolidated References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-technical-papers">6.12.1. Foundational technical papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics-bias-and-social-impact">6.12.2. Ethics, bias, and social impact</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-cost">6.12.3. Environmental cost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hallucination-validation-and-information-literacy">6.12.4. Hallucination, validation, and information literacy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-and-practical-resources">6.12.5. Tools and practical resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-uc-davis-coursework">6.12.6. Related UC Davis coursework</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-m-sources-for-this-book">6.13. Appendix M. Sources for This Book</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <img alt="CC BY-SA 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"> 
+</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
