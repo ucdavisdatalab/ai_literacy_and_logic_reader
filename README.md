@@ -7,7 +7,7 @@ _Spring 2026_
 _Instructors: Carl Stahmer, Pamela Reynolds, Nick Ulle, Rebeccah Yterdal_  
 _Maintainer: Carl Stahmer <<datalab@ucdavis.edu>>_  
 
-* [Reader](https://github.com/ucdavisdatalab/ai_literacy_and_logic_reader/)
+* [Reader](https://ucdavisdatalab.github.io/ai_literacy_and_logic_reader/chapters/index.html)
 * [Event Page](https://events.library.ucdavis.edu/event/ai-literacy-logic-spring-2026#)
 
 This free, 1-day intensive workshop is for College of Letters & Science majors, and covers the foundational principles and skills for using Artificial Intelligence (AI).
